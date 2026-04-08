@@ -29,6 +29,23 @@ Oportunidades (**Opportunities**): Fatores externos favoráveis que podem ser ex
 <img width="1168" height="796" alt="image" src="https://github.com/user-attachments/assets/9c5b51e4-9ae7-4c3e-9167-09d16a6732ab" />
 
 ### B) Identificação Visual de Soluções Existentes
+### Banco Mercantil
+<img width="741" height="511" alt="image" src="https://github.com/user-attachments/assets/3d57f460-2b00-443c-80eb-b3d079ef8e06" />
+
+**Aplicativo:** Banco Mercantil
+
+**Descrição:** Ecossistema de mobile banking completo que integra gestão de benefícios do INSS, crédito consignado e transações Pix em uma interface multifuncional, unindo o digital à confiança do atendimento físico.
+
+**Público-alvo:** Aposentados, pensionistas do INSS e idosos que buscam centralizar suas necessidades financeiras em uma instituição tradicional.
+
+### Agibank
+<img width="764" height="416" alt="image" src="https://github.com/user-attachments/assets/e62fe0b3-6031-4700-b6d7-2c9daa54c455" />
+
+**Aplicativo:** Agibank
+
+**Descrição:** Plataforma de banco digital híbrido que combina serviços bancários modernos e isentos de tarifas (como o Pix) com o suporte de pontos de atendimento físico, focando na oferta de crédito e na modernização financeira de seus usuários.
+
+**Público-alvo:** Aposentados, pensionistas e idosos que desejam migrar para o ambiente digital, mas ainda valorizam a segurança psicológica do suporte presencial.
 
 ### C) Quadro Comparativo de Soluções Existentes
 
