@@ -28,6 +28,7 @@ Oportunidades (**Opportunities**): Fatores externos favoráveis que podem ser ex
 
 <img width="1168" height="796" alt="image" src="https://github.com/user-attachments/assets/9c5b51e4-9ae7-4c3e-9167-09d16a6732ab" />
 
+### B) Identificação Visual de Soluções Existentes
 
 ### C) Quadro Comparativo de Soluções Existentes
 
