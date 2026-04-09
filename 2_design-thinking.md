@@ -67,6 +67,18 @@ Oportunidades (**Opportunities**): Fatores externos favoráveis que podem ser ex
 
 ### C) Quadro Comparativo de Soluções Existentes
 
+---
+
+| Critério/Soluções| Agibank |
+| --- | --- |
+| Modelo de Négocio| Banco digital com modelo híbrido. Gera receita principalmente através de produtos de crédito (consignado), oferecendo uma conta digital gratuita e serviços como Pix para atrair e fidelizar o público.|
+| Tecnologia Utilizada | Aplicativo móvel (mobile banking) de alta performance, integração nativa com o ecossistema Pix e autenticação transacional via biometria.|
+| Publico Alvo | Aposentados, pensionistas e idosos que buscam modernidade e isenção de tarifas, mas que ainda valorizam a existência de pontos de atendimento físico.|
+| Pontos Fortes | Alta agilidade e modernização da interface; uso de biometria para segurança; diferencial de possuir hubs físicos para suporte presencial, o que gera maior segurança psicológica ao usuário.|
+| Pontos Fracos | Interface poluída com ofertas de crédito (foco em vendas prejudica a simplicidade); suporte digital pouco acessível (baseado em chatbots); falta de mecanismos de segurança e alertas específicos para o público idoso.|
+
+---
+
 | Critério/Soluções| Banco BMG |
 | --- | --- |
 | Modelo de Négocio| Banco digital especializado em crédito consignado. O lucro é gerado através da venda de produtos financeiros (empréstimos, cartões e investimentos) dentro de uma conta digital gratuita.|
@@ -75,7 +87,7 @@ Oportunidades (**Opportunities**): Fatores externos favoráveis que podem ser ex
 | Pontos Fortes | Reputação consolidada no nicho de consignados; suporte físico que reduz a insegurança do usuário; aplicativo ágil e tecnologicamente atualizado.|
 | Pontos Fracos | Interface com alta densidade de informações e excesso de ofertas comerciais; falta de foco exclusivo no Pix (o que torna a navegação menos intuitiva); mecanismos de segurança contra golpes muito genéricos.|
 
-
+---
 
 
 
