@@ -47,6 +47,24 @@ Oportunidades (**Opportunities**): Fatores externos favoráveis que podem ser ex
 
 **Público-alvo:** Aposentados, pensionistas e idosos que desejam migrar para o ambiente digital, mas ainda valorizam a segurança psicológica do suporte presencial.
 
+### Banco BMG
+<img width="743" height="422" alt="image" src="https://github.com/user-attachments/assets/95658d7a-258d-4b3b-9838-97d9c895a329" />
+
+**Aplicativo:** Banco BMG
+
+**Descrição:** Plataforma de banco digital especializada em crédito consignado e serviços financeiros completos (como o Pix), que busca equilibrar a modernidade do autoatendimento no app com a segurança de uma rede de suporte físico.
+
+**Público-alvo:** Aposentados e pensionistas que desejam uma conta digital moderna, mas que ainda priorizam instituições com histórico em crédito e presença física para suporte.
+
+### Banco Caixa
+<img width="760" height="421" alt="image" src="https://github.com/user-attachments/assets/49add243-9c3f-401f-bde7-b3d93f65b4c2" />
+
+**Aplicativo:** Banco Caixa
+
+**Descrição:** Plataforma governamental multifuncional e de alta complexidade que centraliza o acesso a benefícios sociais (FGTS, PIS, Habitação) e serviços bancários, priorizando a abrangência de funções institucionais em detrimento da simplicidade de navegação.
+
+**Público-alvo:** A população brasileira em geral, com foco massivo em beneficiários de programas sociais, aposentados e pensionistas que dependem da instituição para o recebimento de recursos do governo.
+
 ### C) Quadro Comparativo de Soluções Existentes
 
 ## 3. Conhecendo o usuário - Persona
