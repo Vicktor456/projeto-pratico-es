@@ -69,6 +69,15 @@ Oportunidades (**Opportunities**): Fatores externos favoráveis que podem ser ex
 
 ---
 
+| Critério/Soluções| Banco Mercantil |
+| --- | --- |
+| Modelo de Négocio| Instituição bancária tradicional com foco em intermediação financeira, geração de receita através de tarifas bancárias e, principalmente, concessão de crédito consignado para o público do INSS.|
+| Tecnologia Utilizada | Plataforma de Mobile Banking (App), integração com o sistema de pagamentos instantâneos (Pix) e autenticação via biometria.|
+| Publico Alvo | Aposentados e pensionistas do INSS (idosos) que necessitam de serviços bancários completos.|
+| Pontos Fortes | Forte reputação e confiança histórica junto ao público idoso; oferta de suporte híbrido (digital + rede de agências físicas); utilização de biometria para maior segurança nas transações.|
+| Pontos Fracos | Interface com alta densidade de informações (excesso de funções no mesmo app); design focado em um banco completo e não na simplicidade radical; suporte digital (chatbots/FAQs) pouco intuitivo e falta de destaque para mecanismos de segurança específicos (antigolpe).|
+---
+
 | Critério/Soluções| Agibank |
 | --- | --- |
 | Modelo de Négocio| Banco digital com modelo híbrido. Gera receita principalmente através de produtos de crédito (consignado), oferecendo uma conta digital gratuita e serviços como Pix para atrair e fidelizar o público.|
