@@ -98,8 +98,25 @@ Oportunidades (**Opportunities**): Fatores externos favoráveis que podem ser ex
 
 ---
 
+| Critério/Soluções| Banco Caixa |
+| --- | --- |
+| Modelo de Négocio| Instituição financeira pública focada na gestão e pagamento de benefícios sociais do governo federal (FGTS, PIS, aposentadorias), além de serviços bancários tradicionais e habitação.|
+| Tecnologia Utilizada | Aplicativo móvel multifuncional (super-app), integração com Pix, biometria e a maior rede de agências físicas e caixas eletrônicos do Brasil.|
+| Publico Alvo | População geral brasileira, com foco massivo em beneficiários de programas sociais, aposentados e pensionistas que possuem vínculo obrigatório ou histórico com o banco.|
+| Pontos Fortes | Máxima confiança institucional por ser um banco público; capilaridade total (presença em quase todos os municípios); uso de biometria para segurança transacional.|
+| Pontos Fracos | Baixíssima usabilidade para idosos devido à interface densa e excesso de funções; o Pix é uma funcionalidade secundária e "escondida"; app lento; alertas de segurança genéricos e sistema de ajuda confuso.|
 
+---
 
+| Critério/Soluções| Nosso sistema - SeuPix |
+| --- | --- |
+| Modelo de Négocio| Fintech de nicho focada em Inclusão Digital Financeira. O modelo pode operar como um aplicativo monetizado por transações ou parcerias ou como uma extesão (B2B) para bancos tradicionais que desejam oferecer um "Modo Idoso" em suas plataformas.|
+| Tecnologia Utilizada | Aplicativo móvel (Mobile) otimizado para dispositivos de baixo desempenho; integração via API com o ecossistema Pix do Banco Central; tecnologias de acessibilidade (ajuste dinâmico de contraste e tamanho de fonte).|
+| Publico Alvo | Pessoas de idade avançada com baixa afinidade digital, dificuldades visuais ou cognitivas, e que apresentam resistência ao uso de aplicativos bancários complexos.|
+| Pontos Fortes | Simplicidade radical (foco exclusivo em Pix); interface minimalista de alta legibilidade; navegação sem curva de aprendizado; segurança preventiva com confirmações claras para evitar golpes e erros acidentais; leveza técnica.|
+| Pontos Fracos | Escopo restrito (não oferece empréstimos, boletos ou investimentos, o que pode exigir que o usuário ainda acesse o app principal para outras tarefas); dependência de parcerias bancárias para liquidação das transações.|
+
+---
 
 ## 3. Conhecendo o usuário - Persona
 
