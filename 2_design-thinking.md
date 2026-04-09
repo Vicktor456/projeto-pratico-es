@@ -66,6 +66,15 @@ Oportunidades (**Opportunities**): Fatores externos favoráveis que podem ser ex
 **Público-alvo:** A população brasileira em geral, com foco massivo em beneficiários de programas sociais, aposentados e pensionistas que dependem da instituição para o recebimento de recursos do governo.
 
 ### C) Quadro Comparativo de Soluções Existentes
+O BMG é um banco digital com especialização em produtos consignados, sendo uma das contas digitais mais citadas como opção para o público idoso (aposentados e pensionistas). Embora seu aplicativo seja moderno e inclua o Pix de forma nativa, seu principal desafio em IHC é a alta densidade de informações e ofertas (como de crédito e investimentos) na interface. O Pix está integrado, mas a busca por simplicidade e a prioridade de segurança anti-golpe são ofuscadas pela necessidade do banco de vender outros produtos. 
+
+<h3 style="display: flex; align-items: center; justify-content: center;">
+  Sistema 4: Banco Caixa
+  <img src="https://github.com/user-attachments/assets/dad2df36-c42b-406e-9ef6-2a936031baf4"
+       alt="Logo Banco BMG"
+       width="50"
+       style="margin-left: 8px;">
+</h3>
 
 ## 3. Conhecendo o usuário - Persona
 
