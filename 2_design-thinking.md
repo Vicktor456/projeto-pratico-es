@@ -67,25 +67,17 @@ Oportunidades (**Opportunities**): Fatores externos favoráveis que podem ser ex
 
 ### C) Quadro Comparativo de Soluções Existentes
 
-<h3 style="display: flex; align-items: center; justify-content: center;">
-  Sistema 3: Banco BMG
-  <img src="https://github.com/user-attachments/assets/f2192108-edaf-4843-bdff-1d5ae1f17ade"
-       alt="Logo Banco BMG"
-       width="50"
-       style="margin-left: 8px;">
-</h3>
+| Critério/Soluções| Banco BMG |
+| --- | --- |
+| Modelo de Négocio| Banco digital especializado em crédito consignado. O lucro é gerado através da venda de produtos financeiros (empréstimos, cartões e investimentos) dentro de uma conta digital gratuita.|
+| Tecnologia Utilizada | Aplicativo de mobile banking moderno, integração nativa com o sistema Pix e segurança via biometria.|
+| Publico Alvo | Idosos, aposentados e pensionistas que desejam migrar para o digital, mas ainda valorizam a existência de suporte físico em hubs estratégicos.|
+| Pontos Fortes | Reputação consolidada no nicho de consignados; suporte físico que reduz a insegurança do usuário; aplicativo ágil e tecnologicamente atualizado.|
+| Pontos Fracos | Interface com alta densidade de informações e excesso de ofertas comerciais; falta de foco exclusivo no Pix (o que torna a navegação menos intuitiva); mecanismos de segurança contra golpes muito genéricos.|
 
-#### Quais problemas o produto resolve? 
 
-Resolve a demanda por uma conta digital e Pix para um público que deseja serviços digitais, mas ainda valoriza o contato humano. Foca em oferecer conveniência digital sem abandonar completamente o suporte físico. 
 
-#### Como os problemas são resolvidos? 
 
-Através de um aplicativo digital (com Pix) complementado por uma rede estratégica de hubs de atendimento presencial (um diferencial de Atendimento Especializado e Reputação). O sistema tenta unir a modernidade do Pix com a segurança psicológica do contato físico. 
-
-#### Quais os pontos fortes e fracos dessas soluções? 
-
-Fortes (Baseados nas Variáveis): Reputação/Atendimento e Atendimento Especializado (O suporte físico mitiga a insegurança do idoso). Agilidade/Modernização (App digital eficaz). Uso de Biometria para Transações (Prática padrão). Fracos (Baseados em IHC/Foco no Idoso): Mecanismos de Antigolpe/Alerta (Alertas genéricos). Área de Suporte em Destaque (O suporte no app é prioritariamente digital e não um botão de pânico). Contatos/Chaves Favoritas (A interface não é exclusivamente focada no Pix, tornando o acesso à lista de contatos menos intuitivo). 
 
 
 ## 3. Conhecendo o usuário - Persona
