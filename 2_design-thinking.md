@@ -22,11 +22,12 @@ Forças (**Strengths**): Atributos internos positivos que conferem vantagem sobr
 
 Fraquezas (**Weaknesses**): Limitações internas que podem comprometer a performance ou a experiência do usuário.
 
-Ameaças (**Threats**): Riscos externos, como mudanças de mercado ou barreiras tecnológicas, que podem desafiar o sucesso do projeto.
-
 Oportunidades (**Opportunities**): Fatores externos favoráveis que podem ser explorados para expansão ou melhoria do sistema.
 
-<img width="1168" height="796" alt="image" src="https://github.com/user-attachments/assets/9c5b51e4-9ae7-4c3e-9167-09d16a6732ab" />
+Ameaças (**Threats**): Riscos externos, como mudanças de mercado ou barreiras tecnológicas, que podem desafiar o sucesso do projeto.
+
+<img width="2947" height="1364" alt="image" src="https://github.com/user-attachments/assets/0b73bbb3-8221-4619-92f8-459e46516544" />
+
 
 ### B) Identificação Visual de Soluções Existentes
 ### Banco Mercantil
