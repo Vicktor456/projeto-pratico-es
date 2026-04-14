@@ -122,3 +122,19 @@ Ameaças (**Threats**): Riscos externos, como mudanças de mercado ou barreiras 
 ## 3. Conhecendo o usuário - Persona
 
 # Fase II - Ideação
+Essa persona representa uma jovem que está iniciando a vida adulta agora e precisa se manter atualizada com a tecnologia e as maneiras mais fáceis de lidar com ela, tudo isso porque ela tem um emprego onde cuida de uma pessoa idosa, que precisa de auxilio com tecnologia e também no cotidiano.
+
+<img width="9001" height="14022" alt="image" src="https://github.com/user-attachments/assets/db29c598-7036-4fa5-adfb-4935cd9edc50" />
+
+A persona José Almeida foi criada como base do público-alvo do aplicativo, representando o idoso com pouca familiaridade tecnológica. Sua construção considerou dados sobre o uso de apps por pessoas idosas, identificando dificuldades de usabilidade e insegurança em sistemas complexos. Assim, José simboliza o usuário que busca simplicidade, clareza e segurança ao realizar operações digitais.
+
+<img width="9001" height="13348" alt="image" src="https://github.com/user-attachments/assets/0cea1b05-a2ff-4601-8e67-dc367462d1dd" />
+
+Essa persona representa uma jovem adulta que atua como facilitadora digital e precisa dominar ferramentas de suporte e a comunicação empática, tudo isso porque ela tem um emprego em um banco onde auxilia idosos, que precisam de ajuda para usar a tecnologia e realizar suas transações financeiras no dia a dia.
+
+<img width="9001" height="13864" alt="image" src="https://github.com/user-attachments/assets/964a1474-2025-46ba-a38c-79e084b917e7" />
+
+É um jovem organizado e prático que gosta de orgnização e segurança no dia a dia. Ele está familiarizado com tecnologia e está ciente que a internet é um lugar onde as pessoas estão sujeitas a golpes e fraudes, por isso preza por utilizar um sistema de banco onde ele possa ter a praticiade esperada e segurança.
+
+<img width="9001" height="14151" alt="image" src="https://github.com/user-attachments/assets/5e502996-e61f-47e7-b82d-ab3a669c4d8e" />
+
