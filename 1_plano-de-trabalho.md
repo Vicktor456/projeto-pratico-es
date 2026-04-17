@@ -9,6 +9,33 @@
 | Executor Principal:        | Isabely Barbosa                                                                        |
 | Coordenador do Projeto:    | Prof:Andrey Rodrigues                                                                  |
 
+## Sumário
+#### 1. Introdução
+#### 1.1 Objeto
+#### 1.2 Motivação, Justificativa e Oportunidade	
+#### 1.3 Caracterização do Projeto	
+#### 1.3.1 Classe
+#### 1.3.2 Enquadrabilidade	
+#### 2. INFORMAÇÕES GERAIS
+#### 2.1 Escopo Geral	
+#### 2.1.1 Escopo Específico
+#### 2.1.2 Escopo Negativo	
+#### 2.2 Ambiente de Desenvolvimento
+#### 2.3 Características Inovadoras do Projeto
+#### 2.4 Resultados Esperado
+#### 3. METODOLOGIA DE PROJETO
+#### 3.1 Estrutura do Projeto	
+#### 3.2 Equipe de Projeto: Papéis e Responsabilidades dos integrantes	
+#### 4. DESPESAS	
+#### 4.1 Dispêndios	
+#### 4.1.1 Equipamentos e Programa de Computador
+#### 4.1.2 Materiais de Consumo	
+#### 4.1.3 Treinamento
+#### 4.1.4 Serviço Técnico de Terceiros	
+#### 4.2 Resumo Financeiro e Valor Total
+
+# 
+
 ## 1. INTRODUÇÃO
 O projeto SeuPix tem como principal objetivo a realização de transferências Pix de maneira prática, segura e sem complicações, foi desenvolvido com o objetivo de ser intuitivo e fácil de utilizar. Esse propósito foi priorizado após a equipe identificar a dificuldade de um determinado público ao lidar com bancos digitais, o público idoso. Uma das propriedades que a equipe priorizou ao desenvolver esse sistema de transferências foi o layout simplificado, com letras grandes e botões fáceis de visualizar. Além disso, fomos cuidadosos ao demonstrar para o usuário que o SeuPix é um sistema confiável e seguro de utilizar, implementando confirmações duplas antes de cada transação e um histórico visual para facilitar o acompanhamento do usuário ao navegar.
 
