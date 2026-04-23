@@ -30,8 +30,7 @@
 #### 4.1 Dispêndios	
 #### 4.1.1 Equipamentos e Programa de Computador
 #### 4.1.2 Materiais de Consumo	
-#### 4.1.3 Treinamento
-#### 4.1.4 Serviço Técnico de Terceiros	
+#### 4.1.3 Serviço Técnico de Terceiros	
 #### 4.2 Resumo Financeiro e Valor Total
 
 # 
