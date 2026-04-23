@@ -103,6 +103,33 @@ Aqui são descritas as tecnologias e ferramentas que serão utilizadas no desenv
 | Modelagem de Software    | Draw.io (diagrama de classes, fluxo de telas)                                  |
 | Desenvolvimento do MVP   | Flutter (Dart) ou React Native (Ideais para cross-platform e otimização de UI) |
 
+### 2.3 Características Inovadoras do Projeto
+
+Aqui são descritas as inovações do projeto, ou seja, o que o torna diferente de soluções já  existentes. 
+
+- **Acessibilidade Visual e Motora Especializada:** O design da interface é adaptado para atender às necessidades da terceira idade, entendendo as limitações motoras e visual por meio de letras ampliadas, alto contraste e botões de fácil visualização.
+
+- **Jornada Linear com Baixa Carga Cognitiva:** Diferente de soluções bancárias convencionais que exigem a navegação por múltiplas ferramentas e serviços (como empréstimos e cartões), o SeuPix oferece um ambiente focado exclusivamente em transferências Pix, reduzindo a complexidade e a confusão para o usuário.
+ 
+- **Suporte Humanizado a um Toque:** Em vez de menus de ajuda complexos ou robôs de atendimento, o sistema integra um canal de ajuda direto com tutores especializados, acessível de forma rápida e prática para dar suporte imediato ao usuário idoso.
+ 
+- **Camada de Segurança Ativa Anti-Golpe:** O sistema não apenas processa transferências, mas atua na mitigação de fraudes através de confirmações duplas, pausas de segurança para novos contatos ou transações atípicas, e pop-ups educativos que alertam o usuário.
+
+### 2.4 Resultados Esperados
+
+Aqui são listados os principais resultados esperados após a conclusão do projeto.
+
+- **Sistema funcional e especializado:** Um aplicativo móvel focado exclusivamente em transações Pix, oferecendo um fluxo de operação linear e livre de funcionalidades bancárias complexas e desnecessárias.
+
+- **Alta acessibilidade e usabilidade:** Uma interface projetada sob rigorosos padrões de IHC para a terceira idade, com alta legibilidade, contraste adequado e navegação intuitiva que dispense auxílio de terceiros.
+
+- **Redução de fraudes e erros:** Implementação de camadas de segurança ativa e alertas didáticos que diminuam a vulnerabilidade do usuário a golpes e evitem transferências acidentais para destinatários incorretos.
+
+- **Inclusão e autonomia digital:** Aumento da confiança e permanência do público idoso em meios digitais de transação, reduzindo a barreira de complexidade que causa a evasão desse grupo dos aplicativos tradicionais.
+
+- **Validação por tutores:** Um produto final testado e aprovado por especialistas em usabilidade para idosos, garantindo que as necessidades específicas desse nicho foram tecnicamente atendidas.
+
+
 ## Despesas
 ### 4.1 Dispêndios 
 #### 4.1.1 Equipamentos e Programa de Computador 
