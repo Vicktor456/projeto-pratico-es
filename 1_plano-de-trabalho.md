@@ -103,6 +103,7 @@ Aqui são descritas as tecnologias e ferramentas que serão utilizadas no desenv
 | Modelagem de Software    | Draw.io (diagrama de classes, fluxo de telas)                                  |
 | Desenvolvimento do MVP   | Flutter (Dart) ou React Native (Ideais para cross-platform e otimização de UI) |
 
+## Despesas
 ### 4.1 Dispêndios 
 #### 4.1.1 Equipamentos e Programa de Computador 
 Equipamentos que serão utilizados no projeto:
