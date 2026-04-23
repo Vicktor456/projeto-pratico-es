@@ -17,7 +17,22 @@
 #### [1.3.1 Classe](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#131-classe-1) 
 #### [1.3.2 Enquadrabilidade](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#132-enquadrabilidade-1)
 #### 2. INFORMAÇÕES GERAIS
-#### 2.1 Escopo Geral	
+#### 2.1 Escopo Geral
+O projeto SeuPix consiste no desenvolvimento de uma interface bancária de nicho, operando exclusivamente sob o protocolo Pix. O sistema é projetado para enfrentar a exclusão digital da terceira idade, substituindo a complexidade dos aplicativos bancários multisserviços por uma jornada de usuário linear, segura e assistida.
+Objetivos Principais
+- **Autonomia Digital:** Permitir que o usuário idoso realize transferências sem dependência de terceiros.
+- **Mitigação de Fraudes:** Implementar camadas de confirmação e alertas didáticos que interrompam a jornada em caso de comportamentos suspeitos de golpes.
+- **Acessibilidade Cognitiva e Visual:** Adaptar a interface para limitações motoras leves, baixa acuidade visual e menor familiaridade com jargões tecnológicos.
+
+
+Funcionalidades Incluídas
+- Pagamentos Pix
+- Recebimento Assistido
+- Gestão de Favoritos
+- Extrato Simplificado
+- Camada Anti-Golpe
+- Suporte Integrado
+
 #### 2.1.1 Escopo Específico
 2.1.1 Escopo Específico 
 2.1.1 Escopo Específico 
