@@ -93,7 +93,7 @@ Os materiais de consumo previstos para o desenvolvimento do projeto estão detal
 | 5 | **Ferramenta de Monitoramento de Fraudes** | 12 meses | 100,00 | 1.200,00 |
 | | **TOTAL DO INVESTIMENTO** | | | **R$ 3.640,00** |
 
-### 4.1.3 Serviço Técnico de Terceiros
+#### 4.1.3 Serviço Técnico de Terceiros
 
 Os serviços técnicos de terceiros necessários para o desenvolvimento do projeto são:
 
@@ -108,3 +108,16 @@ Os serviços técnicos de terceiros necessários para o desenvolvimento do proje
 | 7 | Serviço técnico especializado em teste de usabilidade | 2.000,00 |
 | 8 | Suporte Técnico e Manutenção Mensal | 2.500,00 |
 | | **Total** | **26.000,00** |
+
+### 4.2 Resumo Financeiro e Valor Total 
+
+Segue o resumo financeiro dos itens anteriores com os valores totais e porcentagem do  aporte ao projeto:
+
+| RESUMO FINANCEIRO DO PROJETO | MESES | 9 |
+| ---------------------------- | ----- | - |
+| Item | Valor Total | % |
+| Programas de Computador, Máquinas e Equipamentos | 12.500,00 | 29,64% |
+| Infraestrutura Digital e Materiais de Consumo | 4.080,00 | 9,67% |
+| Serviços Técnicos de Terceiros (RH Direto) | 25.500,00 | 36,26 % |
+| Recursos Humanos Indiretos (Suporte e Adm) | 100,00 | 0,24% |
+|   | **TOTAL** | **R$ 42.180,00** |
