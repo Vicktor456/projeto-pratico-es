@@ -16,79 +16,6 @@
 #### [1.3 Caracterização do Projeto](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#13-caracteriza%C3%A7%C3%A3o-do-projeto-1)	
 #### [1.3.1 Classe](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#131-classe-1) 
 #### [1.3.2 Enquadrabilidade](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#132-enquadrabilidade-1)
-#### 2. INFORMAÇÕES GERAIS
-#### 2.1 Escopo Geral
-O projeto SeuPix consiste no desenvolvimento de uma interface bancária de nicho, operando exclusivamente sob o protocolo Pix. O sistema é projetado para enfrentar a exclusão digital da terceira idade, substituindo a complexidade dos aplicativos bancários multisserviços por uma jornada de usuário linear, segura e assistida.
-Objetivos Principais
-- **Autonomia Digital:** Permitir que o usuário idoso realize transferências sem dependência de terceiros.
-- **Mitigação de Fraudes:** Implementar camadas de confirmação e alertas didáticos que interrompam a jornada em caso de comportamentos suspeitos de golpes.
-- **Acessibilidade Cognitiva e Visual:** Adaptar a interface para limitações motoras leves, baixa acuidade visual e menor familiaridade com jargões tecnológicos.
-
-
-Funcionalidades Incluídas
-- Pagamentos Pix
-- Recebimento Assistido
-- Gestão de Favoritos
-- Extrato Simplificado
-- Camada Anti-Golpe
-- Suporte Integrado
-
-#### 2.1.1 Escopo Específico
-2.1.1 Escopo Específico 
-2.1.1 Escopo Específico 
-
-Pagamentos Pix: Envio de valores via Chave Pix (CPF, Telefone, E-mail), QR Code (leitura via câmera) e "Copia e Cola".
-Recebimento Assistido: Geração de QR Code próprio e compartilhamento de chaves para recebimento de valores.
-Gestão de Favoritos: Cadastro simplificado de contatos frequentes com uso de fotos ou apelidos para evitar erros de digitação.
-Extrato Simplificado: Histórico de transações com linguagem natural (ex: "Você enviou para..." em vez de "LANC. DEB.") e filtros por data.
-Camada Anti-Golpe: Sistema de pop-ups educativos e pausas de segurança em transações atípicas ou para novos contatos.
-Suporte Integrado: Canal de ajuda direta com tutores especializados, acessível por um toque.
-
-2.1.2 Escopo Negativo
-O escopo negativo define o que não será desenvolvido, evitando expectativas erradas  sobre funcionalidades que não fazem parte do projeto. 
-Exemplo: 
-O sistema não incluirá uma versão web, apenas um aplicativo móvel.
-Não haverá integração com redes sociais para login.
-O sistema não inclui a possibilidade de pagar boletos através de escaneamento do código de barras ou modo convencional.
-Não será possível realizar nenhuma opção existente de empréstimos, financiamentos ou cartões de crédito.
-Não será possível colocar recargas de celular ou acessar qualquer outro tipo de serviço de marketplace bancário.
-O sistema não oferece funcionalidades específicas para investimentos, poupanças e similaridades.
-Nota de Design: Qualquer funcionalidade que não seja estritamente ligada ao ecossistema Pix é considerada ruído e foi excluída para preservar a baixa carga cognitiva do usuário.
-2.2 Ambiente de Desenvolvimento
-Aqui são descritas as tecnologias e ferramentas que serão utilizadas no desenvolvimento  do projeto. Pode ser representado em uma tabela. 
-**
-
-| Componente               | Tecnologia/Ferramenta                                                          |
-| ------------------------ | ------------------------------------------------------------------------------ |
-| Metodologia              | Scrum com sprints                                                              |
-| Gerenciamento de Backlog | GitHub                                                                         |
-| Repositório de Código    | GitHub                                                                         |
-| Design e Prototipação    | Figma (Criação de protótipos de alta fidelidade e testes de usabilidade)       |
-| Modelagem de Software    | Draw.io (diagrama de classes, fluxo de telas)                                  |
-| Desenvolvimento do MVP   | Flutter (Dart) ou React Native (Ideais para cross-platform e otimização de UI) |
-
-
-
-**
-2.2 Ambiente de Desenvolvimento
-Aqui são descritas as tecnologias e ferramentas que serão utilizadas no desenvolvimento  do projeto. Pode ser representado em uma tabela. 
-
-Componente 
-Tecnologia/Ferramenta
-Metodologia 
-Scrum com sprints 
-Gerenciamento de Backlog 
-GitHub 
-Repositório de Código 
-GitHub
-Design e Prototipação
-Figma (Criação de protótipos de alta fidelidade e testes de usabilidade)
-Modelagem de Software 
-Draw.io (diagrama de classes, fluxo de telas)
-Desenvolvimento do MVP 
-Flutter (Dart) ou React Native (Ideais para cross-platform e otimização de UI)
-
-
 #### 2.1.2 Escopo Negativo	
 #### 2.2 Ambiente de Desenvolvimento
 #### 2.3 Características Inovadoras do Projeto
@@ -102,8 +29,6 @@ Flutter (Dart) ou React Native (Ideais para cross-platform e otimização de UI)
 #### 4.1.2 Materiais de Consumo	
 #### 4.1.3 Serviço Técnico de Terceiros	
 #### 4.2 Resumo Financeiro e Valor Total
-
-# 
 
 ## 1. INTRODUÇÃO
 O projeto SeuPix tem como principal objetivo a realização de transferências Pix de maneira prática, segura e sem complicações, foi desenvolvido com o objetivo de ser intuitivo e fácil de utilizar. Esse propósito foi priorizado após a equipe identificar a dificuldade de um determinado público ao lidar com bancos digitais, o público idoso. Uma das propriedades que a equipe priorizou ao desenvolver esse sistema de transferências foi o layout simplificado, com letras grandes e botões fáceis de visualizar. Além disso, fomos cuidadosos ao demonstrar para o usuário que o SeuPix é um sistema confiável e seguro de utilizar, implementando confirmações duplas antes de cada transação e um histórico visual para facilitar o acompanhamento do usuário ao navegar.
@@ -128,6 +53,55 @@ Atualmente, observa-se uma baixa adesão do público idoso aos bancos digitais, 
 | Enquadrabilidade | Detalhamento                                                                                                                                                       |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | FinTech          | Aplicativo móvel dedicado exclusivamente à gestão e execução de transações Pix, com arquitetura otimizada para acessibilidade e inclusão digital do público idoso. |
+
+## 2. INFORMAÇÕES GERAIS
+### 2.1 Escopo Geral
+O projeto SeuPix consiste no desenvolvimento de uma interface bancária de nicho, operando exclusivamente sob o protocolo Pix. O sistema é projetado para enfrentar a exclusão digital da terceira idade, substituindo a complexidade dos aplicativos bancários multisserviços por uma jornada de usuário linear, segura e assistida.
+Objetivos Principais
+- **Autonomia Digital:** Permitir que o usuário idoso realize transferências sem dependência de terceiros.
+- **Mitigação de Fraudes:** Implementar camadas de confirmação e alertas didáticos que interrompam a jornada em caso de comportamentos suspeitos de golpes.
+- **Acessibilidade Cognitiva e Visual:** Adaptar a interface para limitações motoras leves, baixa acuidade visual e menor familiaridade com jargões tecnológicos.
+
+
+#### Funcionalidades Incluídas
+- Pagamentos Pix
+- Recebimento Assistido
+- Gestão de Favoritos
+- Extrato Simplificado
+- Camada Anti-Golpe
+- Suporte Integrado
+
+#### 2.1.1 Escopo Específico
+
+Pagamentos Pix: Envio de valores via Chave Pix (CPF, Telefone, E-mail), QR Code (leitura via câmera) e "Copia e Cola".
+Recebimento Assistido: Geração de QR Code próprio e compartilhamento de chaves para recebimento de valores.
+Gestão de Favoritos: Cadastro simplificado de contatos frequentes com uso de fotos ou apelidos para evitar erros de digitação.
+Extrato Simplificado: Histórico de transações com linguagem natural (ex: "Você enviou para..." em vez de "LANC. DEB.") e filtros por data.
+Camada Anti-Golpe: Sistema de pop-ups educativos e pausas de segurança em transações atípicas ou para novos contatos.
+Suporte Integrado: Canal de ajuda direta com tutores especializados, acessível por um toque.
+
+#### 2.1.2 Escopo Negativo
+O escopo negativo define o que não será desenvolvido, evitando expectativas erradas  sobre funcionalidades que não fazem parte do projeto. 
+Exemplo: 
+O sistema não incluirá uma versão web, apenas um aplicativo móvel.
+Não haverá integração com redes sociais para login.
+O sistema não inclui a possibilidade de pagar boletos através de escaneamento do código de barras ou modo convencional.
+Não será possível realizar nenhuma opção existente de empréstimos, financiamentos ou cartões de crédito.
+Não será possível colocar recargas de celular ou acessar qualquer outro tipo de serviço de marketplace bancário.
+O sistema não oferece funcionalidades específicas para investimentos, poupanças e similaridades.
+Nota de Design: Qualquer funcionalidade que não seja estritamente ligada ao ecossistema Pix é considerada ruído e foi excluída para preservar a baixa carga cognitiva do usuário.
+
+### 2.2 Ambiente de Desenvolvimento
+Aqui são descritas as tecnologias e ferramentas que serão utilizadas no desenvolvimento  do projeto. Pode ser representado em uma tabela. 
+
+| Componente               | Tecnologia/Ferramenta                                                          |
+| ------------------------ | ------------------------------------------------------------------------------ |
+| Metodologia              | Scrum com sprints                                                              |
+| Gerenciamento de Backlog | GitHub                                                                         |
+| Repositório de Código    | GitHub                                                                         |
+| Design e Prototipação    | Figma (Criação de protótipos de alta fidelidade e testes de usabilidade)       |
+| Modelagem de Software    | Draw.io (diagrama de classes, fluxo de telas)                                  |
+| Desenvolvimento do MVP   | Flutter (Dart) ou React Native (Ideais para cross-platform e otimização de UI) |
 
 ### 4.1 Dispêndios 
 #### 4.1.1 Equipamentos e Programa de Computador 
