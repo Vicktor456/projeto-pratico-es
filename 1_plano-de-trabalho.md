@@ -93,3 +93,18 @@ Os materiais de consumo previstos para o desenvolvimento do projeto estão detal
 | 5 | **Ferramenta de Monitoramento de Fraudes** | 12 meses | 100,00 | 1.200,00 |
 | | **TOTAL DO INVESTIMENTO** | | | **R$ 3.640,00** |
 
+### 4.1.3 Serviço Técnico de Terceiros
+
+Os serviços técnicos de terceiros necessários para o desenvolvimento do projeto são:
+
+| Item | Especificação | Custo(R$) |
+| ---- | ------------- | --------- |
+| 1 | Desenvolvimento de Software (Front-end e Back-end) | 8.000,00 |
+| 2 | Serviço de UX/UI Design (Foco em Acessibilidade para Idosos) | 4.000,00 |
+| 3 | Consultoria em Segurança Cibernética e LGPD | 3.500,00 |
+| 4 | Teste de Usabilidade com Público-Alvo (Idosos) | 2.000,00 |
+| 5 | Assessoria Jurídica (Contratos e Termos de Uso) | 1.500,00 |
+| 6 | Marketing Digital e Gestão de Redes Sociais | 2.500,00 |
+| 7 | Serviço técnico especializado em teste de usabilidade | 2.000,00 |
+| 8 | Suporte Técnico e Manutenção Mensal | 2.500,00 |
+| | **Total** | **26.000,00** |
