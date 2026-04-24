@@ -138,3 +138,10 @@ Essa persona representa uma jovem adulta que atua como facilitadora digital e pr
 
 <img width="9001" height="14151" alt="image" src="https://github.com/user-attachments/assets/5e502996-e61f-47e7-b82d-ab3a669c4d8e" />
 
+## Sessão de Brainstorming
+
+O brainstorming, ou "tempestade de ideias", é uma técnica de dinâmica de grupo criada para explorar o potencial criativo de uma equipe, focando em gerar o maior volume possível de soluções para um problema específico. Nesta fase do projeto, o objetivo não é filtrar o que é "bom" ou "ruim" logo de cara, mas sim permitir que as ideias fluam livremente, sem julgamentos. É um jovem organizado e prático que gosta de orgnização e segurança no dia a dia.
+
+Segue a baixo o link direcionando para a nossa sessão brainstorming:
+
+https://iris-jet-f18.notion.site/33071e2d25dc80f49cf1fd4e1477e85f?v=33071e2d25dc80babbb9000c0b97881e&source=copy_link
