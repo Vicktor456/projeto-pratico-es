@@ -25,3 +25,5 @@ Andrey Antonio de Oliveira Rodrigues
 # Fases do Projeto
 
 # Links Notion
+- [Backlog do Produto](https://github.com/users/Vicktor456/projects/4)
+- [Daily Scrum Notion](https://iris-jet-f18.notion.site/Daily-Scrum-5a071e2d25dc827eb34b01b150d1c018)
