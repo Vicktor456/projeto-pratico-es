@@ -1,4 +1,4 @@
-# BackLog do Sprint
+# Backlog do Sprint
 O Backlog da Sprint é o nosso quadro de execução de curto prazo, criado especificamente no GitHub Projects para acompanhar as atividades individuais de cada membro da equipe durante o ciclo atual. Diferente do Backlog do Produto, que foca no projeto como um todo e em entregas futuras, o quadro da Sprint serve para evidenciar o andamento diário das implementações e o engajamento do grupo de forma bem prática.
 
 Ele contém as tarefas atribuídas para cada integrante, e essas tarefas refletem exatamente o que foi discutido e relatado nas nossas dailys registradas no Notion. Para manter esse fluxo funcionando corretamente sem divergências, o líder da equipe assume a responsabilidade de ler os registros do Notion e, a partir deles, organizar e resumir as tarefas de forma clara no quadro da Sprint.
