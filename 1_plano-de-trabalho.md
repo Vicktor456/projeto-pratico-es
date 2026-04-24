@@ -143,6 +143,29 @@ Aqui são listados os principais resultados esperados após a conclusão do proj
 
 - **Validação por tutores:** Um produto final testado e aprovado por especialistas em usabilidade para idosos, garantindo que as necessidades específicas desse nicho foram tecnicamente atendidas.
 
+## 3. METODOLOGIA DE PROJETO  
+### 3.1 Estrutura do Projeto 
+O desenvolvimento do projeto será dividido em cinco fases principais, seguindo a  abordagem ágil com Scrum, utilizando sprints curtas para entregas iterativas. 
+Fases do Projeto 
+1. Ideação 
+2. Levantamento de Requisitos 
+3. Projeto e Arquitetura 
+4. Projeto dos Casos de Teste 
+5. Desenvolvimento do MVP 
+
+### 3.2 Equipe de Projeto: Papéis e Responsabilidades dos integrantes 
+A equipe do projeto será composta por até 5 alunos, com papéis definidos para otimizar o  desenvolvimento.
+
+## Equipe do Projeto
+
+| Papel | Responsabilidades |
+| :--- | :--- |
+| *Isabely Cristina* | Organização do Projeto |
+| *Davi Vitor* | Desenvolvedor |
+| *David Alfaia* | Desenvolvedor |
+| *Ana Paula* | Desenvolvedor |
+| *Thiago Vasconcelos* | Desenvolvedor |
+| *Vicktor Eduardo* | Desenvolvedor |
 
 ## Despesas
 ### 4.1 Dispêndios 
