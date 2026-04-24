@@ -1,4 +1,4 @@
-# projeto-pratico-es
+# Projeto Pratico ES
 
 ## Objetivo do Trabalho
 
