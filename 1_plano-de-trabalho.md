@@ -9,17 +9,20 @@
 | Executor Principal:        | Isabely Barbosa                                                                        |
 | Coordenador do Projeto:    | Prof:Andrey Rodrigues                                                                  |
 
-## Sumário
+# Sumário
 #### [1. Introdução](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#1-introdu%C3%A7%C3%A3o-1)
 #### [1.1 Objeto](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#11-objeto-1)
 #### [1.2 Motivação, Justificativa e Oportunidade](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#12-motiva%C3%A7%C3%A3o-justificativa-e-oportunidade-1)
 #### [1.3 Caracterização do Projeto](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#13-caracteriza%C3%A7%C3%A3o-do-projeto-1)	
 #### [1.3.1 Classe](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#131-classe-1) 
 #### [1.3.2 Enquadrabilidade](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#132-enquadrabilidade-1)
-#### 2.1.2 Escopo Negativo	
-#### 2.2 Ambiente de Desenvolvimento
-#### 2.3 Características Inovadoras do Projeto
-#### 2.4 Resultados Esperado
+#### [2. INFORMAÇÕES GERAIS](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#2-informa%C3%A7%C3%B5es-gerais)
+#### [2.1 Escopo Geral](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#21-escopo-geral)
+#### [2.1.1 Escopo Específico](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#211-escopo-espec%C3%ADfico)
+#### [2.1.2 Escopo Negativo](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#212-escopo-negativo-1)
+#### [2.2 Ambiente de Desenvolvimento](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#22-ambiente-de-desenvolvimento-1)
+#### [2.3 Características Inovadoras do Projeto](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#23-caracter%C3%ADsticas-inovadoras-do-projeto-1)
+#### [2.4 Resultados Esperado](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#24-resultados-esperados)
 #### 3. METODOLOGIA DE PROJETO
 #### 3.1 Estrutura do Projeto	
 #### 3.2 Equipe de Projeto: Papéis e Responsabilidades dos integrantes	
