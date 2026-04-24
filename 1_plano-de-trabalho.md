@@ -34,12 +34,12 @@
 #### 3. METODOLOGIA DE PROJETO
 #### 3.1 Estrutura do Projeto	
 #### 3.2 Equipe de Projeto: Papéis e Responsabilidades dos integrantes	
-#### 4. DESPESAS	
-#### 4.1 Dispêndios	
-#### 4.1.1 Equipamentos e Programa de Computador
-#### 4.1.2 Materiais de Consumo	
-#### 4.1.3 Serviço Técnico de Terceiros	
-#### 4.2 Resumo Financeiro e Valor Total
+#### [4. DESPESAS](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#despesas)
+#### [4.1 Dispêndios](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#41-disp%C3%AAndios-1)
+#### [4.1.1 Equipamentos e Programa de Computador](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#411-equipamentos-e-programa-de-computador-1)
+#### [4.1.2 Materiais de Consumo](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#412-materiais-de-consumo-1)
+#### [4.1.3 Serviço Técnico de Terceiros](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#413-servi%C3%A7o-t%C3%A9cnico-de-terceiros-1)
+#### [4.2 Resumo Financeiro e Valor Total](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#42-resumo-financeiro-e-valor-total-1)
 
 #### ㅤ
 #### ㅤ
