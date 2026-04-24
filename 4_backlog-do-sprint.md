@@ -22,4 +22,4 @@ Essa prática ajuda a manter a equipe sincronizada, identificar possíveis atras
 
 ## Acesso da Tabela no Notion
 
-Acesso: https://iris-jet-f18.notion.site/Daily-Scrum-5a071e2d25dc827eb34b01b150d1c018
+[Daily Scrum Notion](https://iris-jet-f18.notion.site/Daily-Scrum-5a071e2d25dc827eb34b01b150d1c018)
