@@ -9,6 +9,14 @@
 | Executor Principal:        | Isabely Barbosa                                                                        |
 | Coordenador do Projeto:    | Prof:Andrey Rodrigues                                                                  |
 
+# HISTÓRICO DE VERSÕES
+
+| Versão | Descrição                       | Autor       | Data       |
+| ------ | ------------------------------- | ----------- | ---------- |
+| 1.0    | Etapa do Design Thinking        | Toda Equipe | 07/04/2026 |
+| 2.0    | Backlog do Produto              | Toda Equipe | 16/04/2026 |
+| 3.0    | Elaboração do Plano de Trabalho | Toda Equipe | 17/04/2026 |
+
 # Sumário
 #### [1. Introdução](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#1-introdu%C3%A7%C3%A3o-1)
 #### [1.1 Objeto](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#11-objeto-1)
