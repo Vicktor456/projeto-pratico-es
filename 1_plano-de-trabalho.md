@@ -31,9 +31,9 @@
 #### [2.2 Ambiente de Desenvolvimento](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#22-ambiente-de-desenvolvimento-1)
 #### [2.3 Características Inovadoras do Projeto](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#23-caracter%C3%ADsticas-inovadoras-do-projeto-1)
 #### [2.4 Resultados Esperado](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#24-resultados-esperados)
-#### 3. METODOLOGIA DE PROJETO
-#### 3.1 Estrutura do Projeto	
-#### 3.2 Equipe de Projeto: Papéis e Responsabilidades dos integrantes	
+#### [3. METODOLOGIA DE PROJETO](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#3-metodologia-de-projeto-1)
+#### [3.1 Estrutura do Projeto](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#31-estrutura-do-projeto-1)
+#### [3.2 Equipe de Projeto: Papéis e Responsabilidades dos integrantes](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#32-equipe-de-projeto-pap%C3%A9is-e-responsabilidades-dos-integrantes-1)
 #### [4. DESPESAS](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#despesas)
 #### [4.1 Dispêndios](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#41-disp%C3%AAndios-1)
 #### [4.1.1 Equipamentos e Programa de Computador](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md#411-equipamentos-e-programa-de-computador-1)
