@@ -35,5 +35,5 @@ Andrey Antonio de Oliveira Rodrigues
 ## Backlog do Sprint
 [Backlog do Sprint](https://github.com/Vicktor456/projeto-pratico-es/blob/main/4_backlog-do-sprint.md)
 # Links Notion
-- 
+- [Sessão Brainstorming](https://iris-jet-f18.notion.site/33071e2d25dc80f49cf1fd4e1477e85f?v=33071e2d25dc80babbb9000c0b97881e&source=copy_link)
 - [Daily Scrum Notion](https://iris-jet-f18.notion.site/Daily-Scrum-5a071e2d25dc827eb34b01b150d1c018)
