@@ -23,6 +23,8 @@ Engenharia de Software
 Andrey Antonio de Oliveira Rodrigues
 
 # Fases do Projeto
+##Plano de Trabalho
+1_plano-de-trabalho.md
 
 # Links Notion
 - [Backlog do Produto](https://github.com/users/Vicktor456/projects/4)
