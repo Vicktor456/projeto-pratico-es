@@ -26,6 +26,14 @@ Andrey Antonio de Oliveira Rodrigues
 ## Plano de Trabalho
 [Plano de Trabalho](https://github.com/Vicktor456/projeto-pratico-es/blob/main/1_plano-de-trabalho.md)
 
+## Design Thinling
+[Design Thinking](https://github.com/Vicktor456/projeto-pratico-es/blob/main/2_design-thinking.md)
+
+## Backlog do Produto
+[Backlog do Produto]()
+
+## Backlog do Sprint
+[]()
 # Links Notion
 - [Backlog do Produto](https://github.com/users/Vicktor456/projects/4)
 - [Daily Scrum Notion](https://iris-jet-f18.notion.site/Daily-Scrum-5a071e2d25dc827eb34b01b150d1c018)
