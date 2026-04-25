@@ -30,7 +30,7 @@ Andrey Antonio de Oliveira Rodrigues
 [Design Thinking](https://github.com/Vicktor456/projeto-pratico-es/blob/main/2_design-thinking.md)
 
 ## Backlog do Produto
-[Backlog do Produto]()
+[Backlog do Produto](https://github.com/Vicktor456/projeto-pratico-es/blob/main/3_backlog-do-produto.md)
 
 ## Backlog do Sprint
 []()
