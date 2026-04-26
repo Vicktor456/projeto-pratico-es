@@ -8,6 +8,7 @@ No quadro, as tarefas são organizadas em três colunas principais que represent
 - **Tasks Sprint:** contém todas as tarefas planejadas para o sprint, geralmente definidas a partir das dailys e ainda não iniciadas.
 - **Em andamento:** reúne as tarefas que estão sendo desenvolvidas no momento.
 - **Concluídas:** agrupa as tarefas que já foram finalizadas.
+
 Essa divisão facilita a visualização do andamento das atividades, ajuda a identificar gargalos e mantém a equipe alinhada quanto ao progresso do sprint.
 
 <img width="1088" height="1002" alt="image" src="https://github.com/user-attachments/assets/50305c14-a1ca-4906-8a3c-88848015a6b6" />
