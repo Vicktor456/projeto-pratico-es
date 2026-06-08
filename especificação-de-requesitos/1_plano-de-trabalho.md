@@ -5,7 +5,7 @@
 | CODINOME:                  | *SeuPix*                                                                               |
 | Versão:                    | 3.0                                                                                    |
 | Status:                    | *Em desenvolvimento.*                                                                  |
-| Número de Controle SRBR-M: | *SBID-DOC-ALPHA-0.1*  (Sistema Bancário para Idosos - Documentação - Versão alpha 0.1) |
+| Número de Controle SRBR-M: | *SBID-DOC-ALPHA-0.3*  (Sistema Bancário para Idosos - Documentação - Versão alpha 0.3) |
 | Executor Principal:        | Isabely Barbosa                                                                        |
 | Coordenador do Projeto:    | Prof:Andrey Rodrigues                                                                  |
 
