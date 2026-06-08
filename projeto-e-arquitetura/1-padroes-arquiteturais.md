@@ -6,7 +6,3 @@
 
 ## Figura da Arquitetura:
 
-
-#
-## Tecnologias e Ferramentas Utilizadas (Tech Stack Map)
-
