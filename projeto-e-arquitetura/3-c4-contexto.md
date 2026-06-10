@@ -1,6 +1,9 @@
 # Diagrama de Contexto
 
+O Diagrama de Contexto é o primeiro nível (Nível 1) do Modelo C4 e funciona como uma visão macro e de alto nível do ecossistema de um software. Ele posiciona o sistema em desenvolvimento no centro do diagrama para estabelecer claramente suas fronteiras, ilustrando como ele se relaciona com seus usuários finais (personas) e com outros sistemas ou dependências externas. Por ser totalmente agnóstico em relação a tecnologias e focado no fluxo de valor de negócio, é uma ferramenta de comunicação ideal tanto para alinhar o escopo com stakeholders não técnicos quanto para dar um ponto de partida claro à equipe de engenharia.
+
 ## Visão Geral do Diagrama:
+
 - Este diagrama de contexto mapeia o ecossistema completo da plataforma SeuPix. Ele define as fronteiras do sistema que será desenvolvido, identificando claramente quem são os usuários que interagem com o aplicativo e quais são as dependências de infraestrutura e serviços externos regulatórios.
 
 <img width="4924" height="3436" alt="image" src="https://github.com/user-attachments/assets/c8327237-75a6-46c1-be76-5bdc90d04c1c" />
