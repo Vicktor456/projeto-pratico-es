@@ -3,9 +3,9 @@
 A etapa de Rastreabilidade com Histórias do Usuário, tem como propósito demonstrar de forma clara e verificável como as decisões arquiteturais do projeto se conectam diretamente às histórias de usuário mapeadas. O procedimento exige correlacionar uma história de usuário específica com suas respectivas evidências nos diagramas do Modelo C4. Para isso, aplicamos um destaque visual dinâmico nos diagramas (utilizando cores, setas ou numeração de passos) e fornecemos um detalhamento textual descritivo que ilustra a jornada completa da requisição, partindo da interface do usuário (frontend) através da API até a persistência final no banco de dados e o retorno da confirmação.
 
 
-## **Diagrama C4 Código - Classe**
+# **Diagrama C4 Código - Classe**
 
-# **Classe - Usuário**: 
+## **Classe - Usuário**: 
 
 ### **Atributo - id: int**
 
@@ -81,7 +81,7 @@ Histórias Associadas - US27 (RN01) | US33 (RN04 / RN08)
 
 **Rastreabilidade:** Método protegido invocado internamente quando o `realizarLogin` falha. Ele incrementa o atributo `tentativasIncorretas`, avalia se o limite foi atingido para alternar o estado do `isBloqueado` e dispara a gravação do evento no histórico de auditoria (`LogAuditoria`).
 
-# **Classe - EspecialistaSuporte**:
+## **Classe - EspecialistaSuporte**:
 
 ### **Atributo - codigoSuporte: String**
 
@@ -128,7 +128,7 @@ Histórias Associadas - US08
 
 **Rastreabilidade:** Atende ao critério de aceitação da **US08** que exige que o especialista tenha acesso a um painel mostrando o motivo do erro da última ação do usuário. O método recebe o identificador do idoso e retorna uma lista estruturada de falhas sistêmicas recentes para guiar o suporte humano.
 
-# **Classe - Idoso**:
+## **Classe - Idoso**:
 
 ### **Atributo - isSaldoOcultoPadrao: boolean**
 
@@ -164,7 +164,7 @@ História Associada - US01
 
 **Rastreabilidade:** Implementa diretamente as regras de transição de permissões da **US31**. O método recebe o objeto configurado de `NivelAcesso` (seja uma predefinição como Acesso Básico ou uma configuração personalizada) e atualiza os privilégios atribuídos ao tutor no sistema, disparando as notificações push ou pop-ups de confirmação exigidas pelos critérios de aceitação.
 
-# Classe - ContatoApoio:
+## Classe - ContatoApoio:
 
 ### **Atributo - valorMinimoNotificacao: double**
 
@@ -193,7 +193,7 @@ História Associada - US25
     - O parâmetro periodo (mapeado na classe como a estrutura `PeriodoFiltro`) recebe a seleção dinâmica do usuário (diário, semanal, mensal ou anual), cumprindo a RN02.
     - O método processa o agrupamento dos dados e encapsula o resultado em um Objeto de Transferência de Dados (`DashboardDTO`), garantindo o isolamento de privilégios (RN01) e atualizando os gráficos da tela automaticamente.
 
-# Classe - LogAuditoria:
+## Classe - LogAuditoria:
 
 ### **Atributo - id: int**
 
@@ -242,7 +242,7 @@ Histórias Associadas - US09 | US27 (RN01) | US30 (RN02) | US31 (RN02) | US33 (R
 
 Rastreabilidade: Método responsável por persistir fisicamente o registro de auditoria no banco de dados ou em arquivos de log protegidos. É invocado de forma automática por interceptadores (triggers/middlewares) do sistema sempre que operações críticas de login, alteração de permissão e exportação financeira são concluídas ou falham.
 
-# Classe - VinculoModoAssistido:
+## Classe - VinculoModoAssistido:
 
 ### Atributo - id: int
 
@@ -284,7 +284,7 @@ Histórias Associadas - US21 | US22
     - Na US21, dispara a requisição de novos métodos de autenticação externa para manter o tutor navegando.
     - Na US22, conecta-se à lógica de geração e entrega do link, código numérico ou QR Code que deve chegar ao dispositivo em até 5 segundos para revalidar a sessão.
 
-# Classe - NivelAcesso:
+## Classe - NivelAcesso:
 
 ### Atributo - tipoNivelAtual: String
 
@@ -339,7 +339,7 @@ História Associada - US31 (RN1)
 
 Rastreabilidade: Implementa de forma robusta a Regra de Negócio 1 da US31. Este método funciona como uma barreira rígida no código de segurança: se a interface ou um usuário malicioso tentar injetar uma permissão de alteração cadastral ou financeira para o tutor (como _"alterar CPF"_, _"alterar senha"_, _"excluir chaves PIX"_ ou _"encerrar conta"_), o método intercepta o pedido, recusa a alteração e retorna `false`.
 
-# Classe - Contato:
+## Classe - Contato:
 
 ### Atributo - id: int
 
@@ -388,7 +388,7 @@ História Associada - US11
 
 Rastreabilidade: Método responsável por dar autonomia ao usuário idoso para modificar, ajustar ou corrigir o nome amigável associado àquele contato. Garante que a atribuição do apelido possa ser refinada a qualquer momento do ciclo de vida do aplicativo, atualizando as exibições dependentes no extrato e nas buscas.
 
-# Classe - ContaBancaria:
+## Classe - ContaBancaria:
 
 ### Atributo - numeroConta: String
 
@@ -438,7 +438,7 @@ Rastreabilidade:
 - Na US03, implementa a inteligência de divisão de fluxos: se o `novoValor` for uma redução, a propriedade `limiteDiarioAtual` é atualizada instantaneamente. Se for um aumento, o método desvia o montante para o `limiteDiarioPendente` e carimba a `dataHoraSolicitacaoLimite`.
 - Nas US21 e US31, o sistema garante que este método sofra restrição de escopo ("Acesso Somente Leitura" do Tutor), bloqueando qualquer tentativa de execução ou alteração de limites por parte do responsável cadastrado.
 
-# Classe - TransacaoPix
+## Classe - TransacaoPix
 
 ### Atributo - id: int
 
@@ -492,7 +492,7 @@ Histórias Associadas - US14 (CA / RN) | US20 | US24
 
 Rastreabilidade: Método crítico invocado obrigatoriamente pela camada de negócio antes da solicitação da senha. Ele realiza chamadas assíncronas em tempo real ao motor antifraude corporativo e às APIs do Banco Central (US14). O objeto `NivelRisco` retornado por essa função dita de forma automatizada se o fluxo deve sofrer uma pausa forçada de 5 segundos, exibir um alerta humanizado ou ser abortado sumariamente por risco crítico de fraude.
 
-# Classe - StatusTransacao
+## Classe - StatusTransacao
 
 ### Atributo - codigoStatus: int
 
@@ -535,7 +535,7 @@ Rastreabilidade: Retorna uma flag booleana indicando se o status em questão é 
 - Apoia diretamente a US34 ao permitir que a interface de suporte administrativo inclua ou exclua determinados estados (como transações falhas ou bem-sucedidas) na montagem do objeto de parâmetros `FiltroExtrato`.
 - Atende à US24, viabilizando que o tutor isole movimentações específicas ao filtrar o histórico de atividades do idoso.
 
-# Classe - NivelRisco:
+## Classe - NivelRisco:
 
 ### Atributo - classificacao: String
 
