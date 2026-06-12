@@ -104,3 +104,4 @@ O Firebase Cloud Messaging é responsável pelo envio de notificações push par
 O sistema antifraude realiza análises de risco sobre operações e comportamentos dos usuários, auxiliando na identificação de possíveis tentativas de golpe ou atividades suspeitas. Sua integração é especialmente importante para o público idoso, contribuindo para a prevenção de fraudes financeiras e aumentando a segurança das transações realizadas na plataforma.
 
 
+### Sistemas Externos
