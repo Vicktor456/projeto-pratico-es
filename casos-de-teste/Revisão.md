@@ -31,7 +31,8 @@ No relatório da equipe apontava que os canais não estavam especificados.  Na n
 Qual formato o comprovante assume ao ser compartilhado:
 O defeito apontava que a omissão do formato (imagem, PDF, texto).Na atualização que foi feito, o critério de aceitação 3 determina explicitamente que o comprovante deve ser enviado em "formato de imagem ou PDF de alta resolução e fácil leitura".
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////
+---
+
 ### Defeitos encontrados pela outra equipe:
 Trecho do Requisito: "US07: O teclado numérico deve ocupar pelo menos 40% da tela."  
 Categoria: Ambiguidade  
