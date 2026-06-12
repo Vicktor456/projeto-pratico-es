@@ -176,6 +176,80 @@ Portanto, a especificação técnica atual da User Story já contém os critéri
 
 
 
+## 1. Defeito Relatado - US09
+
+US09 - Controle de Operações Essenciais
+
+A história falha ao focar apenas na funcionalidade (geração e download de extratos) e omitir completamente as restrições e regras de segurança necessárias para uma operação de alto risco. Por se tratar de um sistema financeiro (SeuPix) que lida com dados sensíveis, permitir o download em massa (CSV/PDF) sem amarrar regras rígidas de autorização é uma falha arquitetural e de conformidade (LGPD). O defeito é classificado como Omissão porque a equipe deixou de especificar as Regras de Negócio fundamentais que devem acompanhar essa ação, tais como:
+
+Qual o nível de privilégio exigido (Controle de Acesso Baseado em Funções - RBAC)?
+Há exigência de autenticação em duas etapas (2FA) antes de confirmar o download de milhares de registros?
+Existe um limite máximo de linhas por exportação para evitar exfiltração de dados?
+O sistema deve gerar um log de auditoria registrando qual administrador baixou os dados?
+Sem essas definições estruturais, a equipe de desenvolvimento construirá uma rota de API vulnerável e insegura.
+
+**Trecho do Requisito:**
+"A geração de extratos deve oferecer filtros rápidos... O sistema deve permitir o download de relatórios em formatos acessíveis..."
+
+**Tipo do defeito:**
+Omissão
+
+### User Story Final
+
+Descrição
+Enquanto suporte, desejo um sistema com menus enxutos e funções essenciais para realização de ações fundamentais como geração de extratos.
+
+Critérios de Aceitação
+
+A geração de extratos deve oferecer filtros rápidos por período (últimos 7, 15 ou 30 dias)
+O download deve estar disponível em PDF (estruturado para leitores de tela) e CSV (com codificação UTF-8).
+
+Deve haver um campo de busca no topo que localize funcionalidades ou registros sem a necessidade de navegação profunda em submenus.
+Antes de iniciar qualquer exportação de dados (PDF/CSV), o sistema deve exigir uma reautenticação via MFA (Multi-Factor Authentication).
+Para extratos processados em segundo plano, o suporte deve receber uma notificação in-app quando o link seguro para download for enviado ao e-mail cadastrado.
+
+Regra de Negócios
+
+Toda geração de extrato deve registrar no log do sistema: ID do suporte, data/hora, filtros aplicados, IP de origem e o hash do arquivo gerado, em conformidade com a LGPD.
+O limite máximo por exportação síncrona é de 10.000 registros.
+Acima de 10.000 e até o teto de 50.000 registros, o processamento deve ser assíncrono (segundo plano) e enviado por e-mail via link temporário (expira em 24h).
+Exportações acima de 50.000 registros são bloqueadas e exigem aprovação de um segundo suporte.
+O sistema deve limitar cada suporte a um máximo de 5 exportações de grandes volumes por dia.
+
+### **Defeitos Encontrados:**
+
+1° Omissão de Log de Auditoria: Ausência de registro de metadados das ações de download de relatórios, gerando falhas de rastreabilidade e conformidade com a LGPD.
+2° Omissão de Controle de Volume: Falta de limites e restrições para a exportação massiva de dados (CSV/PDF), criando vulnerabilidades para exfiltração de dados em larga escala.
+3° Omissão de Autenticação Multifator (MFA): Permissão de downloads de alto risco sem a exigência de uma camada extra de validação de segurança ativa.
+4° Omissão de Controle de Acesso Baseado em Funções (RBAC): Falta de amarração estrita de regras e privilégios específicos para os operadores do sistema financeiro.
+
+### **Justificativas:**
+
+1° ao 3° Defeitos (Corrigidos): A User Story foi reestruturada para neutralizar os riscos arquiteturais. Foram criados critérios e regras rígidas que adicionam o compulsório, criam travas volumétricas (síncronas até 10k, assíncronas até 50k e bloqueio automático acima disso) e exigem reautenticação obrigatória via MFA antes de iniciar qualquer exportação.  
+
+4° Defeito (Reavaliado): Em vez de implementar uma matriz complexa de papéis, a equipe delimitou o escopo ao perfil de Suporte. O risco de fraude ou abuso foi mitigado através da Segregação de Funções, adicionando uma regra que exige a aprovação de um segundo operador de suporte para a liberação de volumes acima de 50.000 registros.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
