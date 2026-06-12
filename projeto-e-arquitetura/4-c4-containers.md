@@ -1,1 +1,62 @@
+# Diagrama de Container
+O Diagrama de Containers apresenta uma visão geral da arquitetura do SeuPix baseada em microserviços, demonstrando como os diferentes perfis de usuários interagem com o sistema por meio de aplicações específicas que se comunicam com o backend através de um API Gateway. A arquitetura é composta por serviços independentes responsáveis por funcionalidades como autenticação, gerenciamento de usuários, conta assistida, permissões, transações PIX, notificações e segurança antifraude, promovendo modularidade e escalabilidade. Além disso, o sistema integra-se a componentes de infraestrutura, como serviços de nuvem, mensageria e biometria, e a sistemas externos responsáveis pelo processamento de transações, autenticação, envio de notificações e análise antifraude. Essa organização permite que os serviços atuem de forma desacoplada, facilitando a manutenção, a evolução da aplicação e a implementação de uma solução segura e acessível para usuários idosos.
 
+
+### Personas, Interface e API Gateway
+
+<img width="2482" height="1704" alt="image" src="https://github.com/user-attachments/assets/e724d98c-b8bd-40e9-9510-59865e0e0091" />
+
+A camada superior do diagrama representa os diferentes perfis de usuários do sistema SeuPix e suas respectivas interfaces de acesso. Embora cada perfil possua funcionalidades específicas de acordo com suas responsabilidades, todos utilizam aplicações dedicadas que foram projetadas para atender suas necessidades de interação com a plataforma.
+As interfaces funcionam como a camada de apresentação do sistema, sendo responsáveis por receber as ações dos usuários e encaminhá-las para o backend. Essa separação permite que cada perfil tenha uma experiência adequada ao seu contexto de uso, sem alterar a lógica de negócio implementada nos serviços internos.
+Todas as aplicações se comunicam com o sistema por meio do API Gateway & Core Backend, que atua como ponto central de entrada das requisições. Essa camada é responsável por receber, validar e direcionar as solicitações para os microserviços apropriados, além de consolidar as respostas retornadas ao usuário.
+A utilização de um ponto único de comunicação reduz o acoplamento entre as interfaces e os serviços internos, facilitando a manutenção da arquitetura, a aplicação de mecanismos de segurança e a evolução independente dos microserviços sem impactar diretamente as aplicações utilizadas pelos diferentes perfis de usuários.
+
+### Domínio de Microsserviços
+
+<img width="9004" height="4772" alt="image" src="https://github.com/user-attachments/assets/410c6e6a-0001-4980-9832-b8d858187a61" />
+
+
+O API Gateway & Core Backend atua como ponto central de comunicação entre as aplicações do SeuPix e o domínio de microserviços. Sua função é receber as requisições dos usuários, realizar validações iniciais e encaminhá-las para o serviço responsável por processar cada funcionalidade, simplificando a comunicação e reduzindo o acoplamento entre os componentes do sistema.
+O domínio de microserviços reúne os principais serviços responsáveis pelas funcionalidades do SeuPix, cada um especializado em uma área específica do negócio. Entre eles estão os serviços de gerenciamento de usuários, autenticação, conta assistida, permissões, transações PIX, segurança antifraude e notificações. Essa divisão permite que os serviços sejam desenvolvidos e mantidos de forma independente, promovendo maior escalabilidade, organização e facilidade de evolução da aplicação.
+Além disso, cada microserviço possui seu próprio banco de dados, garantindo autonomia no gerenciamento das informações e reduzindo dependências entre os componentes. Essa abordagem fortalece a arquitetura de microserviços e contribui para a construção de um sistema mais robusto, seguro e de fácil manutenção.
+
+### API's
+#### API Usuário
+
+A **API Usuário** é responsável pelo gerenciamento dos dados cadastrais dos usuários do sistema, como informações pessoais, contato e configurações da conta. Sua importância está em centralizar todas as informações necessárias para identificação dos usuários e funcionamento das demais funcionalidades da plataforma.
+
+---
+
+#### API Autenticação
+
+A **API Autenticação** gerencia os processos de login, validação de credenciais e controle de acesso ao sistema. Ela garante que apenas usuários autorizados possam acessar suas contas, contribuindo diretamente para a segurança da aplicação.
+
+---
+
+#### API Conta Assistida
+
+A **API Conta Assistida** é responsável pelas funcionalidades que permitem vincular um responsável ao usuário idoso. Ela gerencia o relacionamento entre as contas, possibilitando recursos de supervisão, acompanhamento e auxílio financeiro de acordo com as permissões definidas pelo titular.
+
+---
+
+#### API Permissões
+
+A **API Permissões** controla os níveis de acesso concedidos ao responsável vinculado à conta assistida. Sua função é aplicar e gerenciar as regras que determinam quais informações podem ser visualizadas e quais ações podem ser supervisionadas ou sugeridas, garantindo privacidade e segurança ao usuário idoso.
+
+---
+
+#### API PIX
+
+A **API PIX** é responsável pelo processamento das transações financeiras realizadas no sistema. Ela gerencia operações como transferências, consultas e validações relacionadas ao ecossistema PIX, sendo um dos principais serviços da plataforma bancária.
+
+---
+
+#### API Antifraude
+
+A **API Antifraude** monitora atividades suspeitas e realiza análises de segurança durante operações sensíveis, como logins e transações financeiras. Sua importância está na prevenção de golpes, fraudes e acessos indevidos, oferecendo maior proteção aos usuários.
+
+---
+
+#### API Notificação
+
+A **API Notificação** centraliza o envio de comunicações do sistema, incluindo alertas, avisos de segurança, confirmações de operações e mensagens informativas. Ela garante que usuários e responsáveis sejam informados sobre eventos importantes relacionados às suas contas.
