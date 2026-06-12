@@ -65,8 +65,6 @@ A **API Notificação** centraliza o envio de comunicações do sistema, incluin
 ### Sistemas Externos
 <img width="6684" height="804" alt="image" src="https://github.com/user-attachments/assets/40261512-41f6-4424-8edb-88bcc33996d4" />
 
-#### Sistemas Externos
-
 Os sistemas externos representam serviços especializados que complementam as funcionalidades do SeuPix e fornecem recursos essenciais para sua operação. Em vez de desenvolver internamente mecanismos complexos de comunicação, autenticação, processamento financeiro e análise de risco, o sistema integra-se a plataformas já consolidadas no mercado, aumentando a confiabilidade, segurança e escalabilidade da solução. Essas integrações permitem que os microserviços do SeuPix consumam funcionalidades externas de forma transparente, garantindo uma experiência mais segura e eficiente para os usuários.
 
 ---
