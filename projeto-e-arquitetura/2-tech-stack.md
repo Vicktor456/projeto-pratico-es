@@ -51,6 +51,8 @@ No SeuPix, o Tech Stack Map demonstra como as tecnologias escolhidas trabalham e
 ### Kong
 <img width="1648" height="833" alt="apigat" src="https://github.com/user-attachments/assets/0482528c-fa81-4b9d-8eb7-316c072f899b" />
 
+# Tabela Tech Stack
+
 
 
 
