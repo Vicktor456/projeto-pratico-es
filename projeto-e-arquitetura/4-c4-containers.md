@@ -123,3 +123,7 @@ O Apache Kafka é a plataforma de mensageria responsável pela comunicação ass
 
 Os serviços de biometria disponibilizados pelos sistemas operacionais dos dispositivos móveis são utilizados para validar a identidade dos usuários durante processos de autenticação e confirmação de ações sensíveis. Essa integração permite que o SeuPix utilize recursos como impressão digital, reconhecimento facial e outras formas de autenticação biométrica, oferecendo uma experiência mais segura e acessível para os usuários.
 
+
+### Relacionamentos
+<img width="1488" height="1040" alt="image" src="https://github.com/user-attachments/assets/199641cd-f1b9-4a09-897b-619ec406a1fe" />
+
