@@ -111,9 +111,13 @@ O sistema antifraude realiza análises de risco sobre operações e comportament
 
 A AWS (Amazon Web Services) é a plataforma de computação em nuvem utilizada para hospedar e gerenciar a infraestrutura do SeuPix. Por meio dela, os microserviços, bancos de dados e demais componentes da aplicação podem ser executados de forma escalável, segura e com alta disponibilidade, garantindo que o sistema permaneça acessível aos usuários.
 
+---
+
 #### Mensagens e Eventos (Apache Kafka)
 
 O Apache Kafka é a plataforma de mensageria responsável pela comunicação assíncrona entre os microserviços do sistema. Sua função é permitir que eventos gerados por um serviço possam ser consumidos por outros componentes sem a necessidade de comunicação direta, reduzindo o acoplamento da arquitetura e aumentando a escalabilidade e a eficiência da troca de informações.
+
+---
 
 #### Biometria (Android Biometric API e Apple Touch ID)
 
