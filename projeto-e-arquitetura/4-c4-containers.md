@@ -60,3 +60,49 @@ A **API Antifraude** monitora atividades suspeitas e realiza análises de segura
 #### API Notificação
 
 A **API Notificação** centraliza o envio de comunicações do sistema, incluindo alertas, avisos de segurança, confirmações de operações e mensagens informativas. Ela garante que usuários e responsáveis sejam informados sobre eventos importantes relacionados às suas contas.
+
+
+### Sistemas Externos
+<img width="6684" height="804" alt="image" src="https://github.com/user-attachments/assets/40261512-41f6-4424-8edb-88bcc33996d4" />
+
+#### Sistemas Externos
+
+Os sistemas externos representam serviços especializados que complementam as funcionalidades do SeuPix e fornecem recursos essenciais para sua operação. Em vez de desenvolver internamente mecanismos complexos de comunicação, autenticação, processamento financeiro e análise de risco, o sistema integra-se a plataformas já consolidadas no mercado, aumentando a confiabilidade, segurança e escalabilidade da solução. Essas integrações permitem que os microserviços do SeuPix consumam funcionalidades externas de forma transparente, garantindo uma experiência mais segura e eficiente para os usuários.
+
+---
+
+#### Sistema de Autenticação (Twilio)
+
+O serviço de autenticação é responsável por validar a identidade dos usuários durante processos de login, recuperação de conta e confirmações de segurança. Sua utilização adiciona uma camada extra de proteção ao sistema, reduzindo riscos de acessos indevidos e fortalecendo os mecanismos de autenticação.
+
+---
+
+#### Sistema PIX (Banco Central / SPI)
+
+O Sistema PIX é responsável pela liquidação e comunicação das transações financeiras realizadas pelos usuários. Por meio dessa integração, o SeuPix consegue efetuar transferências instantâneas e consultar informações relacionadas às operações financeiras, garantindo conformidade com a infraestrutura oficial do Banco Central.
+
+---
+
+#### Serviço de E-mail (Twilio)
+
+O serviço de e-mail é utilizado para o envio de comunicações importantes aos usuários, como confirmações de cadastro, recuperação de senha, alertas de segurança e notificações operacionais. Essa integração garante um canal adicional de comunicação entre a plataforma e seus usuários.
+
+---
+
+#### Serviço de SMS (Twilio)
+
+O serviço de SMS permite o envio de mensagens diretamente para o telefone dos usuários. Ele pode ser utilizado para autenticação em duas etapas, recuperação de conta e envio de alertas críticos, oferecendo uma alternativa de comunicação rápida e acessível.
+
+---
+
+#### Serviço de Notificações Push (Firebase Cloud Messaging)
+
+O Firebase Cloud Messaging é responsável pelo envio de notificações push para os dispositivos móveis dos usuários. Essa integração permite que o SeuPix informe eventos importantes em tempo real, como alterações de permissões, movimentações suspeitas, solicitações de aprovação e outras ações relevantes para a segurança da conta.
+
+---
+
+#### Sistema Antifraude (ClearSale)
+
+O sistema antifraude realiza análises de risco sobre operações e comportamentos dos usuários, auxiliando na identificação de possíveis tentativas de golpe ou atividades suspeitas. Sua integração é especialmente importante para o público idoso, contribuindo para a prevenção de fraudes financeiras e aumentando a segurança das transações realizadas na plataforma.
+
+
