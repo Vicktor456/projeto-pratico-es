@@ -4,6 +4,186 @@ A etapa de Rastreabilidade com Histórias do Usuário, tem como propósito demon
 
 # **Diagrama C4 Container**
 
+## Container - API Usuário
+
+**Responsabilidade:** Gerenciamento dos dados cadastrais do usuário idoso e responsável.
+
+**Histórias Associadas:** H1 | H7 | H8
+
+**Rastreabilidade:** Responsável pelo armazenamento e recuperação das informações dos usuários cadastrados no sistema. Participa da criação da conta durante o cadastro, da validação de dados utilizados no login e da identificação dos usuários envolvidos no vínculo entre idoso e responsável na funcionalidade de conta assistida.
+
+---
+
+## Container - API Autenticação
+
+**Responsabilidade:** Autenticação e validação de identidade dos usuários.
+
+**Histórias Associadas:** H1 | H4 | H8
+
+**Rastreabilidade:** Responsável pela validação das credenciais de acesso, gerenciamento de sessões e confirmação de operações sensíveis. É utilizada durante o login e também para autenticar alterações relacionadas à conta assistida e às configurações de permissões do responsável.
+
+---
+
+## Container - API Conta Assistida
+
+**Responsabilidade:** Gerenciamento do vínculo entre usuário idoso e responsável.
+
+**Histórias Associadas:** H1 | H4
+
+**Rastreabilidade:** Responsável pela ativação da conta assistida, geração de convites para vinculação de responsáveis, manutenção do relacionamento entre as contas e aplicação das regras relacionadas ao suporte e acompanhamento do usuário idoso.
+
+---
+
+## Container - API Permissões
+
+**Responsabilidade:** Controle de níveis de acesso e permissões do responsável.
+
+**Histórias Associadas:** H4
+
+**Rastreabilidade:** Responsável pelo gerenciamento dos níveis de acesso Básico, Supervisionado, Dependente e Personalizado, garantindo que cada responsável possua apenas as permissões autorizadas pelo usuário idoso conforme as regras de negócio definidas.
+
+---
+
+## Container - API PIX
+
+**Responsabilidade:** Processamento de transações financeiras.
+
+**Histórias Associadas:** Nenhuma HU diretamente implementada até o momento.
+
+**Rastreabilidade:** Embora ainda não possua uma história de usuário específica definida nesta etapa do projeto, o serviço é responsável pelo processamento das transações financeiras e servirá de base para futuras funcionalidades relacionadas a pagamentos, transferências, limites e monitoramento de operações.
+
+---
+
+## Container - API Antifraude
+
+**Responsabilidade:** Análise de risco e prevenção de fraudes.
+
+**Histórias Associadas:** H1 | H4
+
+**Rastreabilidade:** Atua como camada adicional de segurança para usuários idosos, analisando comportamentos suspeitos, operações sensíveis e possíveis tentativas de fraude. Dá suporte às funcionalidades de conta assistida e supervisão financeira.
+
+---
+
+## Container - API Notificação
+
+**Responsabilidade:** Gerenciamento das notificações do sistema.
+
+**Histórias Associadas:** H1 | H4
+
+**Rastreabilidade:** Responsável pelo envio de notificações relacionadas à vinculação de responsáveis, alteração de permissões, mudanças de níveis de acesso e demais eventos importantes para manter o usuário informado sobre ações realizadas em sua conta.
+
+---
+
+## Container - Aplicação Móvel (Usuário Idoso)
+
+**Responsabilidade:** Interface principal de utilização do sistema.
+
+**Histórias Associadas:** H1 | H4 | H7 | H8
+
+**Rastreabilidade:** Permite que o usuário idoso realize cadastro, login, gerenciamento da conta assistida, configuração de permissões e utilização dos serviços financeiros disponibilizados pela plataforma.
+
+---
+
+## Container - Aplicação Móvel (Contato de Apoio)
+
+**Responsabilidade:** Interface utilizada pelo responsável vinculado ao usuário idoso.
+
+**Histórias Associadas:** H1 | H4
+
+**Rastreabilidade:** Disponibiliza ao responsável as funcionalidades autorizadas pelo usuário idoso, permitindo acompanhamento financeiro, recebimento de alertas e atuação dentro dos limites definidos pelo nível de acesso configurado.
+
+---
+
+## Container - Aplicação Móvel (Especialista de Suporte)
+
+**Responsabilidade:** Interface utilizada pela equipe de suporte da plataforma.
+
+**Histórias Associadas:** Nenhuma HU diretamente associada.
+
+**Rastreabilidade:** Fornece ferramentas administrativas para atendimento ao usuário, diagnóstico de problemas, auxílio operacional e suporte relacionado às funcionalidades da plataforma.
+
+---
+
+## Container - API Gateway & Core Backend
+
+**Responsabilidade:** Orquestração e roteamento das requisições.
+
+**Histórias Associadas:** H1 | H4 | H7 | H8
+
+**Rastreabilidade:** Atua como ponto central de entrada para todas as requisições realizadas pelos aplicativos do sistema, encaminhando chamadas aos microserviços apropriados, aplicando regras de segurança, autenticação e controle de acesso.
+
+---
+
+## Sistema Externo - Autenticação
+
+**Histórias Associadas:** H1 | H4 | H8
+
+**Rastreabilidade:** Responsável pela validação externa de identidade, autenticação multifator e gerenciamento seguro das credenciais utilizadas pelos usuários da plataforma.
+
+---
+
+## Sistema Externo - Sistema PIX (SPI/Banco Central)
+
+**Histórias Associadas:** Nenhuma HU diretamente associada.
+
+**Rastreabilidade:** Responsável pela liquidação e comunicação das transações PIX realizadas pela plataforma, servindo como infraestrutura financeira externa obrigatória para operações bancárias.
+
+---
+
+## Sistema Externo - Email
+
+**Histórias Associadas:** H1 | H7
+
+**Rastreabilidade:** Utilizado para envio de mensagens de confirmação de cadastro, vinculação de responsáveis e demais comunicações importantes relacionadas à conta do usuário.
+
+---
+
+## Sistema Externo - SMS
+
+**Histórias Associadas:** H1 | H7 | H8
+
+**Rastreabilidade:** Utilizado para envio de códigos de verificação, autenticação adicional e notificações de segurança relacionadas ao acesso e gerenciamento da conta.
+
+---
+
+## Sistema Externo - Notificações Push
+
+**Histórias Associadas:** H1 | H4
+
+**Rastreabilidade:** Responsável pelo envio de notificações em tempo real para informar alterações de permissões, vinculação de responsáveis e demais eventos relevantes da conta assistida.
+
+---
+
+## Sistema Externo - Antifraude (ClearSale)
+
+**Histórias Associadas:** H1 | H4
+
+**Rastreabilidade:** Realiza análise de risco sobre operações e comportamentos suspeitos, auxiliando os mecanismos internos de segurança e proteção contra fraudes.
+
+---
+
+## Sistema Externo - Biometria
+
+**Histórias Associadas:** H1 | H4 | H8
+
+**Rastreabilidade:** Permite a utilização de biometria digital ou facial para autenticação de usuários e confirmação de operações críticas, aumentando a segurança e a acessibilidade da plataforma.
+
+---
+
+## Sistema Externo - Cloud (AWS)
+
+**Histórias Associadas:** H1 | H4 | H7 | H8
+
+**Rastreabilidade:** Fornece a infraestrutura necessária para hospedagem, processamento e armazenamento dos componentes da aplicação, garantindo disponibilidade e escalabilidade dos serviços.
+
+---
+
+## Sistema Externo - Mensageria e Eventos (Kafka)
+
+**Histórias Associadas:** H1 | H4
+
+**Rastreabilidade:** Responsável pela comunicação assíncrona entre os microserviços, permitindo a propagação de eventos relacionados à conta assistida, permissões, notificações e monitoramento de segurança sem aumentar o acoplamento entre os serviços.
+
 
 # **Diagrama C4 Código - Classe**
 
