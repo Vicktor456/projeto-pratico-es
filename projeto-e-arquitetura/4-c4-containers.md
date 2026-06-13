@@ -148,3 +148,20 @@ A API Antifraude integra-se ao serviço antifraude externo para analisar comport
 #### Comunicação Integrada entre os Serviços
 
 Embora cada microserviço possua sua responsabilidade específica, as integrações externas fazem parte de um fluxo maior de funcionamento do sistema. Por exemplo, uma transferência PIX pode envolver simultaneamente a API PIX, que processa a transação; a API Antifraude, que avalia riscos da operação; e a API Notificação, que informa o usuário sobre o resultado da transação. Essa colaboração entre serviços internos e externos permite que o SeuPix ofereça funcionalidades completas, seguras e alinhadas às necessidades do seu público-alvo.
+
+---
+
+<img width="3822" height="2142" alt="image" src="https://github.com/user-attachments/assets/e626ca36-5329-4fb9-89f5-cf8e74a39b45" />
+
+Além das integrações com sistemas externos de negócio, como PIX e notificações, os microserviços do SeuPix dependem de serviços de infraestrutura que fornecem suporte técnico para autenticação, armazenamento, processamento e comunicação interna. Esses componentes não implementam regras de negócio diretamente, mas garantem que os serviços da aplicação operem de forma segura, escalável e confiável.
+
+A API Usuário integra-se ao serviço de Biometria (Android Biometric API e Apple Touch ID), permitindo a coleta e validação biométrica durante operações como login, ativação do modo assistido, alteração de permissões e confirmação de ações sensíveis. Dessa forma, o sistema adiciona uma camada extra de segurança sem comprometer a usabilidade para o público idoso.
+
+A API Autenticação e outros microserviços que necessitam verificar a identidade do usuário utilizam o serviço externo de Autenticação. Esse serviço é responsável por validar credenciais, tokens e sessões de acesso, garantindo que apenas usuários devidamente autenticados possam acessar funcionalidades protegidas. Por atender múltiplos serviços, ele aparece conectado a diferentes partes do diagrama.
+
+Todos os microserviços são hospedados na infraestrutura de Cloud (AWS), que fornece recursos computacionais, armazenamento, disponibilidade e escalabilidade para a aplicação. A utilização da nuvem permite que cada serviço seja executado de forma independente, facilitando a manutenção, o monitoramento e o crescimento da plataforma conforme a demanda de usuários aumenta.
+
+Complementando essa arquitetura, o Kafka atua como plataforma de mensageria e eventos, permitindo a comunicação assíncrona entre os microserviços. Em vez de depender exclusivamente de chamadas diretas entre APIs, eventos como criação de conta, alteração de permissões, detecção de fraude ou envio de notificações podem ser publicados e consumidos pelos serviços interessados. Essa abordagem reduz o acoplamento entre os componentes, melhora a escalabilidade do sistema e aumenta sua tolerância a falhas.
+
+Em conjunto, esses serviços de infraestrutura formam a base tecnológica do SeuPix, oferecendo suporte para autenticação segura, processamento distribuído, comunicação eficiente entre microserviços e disponibilidade contínua da plataforma, elementos fundamentais para um sistema bancário digital voltado à segurança e acessibilidade de usuários idosos.
+
