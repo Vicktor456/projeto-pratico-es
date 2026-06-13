@@ -127,3 +127,24 @@ Os serviços de biometria disponibilizados pelos sistemas operacionais dos dispo
 ### Relacionamentos
 <img width="1488" height="1040" alt="image" src="https://github.com/user-attachments/assets/199641cd-f1b9-4a09-897b-619ec406a1fe" />
 
+Além de suas responsabilidades internas, alguns microserviços do SeuPix precisam se comunicar com sistemas externos especializados para executar determinadas funcionalidades. Essas integrações permitem que a aplicação utilize serviços consolidados de autenticação, processamento financeiro, notificações e análise de segurança, evitando a necessidade de implementar essas soluções internamente.
+
+#### API Autenticação → Serviço de Autenticação
+
+A API Autenticação se comunica com o serviço externo de autenticação para validar credenciais, códigos de verificação e processos de confirmação de identidade. Essa integração reforça a segurança do sistema durante operações como login, recuperação de conta e autenticação em múltiplos fatores, garantindo que apenas usuários autorizados tenham acesso aos recursos da plataforma.
+
+#### API PIX → Sistema PIX (Banco Central / SPI)
+
+A API PIX é responsável por intermediar a comunicação entre o SeuPix e a infraestrutura oficial do PIX. Quando um usuário realiza uma transferência, os dados da transação são enviados ao Sistema PIX para validação, liquidação e confirmação da operação. Após o processamento, o resultado é retornado ao sistema para atualização das informações da conta e notificação dos usuários envolvidos.
+
+#### API Notificação → Serviços de E-mail, SMS e Push Notification
+
+A API Notificação centraliza toda a comunicação do sistema com os usuários. Dependendo do tipo de mensagem, ela pode utilizar diferentes canais de entrega. Para comunicações formais e confirmações de cadastro, utiliza o serviço de E-mail; para autenticações e alertas críticos, utiliza o serviço de SMS; e para notificações em tempo real dentro do aplicativo, utiliza o Firebase Cloud Messaging (FCM). Dessa forma, o sistema consegue garantir que informações importantes sejam entregues pelo canal mais adequado.
+
+#### API Antifraude → Sistema Antifraude (ClearSale)
+
+A API Antifraude integra-se ao serviço antifraude externo para analisar comportamentos, transações e atividades consideradas sensíveis. Durante operações como transferências financeiras, alterações de segurança ou tentativas de acesso suspeitas, informações podem ser enviadas para análise de risco. O resultado retornado auxilia o sistema na identificação de possíveis fraudes, permitindo bloquear, sinalizar ou solicitar validações adicionais antes da conclusão da operação.
+
+#### Comunicação Integrada entre os Serviços
+
+Embora cada microserviço possua sua responsabilidade específica, as integrações externas fazem parte de um fluxo maior de funcionamento do sistema. Por exemplo, uma transferência PIX pode envolver simultaneamente a API PIX, que processa a transação; a API Antifraude, que avalia riscos da operação; e a API Notificação, que informa o usuário sobre o resultado da transação. Essa colaboração entre serviços internos e externos permite que o SeuPix ofereça funcionalidades completas, seguras e alinhadas às necessidades do seu público-alvo.
