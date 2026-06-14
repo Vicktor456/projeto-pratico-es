@@ -78,7 +78,7 @@ No SeuPix, o Tech Stack Map demonstra como as tecnologias escolhidas trabalham e
 |------|---------------------|------------------|
 | API de Autenticação | oAuth2 | Gerenciamento de login, tempo de sessão, biometria, recuperação de conta e permissões do usuário. |
 | API Pix | BaaS | Responsável pela integração com PIX, chaves, transferências, consultas e confirmar pagamentos. |
-| API Antifraude | IA Própria | Responsável pela detecção de contas suspeitas, e ligadas a golpes golpes, assim como transferências anormais de acessos comuns. |
+| API Antifraude | IA Própria | Responsável pela detecção de contas suspeitas e ligadas a golpes golpes, assim como transferências anormais de acessos comuns. |
 | API Notificação | OneSignal | Responsável por enviar notificação push, email, SMS. |
 | API de Usuários | Controle de Dados de Usuário | Gerencia os dados do idoso, contatos de apoio, preferências de acessibilidade. |
 | API de Permissões | Controle de Permissões do Contato de Apoio | Responsável por gerenciar as permissões do contato de apoio e os níveis de acesso. |
