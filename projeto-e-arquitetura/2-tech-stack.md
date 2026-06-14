@@ -56,16 +56,15 @@ No SeuPix, o Tech Stack Map demonstra como as tecnologias escolhidas trabalham e
 
 | Tecnologias | Camadas | Justificativa |
 |------------|----------|---------------|
-| Spring Boot (Java) | Back End | É uma ferramenta que torna o desenvolvimento de aplicações web e microsserviços com o Spring Framework mais rápido e fácil. |
-| Python | Back End | Utilizado para análise de dados, aplicações financeiras e automação. |
-| React Native | Front End | Ferramenta para criação de interfaces móveis para iOS e Android. |
+| Spring Boot (Java) | Back End | É uma ferramenta que torna o desenvolvimento de aplicações web e microsserviços com o Java Spring Framework mais rápido e fácil. |
+| Python | Back End | Utilizado para analysis; financeira e automação. |
+| React Native | Front End | Ferramenta para criação de interfaces mobile, iOS e Android. |
 | CodePush | Front End | Serviço que permite atualização da interface de aplicativos móveis diretamente nos dispositivos dos usuários. |
 | Kong | API Gateway | Ela atua como um proxy reverso que gerencia, protege e roteia requisições para APIs, microsserviços e modelos de IA. |
 | Figma | Front End |  |
-| Keycloak | Segurança | Software open source para autenticação, autorização, Single Sign-On (SSO) e gerenciamento de identidade e acesso. |
-| AWS | Cloud | Plataforma amplamente utilizada para serviços de computação em nuvem, segura e robusta. |
-| RabbitMQ | Notificação | Implementa o protocolo AMQP como Message Broker, amplamente utilizado em arquiteturas de microsserviços. |
-| PostgreSQL | Banco de Dados | Sistema gerenciador de banco de dados relacional (SGBD) de código aberto, robusto e amplamente utilizado. |
+| KeyCloak | Segurança | Keycloak is an open-source software product to allow single sign-on with identity and access management aimed at modern applications and services. |
+| RabbitMQ | Notificação | Implementa o protocolo AMQP como Mensage Broker, amplamente utilizado em sistemas com arquiteturas de microsserviços. |
+| PostgreSQL | BD | PostgreSQL é um sistema gerenciador de banco de dados objeto relacional (SGBD), desenvolvido como projeto de código aberto. |
 | GitHub Actions | Deploy Automáticos |  |
 | Git + GitHub | Versionamento |  |
 | GitHub Projects | Gerenciamento de Tarefas |  |
