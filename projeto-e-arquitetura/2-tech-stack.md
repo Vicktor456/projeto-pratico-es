@@ -60,20 +60,20 @@ No SeuPix, o Tech Stack Map demonstra como as tecnologias escolhidas trabalham e
 | Python | Back End | Utilizado para análise de dados, aplicações financeiras e automação. |
 | React Native | Front End | Ferramenta para criação de interfaces móveis para iOS e Android. |
 | CodePush | Front End | Serviço que permite atualização da interface de aplicativos móveis diretamente nos dispositivos dos usuários. |
-| Kong | API Gateway | Atua como um proxy reverso que gerencia, protege e roteia requisições para APIs, microsserviços e modelos de IA. |
-| Figma | Front End | Ferramenta de design colaborativo utilizada para prototipação e criação de interfaces de usuário. |
+| Kong | API Gateway | Ela atua como um proxy reverso que gerencia, protege e roteia requisições para APIs, microsserviços e modelos de IA. |
+| Figma | Front End |  |
 | Keycloak | Segurança | Software open source para autenticação, autorização, Single Sign-On (SSO) e gerenciamento de identidade e acesso. |
 | AWS | Cloud | Plataforma amplamente utilizada para serviços de computação em nuvem, segura e robusta. |
 | RabbitMQ | Notificação | Implementa o protocolo AMQP como Message Broker, amplamente utilizado em arquiteturas de microsserviços. |
 | PostgreSQL | Banco de Dados | Sistema gerenciador de banco de dados relacional (SGBD) de código aberto, robusto e amplamente utilizado. |
-| GitHub Actions | Deploy Automáticos | Plataforma de CI/CD para automação de testes, builds e deploys diretamente no GitHub. |
-| Git + GitHub | Versionamento | Ferramentas para controle de versão, colaboração e gerenciamento de código-fonte. |
-| GitHub Projects | Gerenciamento de Tarefas | Recurso do GitHub utilizado para planejamento, acompanhamento e organização de tarefas e projetos. |
-| JavaScript | Linguagem de Frontend | Linguagem de programação utilizada para desenvolvimento de interfaces web interativas. |
-| Visual Studio Code | IDE para Programação Geral | Editor de código leve e extensível, compatível com diversas linguagens de programação. |
-| PyCharm | IDE para Programação Python | Ambiente de desenvolvimento integrado especializado para aplicações Python. |
-| WebStorm | IDE para Programação JavaScript | Ambiente de desenvolvimento integrado focado em aplicações JavaScript e TypeScript. |
-| IntelliJ IDEA | IDE para Programação Java/Spring Boot | Ambiente de desenvolvimento integrado voltado para projetos Java, Spring Boot e outras tecnologias JVM. |
+| GitHub Actions | Deploy Automáticos |  |
+| Git + GitHub | Versionamento |  |
+| GitHub Projects | Gerenciamento de Tarefas |  |
+| JavaScript | Linguagem de Frontend |  |
+| Visual Studio Code | IDE para Programação Geral |  |
+| PyCharm | IDE para Programação Python |  |
+| WebStorm | IDE para Programação JavaScript |  |
+| IntelliJ IDEA | IDE para Programação Java/Spring Boot |  |
 
 
 
