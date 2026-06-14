@@ -19,7 +19,23 @@ Viabilizado pela Nuvem: O padrão tornou-se popular com o surgimento da computa�
 
 ## Justificativa da Escolha:
 
+A arquitetura de microsserviços foi escolhida para o desenvolvimento do SeuPix por permitir a divisão do sistema em serviços independentes, cada um responsável por uma funcionalidade específica. Essa abordagem é adequada para o projeto, pois o aplicativo possui diferentes módulos, como autenticação, transferências PIX, gerenciamento de usuários, notificações e recursos de acessibilidade, que podem ser desenvolvidos e mantidos separadamente.
+
+Além de facilitar a organização do sistema, os microsserviços ajudam a reduzir a complexidade do desenvolvimento, permitindo que os integrantes da equipe trabalhem de forma mais focada em funcionalidades específicas. Isso melhora a produtividade, diminui conflitos durante a implementação e facilita a manutenção do código.
+
+Outro benefício importante é a escalabilidade, já que cada serviço pode ser atualizado ou expandido individualmente conforme a necessidade da aplicação. A arquitetura também contribui para a segurança e a confiabilidade do sistema, pois possíveis falhas em um serviço tendem a causar menor impacto nos demais componentes.
+
+Dessa forma, a arquitetura de microsserviços torna o SeuPix mais modular, organizado, escalável e preparado para futuras evoluções, características essenciais para uma aplicação financeira moderna.
+
 ## Aplicação no Sistema:
+
+No SeuPix, o padrão de arquitetura de microsserviços foi aplicado por meio da separação das funcionalidades do sistema em serviços independentes, cada um responsável por uma área específica do negócio. Em vez de concentrar toda a lógica da aplicação em um único sistema monolítico, as responsabilidades foram distribuídas em módulos especializados, permitindo maior organização e desacoplamento entre as funcionalidades.
+
+As principais partes do sistema que seguem esse padrão são os serviços responsáveis pelo gerenciamento de usuários, autenticação, controle de permissões, acessibilidade e suporte ao idoso, processamento de transações PIX, notificações e mecanismos de segurança e antifraude. Cada um desses componentes possui responsabilidades bem definidas e pode evoluir de forma independente dos demais.
+
+A comunicação entre esses serviços ocorre por meio de APIs e troca de eventos, permitindo que as funcionalidades trabalhem em conjunto sem criar dependências excessivas. Dessa forma, o sistema torna-se mais modular, facilitando a manutenção, a implementação de novas funcionalidades e a distribuição das atividades entre os membros da equipe.
+
+A adoção desse padrão também contribui para a escalabilidade e confiabilidade da aplicação, uma vez que cada serviço pode ser atualizado, monitorado e expandido individualmente conforme as necessidades do sistema e dos usuários. Isso é especialmente importante para o SeuPix, que atua em um contexto financeiro e precisa garantir segurança, disponibilidade e facilidade de evolução ao longo do tempo.
 
 ## Figura do Sistema aplicada a Arquitetura:
 
