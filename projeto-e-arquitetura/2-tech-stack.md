@@ -52,8 +52,6 @@ No SeuPix, o Tech Stack Map demonstra como as tecnologias escolhidas trabalham e
 <img width="1648" height="833" alt="apigat" src="https://github.com/user-attachments/assets/0482528c-fa81-4b9d-8eb7-316c072f899b" />
 
 # Tabela Tech Stack
-
-
 | Tecnologias | Camadas | Justificativa |
 |------------|----------|---------------|
 | Spring Boot (Java) | Back End | É uma ferramenta que torna o desenvolvimento de aplicações web e microsserviços com o Java Spring Framework mais rápido e fácil. |
@@ -75,6 +73,15 @@ No SeuPix, o Tech Stack Map demonstra como as tecnologias escolhidas trabalham e
 | WebStorm | IDE para Programação JavaScript |  |
 | IntelliJ IDEA | IDE para Programação Java/Spring Boot |  |
 
+# API's
+| API | Tecnologia / Serviço | Responsabilidade |
+|------|---------------------|------------------|
+| API de Autenticação | oAuth2 | Gerenciamento de login, tempo de sessão, biometria, recuperação de conta e permissões do usuário. |
+| API Pix | BaaS | Responsável pela integração com PIX, chaves, transferências, consultas e confirmar pagamentos. |
+| API Antifraude | IA Própria | Responsável pela detecção de contas suspeitas, e ligadas a golpes golpes, assim como transferências anormais de acessos comuns. |
+| API Notificação | OneSignal | Responsável por enviar notificação push, email, SMS. |
+| API de Usuários | Controle de Dados de Usuário | Gerencia os dados do idoso, contatos de apoio, preferências de acessibilidade. |
+| API de Permissões | Controle de Permissões do Contato de Apoio | Responsável por gerenciar as permissões do contato de apoio e os níveis de acesso. |
 
 
 
