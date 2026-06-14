@@ -63,6 +63,7 @@ No SeuPix, o Tech Stack Map demonstra como as tecnologias escolhidas trabalham e
 | Kong | API Gateway | Ela atua como um proxy reverso que gerencia, protege e roteia requisições para APIs, microsserviços e modelos de IA. |
 | Figma | Front End |  |
 | KeyCloak | Segurança | Keycloak is an open-source software product to allow single sign-on with identity and access management aimed at modern applications and services. |
+| AWS | Cloud | Plataforma amplamente utilizada para serviços de computação em nuvem, segura e robusta. |
 | RabbitMQ | Notificação | Implementa o protocolo AMQP como Mensage Broker, amplamente utilizado em sistemas com arquiteturas de microsserviços. |
 | PostgreSQL | BD | PostgreSQL é um sistema gerenciador de banco de dados objeto relacional (SGBD), desenvolvido como projeto de código aberto. |
 | GitHub Actions | Deploy Automáticos |  |
