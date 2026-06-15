@@ -64,65 +64,72 @@ O problema apontava que não estava claro se as barras do SO deveriam ser contab
 
 ---
 
-### Defeitos encontrados pela outra equipe:
+### 3. Defeitos Relatado - US18
+US18 - Botão de Ajuda por Voz/Video
+
 Embora a história especifique a comunicação com um "atendente humano" (descartando bots) , há uma ambiguidade crítica no método de comunicação. O termo "falar" não define a arquitetura tecnológica do sistema. Não fica claro se a funcionalidade exigirá a construção de um sistema de chamada interno no aplicativo , um redirecionamento para um aplicativo externo como o WhatsApp , ou o uso do discador nativo para uma ligação telefônica comum. Sem essa definição, a equipe de desenvolvimento fica impossibilitada de estimar o esforço, os custos e as permissões de hardware necessárias (como acesso ao microfone).
 
-Trecho do Requisito:  
-US18: “Enquanto usuário idoso, desejo visualizar um botão de ajuda em destaque na tela, para conseguir falar com um atendente humano sempre que eu tiver alguma dificuldade no aplicativo.”
+***Trecho do Requisito:*** US18 - “Enquanto usuário idoso, desejo visualizar um botão de ajuda em destaque na tela, para conseguir falar com um atendente humano sempre que eu tiver alguma dificuldade no aplicativo.”
 
-Tipo do defeito:  
+***Tipo do defeito:*** 
 Ambiguidade
 
-### Historia de usuário corrigido:
-### 📝 Descrição
+### User Story Final:
+Descrição:Enquanto usuário idoso, desejo ter um botão de "Ajuda" fácil de encontrar, para falar com um atendente humano caso eu fique confuso.
 
-Enquanto usuário idoso, desejo ter um botão de "Ajuda" fácil de encontrar, para falar com um atendente humano caso eu fique confuso.
-
-### ✅ Critérios de Aceitação
-
+Critérios de Aceitação:
 1. O botão de ajuda deve estar visível em todas as telas principais, posicionado em um local de fácil alcance.
-    
 2. O botão deve utilizar um ícone de "fone de ouvido" ou "balão de conversa" acompanhado do texto "Falar com Atendente" em fonte ampliada.
-    
 3. Ao acionar o botão, o usuário deve ter a opção de escolher entre "Chamada de Voz" ou "Chat por Mensagem".
-    
 4. O tempo de espera estimado deve ser exibido na tela de forma clara e legível.
-    
 
-### 📏 Regra de Negócios
+Regra de Negócios: O suporte deve estar disponível em horário comercial estendido (7h às 22h).
 
-O suporte deve estar disponível em horário comercial estendido (7h às 22h).
-
-### Quais problemas foram corrigidos:
+### Justificativa:
 
 Definição das modalidades de comunicação ("Falar):
 O termo genérico "falar" foi refinado. O critério de aceitação 3 agora estabelece que o usuário terá uma tela intermediária para escolher entre duas modalidades de atendimento: "Chamada de voz" ou "chat por mensagem". A inclusão do chat demonstra uma reavaliação do escopo pela nossa equipe para dar mais alternativas de acessibilidade.
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 ---
 
-## Defeito 06 - US10
+## 4. Defeito Relatado - US10
+US10 - Acessibilidade Visual na Interface
 
-**Descrição do Problema**  
 A US10 é descrita do ponto de vista de uma “tutora de idosos”, diferente do padrão “usuário idoso” adotado nas demais histórias.  
 Além disso, a história menciona “fontes legíveis” sem quantificar tamanho mínimo, enquanto a US05 já especifica “no mínimo 20pt”, criando divergência entre histórias sobre o mesmo tema de acessibilidade visual.
 
 **Trecho do Requisito**
-
 - US10: “Enquanto tutora de idosos, desejo uma interface com fontes legíveis para garantir a acessibilidade de usuários com baixa visão.”
 - US05 CA1: “O nome do recebedor deve estar em negrito e com fonte de no mínimo 20pt.”
 
 **Tipo de Defeito:** Inconsistência
 
-## User Story
-### 📝 Descrição
+### User Story Final
+
+Descrição:
 Enquanto contato de apoio, desejo uma interface com fontes legíveis para garantir a acessibilidade de usuários com baixa visão.
 
-#### Quais Problemas foram corrigidos?
+Critérios de Aceitação:
+1. Deve haver um espaçamento mínimo entre linhaspara evitar a fadiga visual e facilitar o rastreamento da leitura pelo idoso
+2. O sistema deve utilizar fontes sem serifa (como Arial, Open Sans ou Roboto), evitando estilos cursivos ou muito finos que dificultam a leitura.
+3. Deve haver um espaçamento visual (margem) suficiente entre os botões para evitar que o usuário clique em um item por engano ao tentar selecionar outro.
+
+Regras de Negocios: Para garantir a legibilidade, os textos não devem exceder 80 caracteres por linha.
+
+
+#### Justificativa:
 - O defeito n° 06 apontado na inspeção realizada por outra equipe não descreve de fato nenhuma inconsistência na referida user story 10 do trabalho prático. O defeito encontrado descreve que não há padronização ao referir-se a persona “tutora de idosos”, já que em outras user story’s é usado de modo padronizado o termo “usuário idoso”, entretanto esta user story não está se referindo ao “usuário idoso”, já que esta é uma persona diferente e que não se enquadra no contexto descrito da user story atual. Dessa forma, não existe nenhum erro principal que possa ser corrigido ou reavaliado.
     
 - Outro defeito inspecionado pela equipe foi a existência de duas user storys que mencionam o mesmo tema, acessibilidade na leitura do usuário, referindo-se especificamente ao tamanho da fonte. A convergência encontra-se no fato de uma user story(US05) especificar “No mínimo 20pt” ao  abordar o tamanho da fonte, enquanto a outra (US10)cita “fontes legíveis”, mas não diz de que forma a legibilidade vai ser oferecida ao usuário. Tendo em vista essa convergência entre histórias de usuários, a equipe padronizou as user storys de modo que todas tenham detalhamento de “20pt” para os tamanhos de fontes, criando um modelo/padronização para todas as user storys que tratam sobre legibilidade.
+
+---
     
-## DEFEITO 2 - US14
+## 5. Defeito Relatado - US14
+US14 - Exibição de Aviso de Risco de Fraude
+
+Descrição do Problema: O requisito apresenta uma ambiguidade semântica e lógica. O termo “risco de fraude” é subjetivo e não vem acompanhado das regras de negócio ou parâmetros que o definem (ex.: limites de valor, divergência de geolocalização ou contas suspeitas em listas externas).  
+Sem esses critérios, é impossível implementar a lógica de backend que dispara o alerta e, consequentemente, é impossível validar se o sistema está identificando corretamente o risco durante os testes.
+
 **Trecho do Requisito**  
 “...caso a transação apresente algum risco de fraude...”
 
@@ -131,21 +138,28 @@ Enquanto contato de apoio, desejo uma interface com fontes legíveis para garant
 - **Categoria:** Ambiguidade / Falta de Regras de Negócio  
     Ocorre quando o requisito depende de uma inteligência ou lógica que não foi descrita, deixando a funcionalidade “vazia” de sentido técnico.
 
-#### Descrição do Problema
-O requisito apresenta uma ambiguidade semântica e lógica. O termo “risco de fraude” é subjetivo e não vem acompanhado das regras de negócio ou parâmetros que o definem (ex.: limites de valor, divergência de geolocalização ou contas suspeitas em listas externas).  
-Sem esses critérios, é impossível implementar a lógica de backend que dispara o alerta e, consequentemente, é impossível validar se o sistema está identificando corretamente o risco durante os testes.
+### User story Final
+
+Descrição:
+Enquanto usuário idoso, desejo visualizar um aviso de risco claro e em destaque antes de confirmar um Pix suspeito, para que eu possa interromper a operação a tempo e evitar cair em um golpe.
+
+Critério de Aceitação:
+1. Bloqueio Intermediário Visual: Se o sistema detectar uma transação suspeita, deve exibir uma tela de alerta em formato de "interrupção" (pop-up de tela cheia) com fundo amarelo-alerta, texto em tamanho grande (mínimo 20pt) e uma mensagem direta e amigável, como: "Atenção: Esta conta recebeu avisos de outros usuários recentemente. Tem certeza que conhece essa pessoa?".
+2. Destaque para a Ação Segura: A tela deve apresentar dois botões grandes e bem espaçados. O botão "Quero Cancelar" (ação recomendada) deve estar em destaque principal (cor chamativa, como verde ou azul escuro), enquanto o botão "Continuar assim mesmo" deve estar em menor evidência visual.
+3. Mecanismo de Pausa Forçada: Caso o usuário clique em "Continuar assim mesmo", o sistema deve aplicar um temporizador (cronômetro regressivo) de 5 segundos antes de liberar o campo de senha, exibindo a mensagem: "Por favor, reserve um momento para ler o aviso acima antes de prosseguir".
+
+Regras de Negocio:
+1. Inteligência de Risco (DICT/Bacen): O aplicativo deve consultar o motor de antifraude e a API do Banco Central em tempo real. O alerta deve ser acionado se a chave Pix de destino tiver um score de risco elevado ou histórico recente de denúncias de fraude/golpe.
+2. Linguagem Acessível: O texto do alerta não deve conter termos técnicos como "Score de Risco de Transação" ou "Inconsistência Cadastral". Deve-se usar uma linguagem humana, acolhedora e preventiva.
+3. Bloqueio Definitivo: Se o nível de risco da conta de destino for classificado como "Crítico" (ex: conta já marcada como fraudulenta em listas pretas oficiais), o sistema deve bloquear a transação sumariamente, impedindo a opção de continuidade e orientando o usuário a entrar em contato com o suporte do SeuPix.
+
+#### Justificativa:
+- O trecho que foi informado como um erro de ambiguidade na user story é inexistente na user story 14, não existe nenhuma parte do texto que cite “caso a transação apresente algum risco de fraude”, dessa forma, foi impossível corrigir o erro, a frase “risco de fraude” não é mencionada nenhuma vez.
 
 ---
 
-## User storys
-### 📝 Descrição
-Enquanto usuário idoso, desejo visualizar um aviso de risco claro e em destaque antes de confirmar um Pix suspeito, para que eu possa interromper a operação a tempo e evitar cair em um golpe.
-
-#### Quais Problemas foram corrigidos?
-- O trecho que foi informado como um erro de ambiguidade na user story é inexistente na user story 14, não existe nenhuma parte do texto que cite “caso a transação apresente algum risco de fraude”, dessa forma, foi impossível corrigir o erro, a frase “risco de fraude” não é mencionada nenhuma vez.
-    
-
-## DFEITO US16
+## 6. Defeito Relatado - US16
+US16 - Extrato Simplificado
 
 **Trecho do Requisito** “...exibindo nomes conhecidos no lugar de razões sociais...” (US16)
 
@@ -153,13 +167,22 @@ Enquanto usuário idoso, desejo visualizar um aviso de risco claro e em destaque
 
 **ID:** DEF-11
 
-**Descrição do Problema** O termo “nomes conhecidos” é subjetivo e carece de fundamentação técnica no contexto do aplicativo. Não está definido se o sistema realizará o de-para (mapeamento) via consulta ao Nome Fantasia do CNPJ, se utilizará uma base de dados interna de marcas populares ou se o próprio usuário deverá apelidar os contatos. Para o idoso, a substituição automática sem critérios claros pode gerar insegurança quanto à veracidade da transação.
+Descrição do Problema: O termo “nomes conhecidos” é subjetivo e carece de fundamentação técnica no contexto do aplicativo. Não está definido se o sistema realizará o de-para (mapeamento) via consulta ao Nome Fantasia do CNPJ, se utilizará uma base de dados interna de marcas populares ou se o próprio usuário deverá apelidar os contatos. Para o idoso, a substituição automática sem critérios claros pode gerar insegurança quanto à veracidade da transação.
 
-## User storys
-### 📝 Descrição
+### User Story Final
+
+Descrição:
 Enquanto contato de apoio, desejo uma interface com fontes legíveis para garantir a acessibilidade de usuários com baixa visão.
 
-#### Quais Problemas foram corrigidos?
+Critérios de Aceitação:
+1. A lista de transações deve exibir o nome fantasia ou o nome do contato salvo (apelido) em destaque, em vez da razão social completa da empresa.
+2. Ao tocar em uma movimentação, o sistema deve permitir a visualização dos detalhes completos, incluindo a razão social original, se necessário.
+3. As fontes e o contraste da lista de movimentações devem seguir o padrão de alta visibilidade já estabelecido para o projeto.
+
+Regras de Negócio:
+O sistema deve cruzar os dados do CNPJ/CPF do recebedor com a lista de contatos salvos do usuário para priorizar a exibição do apelido definido.
+
+#### Justificativa:
 O erro apontado pela equipe não coincide com a especificação atual da US16 apresentada já reclamação do defeito baseia-se em um trecho inexistente ("...exibindo nomes conhecidos no lugar de razões sociais...") e argumenta que o termo "nomes conhecidos" é ambíguo e carece de fundamentação técnica sobre a origem dos dados (se vem do Nome Fantasia do CNPJ, de uma base de dados interna ou de apelidos salvos pelo usuário).
 
 ao analisar o texto atual da US16 podemos ver que a ambiguidade já foi resolvida:
@@ -167,12 +190,11 @@ ao analisar o texto atual da US16 podemos ver que a ambiguidade já foi resolvid
 - O Critério de Aceitação 1 define exatamente o que exibir: "o nome fantasia ou o nome do contato salvo (apelido) em destaque".
 - A seção Regra de Negócios resolve explicitamente a dúvida técnica levantada pelo erro, determinando a lógica de mapeamento: "O sistema deve cruzar os dados do CNPJ/CPF do recebedor com a lista de contatos salvos do usuário para priorizar a exibição do apelido definido."
     
-
 Portanto, a especificação técnica atual da User Story já contém os critérios e fontes de referência cobrados pelo relatório de erros
 
+---
 
-
-## 1. Defeito Relatado - US09
+## 7. Defeito Relatado - US09
 
 US09 - Controle de Operações Essenciais
 
