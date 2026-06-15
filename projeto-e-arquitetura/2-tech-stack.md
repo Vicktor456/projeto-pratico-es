@@ -51,27 +51,27 @@ No SeuPix, o Tech Stack Map demonstra como as tecnologias escolhidas trabalham e
 ### Kong
 <img width="1648" height="833" alt="apigat" src="https://github.com/user-attachments/assets/0482528c-fa81-4b9d-8eb7-316c072f899b" />
 
-# Tabela Tech Stack
-| Tecnologias | Camadas | Justificativa |
-|------------|----------|---------------|
-| Spring Boot (Java) | Back End | É uma ferramenta que torna o desenvolvimento de aplicações web e microsserviços com o Java Spring Framework mais rápido e fácil. |
-| Python | Back End | Utilizado para analysis; financeira e automação. |
-| React Native | Front End | Ferramenta para criação de interfaces mobile, iOS e Android. |
-| CodePush | Front End | Serviço que permite atualização da interface de aplicativos móveis diretamente nos dispositivos dos usuários. |
-| Kong | API Gateway | Ela atua como um proxy reverso que gerencia, protege e roteia requisições para APIs, microsserviços e modelos de IA. |
-| Figma | Front End |  |
-| KeyCloak | Segurança | Keycloak is an open-source software product to allow single sign-on with identity and access management aimed at modern applications and services. |
-| AWS | Cloud | Plataforma amplamente utilizada para serviços de computação em nuvem, segura e robusta. |
-| RabbitMQ | Notificação | Implementa o protocolo AMQP como Mensage Broker, amplamente utilizado em sistemas com arquiteturas de microsserviços. |
-| PostgreSQL | BD | PostgreSQL é um sistema gerenciador de banco de dados objeto relacional (SGBD), desenvolvido como projeto de código aberto. |
-| GitHub Actions | Deploy Automáticos |  |
-| Git + GitHub | Versionamento |  |
-| GitHub Projects | Gerenciamento de Tarefas |  |
-| JavaScript | Linguagem de Frontend |  |
-| Visual Studio Code | IDE para Programação Geral |  |
-| PyCharm | IDE para Programação Python |  |
-| WebStorm | IDE para Programação JavaScript |  |
-| IntelliJ IDEA | IDE para Programação Java/Spring Boot |  |
+| Tecnologias            | Camada                   | Justificativa                                                                                                                                          |
+| ---------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Spring Boot (Java)** | Back End                 | Framework utilizado para o desenvolvimento dos microsserviços do sistema, oferecendo rapidez, escalabilidade e integração com aplicações corporativas. |
+| **Python**             | Back End / Antifraude    | Utilizado para automações, processamento de dados e futuras implementações de análise comportamental e detecção de fraudes.                            |
+| **React Native**       | Front End Mobile         | Framework utilizado para o desenvolvimento do aplicativo móvel, permitindo a criação de uma única aplicação para Android e iOS.                        |
+| **CodePush**           | Front End Mobile         | Permite realizar atualizações da interface e correções sem a necessidade de publicar uma nova versão do aplicativo nas lojas.                          |
+| **Kong**               | API Gateway              | Responsável por centralizar, proteger e rotear as requisições entre o aplicativo e os microsserviços do sistema.                                       |
+| **Figma**              | Design e Prototipação    | Utilizado para criação de protótipos, wireframes e interfaces, auxiliando no planejamento da experiência do usuário.                                   |
+| **Keycloak**           | Segurança                | Plataforma de gerenciamento de identidade e acesso utilizada para autenticação, autorização e controle seguro dos usuários.                            |
+| **AWS**                | Cloud                    | Plataforma de computação em nuvem utilizada para hospedar e escalar os serviços da aplicação com alta disponibilidade e segurança.                     |
+| **RabbitMQ**           | Mensageria e Notificação | Responsável pela comunicação assíncrona entre os microsserviços e pelo processamento de eventos e notificações.                                        |
+| **PostgreSQL**         | Banco de Dados           | Sistema gerenciador de banco de dados relacional utilizado para armazenar os dados da aplicação com segurança e consistência.                          |
+| **GitHub Actions**     | CI/CD e Deploy           | Ferramenta utilizada para automatizar processos de integração contínua, testes e implantação do sistema.                                               |
+| **Git + GitHub**       | Versionamento            | Utilizados para controle de versão do código-fonte, colaboração da equipe e rastreabilidade das alterações do projeto.                                 |
+| **GitHub Projects**    | Gerenciamento de Tarefas | Utilizado para organização do backlog, acompanhamento de atividades e gerenciamento do desenvolvimento do projeto.                                     |
+| **JavaScript**         | Linguagem Front End      | Linguagem utilizada no desenvolvimento da interface e de componentes do aplicativo.                                                                    |
+| **Visual Studio Code** | IDE                      | Editor de código leve e versátil utilizado no desenvolvimento geral do projeto.                                                                        |
+| **PyCharm**            | IDE Python               | Ambiente de desenvolvimento especializado para criação e manutenção de aplicações Python.                                                              |
+| **WebStorm**           | IDE Front End            | IDE especializada em JavaScript e TypeScript, utilizada no desenvolvimento de interfaces modernas.                                                     |
+| **IntelliJ IDEA**      | IDE Back End             | Ambiente de desenvolvimento utilizado para criação e manutenção dos microsserviços desenvolvidos com Java e Spring Boot.                               |
+
 
 # API's
 | API | Tecnologia / Serviço | Responsabilidade |
