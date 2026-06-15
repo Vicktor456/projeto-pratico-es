@@ -1,5 +1,5 @@
 # SeuPix
-**Trabalho Prático 1** da Disciplina de **Engenharia de Software I**
+**Trabalho Prático** da Disciplina de **Engenharia de Software I**
 ## Proposta do Projeto:
 O SeuPix é uma ideia de app criada para resolver a problematica da evasão dos idosos de sistemas bancarios, o SeuPix é uma alternativa acessivel para que idosos utilizem e ingressem no sistema bancario virtual
 
