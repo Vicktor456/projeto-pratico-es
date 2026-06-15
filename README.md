@@ -41,5 +41,7 @@ Andrey Antonio de Oliveira Rodrigues
 ## Projeto e Arquitetura
 [Projeto e Arquitetura](https://github.com/Vicktor456/projeto-pratico-es/tree/main/projeto-e-arquitetura)
 
+#
+
 Declaramos a utilização de IA para estruturação e refinamento do projeto.
 IAs utilizadas - Gemini e ChatGPT
