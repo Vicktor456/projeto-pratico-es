@@ -71,3 +71,33 @@ US29 - Enquanto idoso, desejo adicionar um responsável à minha conta assistida
 | 1,3,5,7,9,12,15,17,19,23,24  | Responsável vinculado             | Sistema permite adicionar um segundo responsável (Inválido)      |
 | 1,3,5,7,9,12,15,17,19,22,25  | Permissões do responsável         | Sistema concede permissões acima das mínimas iniciais (Inválido) |
 
+## Remoção de um Contato de Apoio
+US30 - Enquanto idoso, desejo remover um responsável vinculado à minha conta para manter controle sobre quem possui acesso assistido à minha conta.
+
+**Classes de Equivalência**
+
+| **CONDIÇÃO DE ENTRADA**                                              | **CASO VÁLIDO**                                                      | **CASO INVÁLIDO**                                          | **CASO INVÁLIDO**                                           |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------- | ----------------------------------------------------------- |
+| Usuário seleciona a opção "Remover Responsável"                      | Sistema permite iniciar o processo de remoção a qualquer momento (1) | Sistema não permite iniciar a remoção (2)                  |                                                             |
+| Usuário solicita a remoção do responsável                            | Sistema solicita confirmação de segurança (3)                        | Sistema remove o responsável sem solicitar confirmação (4) | Sistema apresenta erro e não solicita confirmação (5)       |
+| Usuário escolhe autenticação por senha e informa credenciais válidas | Responsável é removido com sucesso (6)                               | Senha incorreta e remoção negada (7)                       |                                                             |
+| Usuário escolhe autenticação por biometria válida                    | Responsável é removido com sucesso (8)                               | Biometria não reconhecida (9)                              | Dispositivo sem biometria cadastrada (10)                   |
+| Usuário escolhe autenticação por biometria facial válida             | Responsável é removido com sucesso (11)                              | Biometria facial não reconhecida (12)                      | Biometria facial não cadastrada ou câmera indisponível (13) |
+| Responsável removido com sucesso                                     | Todas as permissões do responsável são revogadas imediatamente (14)  | Permissões permanecem ativas após remoção (15)             |                                                             |
+| Responsável removido com sucesso                                     | Sistema registra a remoção nos logs de auditoria (16)                | Remoção não é registrada nos logs (17)                     |                                                             |
+
+**Casos de Teste**
+
+| Classes de Equivalência | Entradas                | Resultado Esperado                                                                     |
+| ----------------------- | ----------------------- | -------------------------------------------------------------------------------------- |
+| 1,3,6,8,11,14,16        | Todas entradas válidas  | Responsável removido com sucesso, permissões revogadas e auditoria registrada (Válido) |
+| 2,3,6,8,11,14,16        | Remoção de responsável  | Sistema não permite iniciar a remoção (Inválido)                                       |
+| 1,4,6,8,11,14,16        | Solicitação de remoção  | Responsável removido sem confirmação de segurança (Inválido)                           |
+| 1,5,6,8,11,14,16        | Solicitação de remoção  | Sistema não solicita confirmação de segurança (Inválido)                               |
+| 1,3,7,8,11,14,16        | Senha                   | Senha incorreta e remoção negada (Inválido)                                            |
+| 1,3,6,9,11,14,16        | Biometria               | Biometria não reconhecida (Inválido)                                                   |
+| 1,3,6,10,11,14,16       | Biometria               | Biometria não cadastrada (Inválido)                                                    |
+| 1,3,6,8,12,14,16        | Biometria Facial        | Biometria facial não reconhecida (Inválido)                                            |
+| 1,3,6,8,13,14,16        | Biometria Facial        | Biometria facial não cadastrada ou câmera indisponível (Inválido)                      |
+| 1,3,6,8,11,15,16        | Revogação de permissões | Permissões do responsável permanecem ativas após remoção (Inválido)                    |
+| 1,3,6,8,11,14,17        | Auditoria               | Remoção não registrada nos logs de auditoria (Inválido)                                |
