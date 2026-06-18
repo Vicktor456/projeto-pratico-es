@@ -1,5 +1,100 @@
 # Classe de Equivalência
 
+## Privacidade de Saldo
+US1 - Enquanto usuário idoso, quero que o meu saldo apareça oculto por padrão, para que eu possa abrir o aplicativo em locais públicos com privacidade
+
+**Classes de Equivalência**
+
+| Condições de Entrada              | Classes Válidas                           | Classes Inválidas                            | Classes Inválidas |
+| --------------------------------- | ----------------------------------------- | -------------------------------------------- | ----------------- |
+| Estado inicial ao abrir o app     | Saldo inicia oculto (1)                   | Saldo inicia visível (2)                     |                   |
+| Interação com o botão "Ver Saldo" | Clique exibe o saldo textual (3)          | Clique mantém oculto ou quebra layout (4)    |                   |
+| Ação de trocar de tela            | Saldo volta a ocultar automaticamente (5) | Saldo permanece exposto na nova tela (6)     |                   |
+| Preferência no Perfil             | Estado é salvo nas configurações (7)      | Preferência é perdida ao deslogar/fechar (8) |                   |
+
+**Casos de Teste**
+
+| Casos de Teste | Classes de Equivalência | Entradas                                                                                 | Resultado Esperado                 |
+| -------------- | ----------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------- |
+| Caso 1         | 1, 3, 5, 7              | Abrir o app, clicar em "Ver saldo", alternar outra tela e verificar o perfil.            | Sucesso ( Saldo inicia oculto ***) |
+| Caso 2         | 1, 3, 5, 7              | Inicializar o aplicativo pela primeira vez na tela principal.                            | Falha                              |
+| Caso 3         | 1, 4, 5, 7              | Tocar no botão grande com a etiqueta "Ver Saldo".                                        | Falha                              |
+| Caso 4         | 1, 3, 6, 7              | Revelar o saldo clicando no botão e, em seguida, tocar para ir à tela de Extrato.        | Falha                              |
+| Caso 5         | 1, 3, 5, 8              | Definir a preferência de ocultar saldo, fazer o logout e fechar o aplicativo totalmente. | Falha                              |
+
+## Acesso Biométrico
+US2 - Enquanto usuário idoso, desejo autenticar meu processo por meio de biometria (digital ou reconhecimento facial), a fim de simplificar o processo de login e eliminar a necessidade de memorização de credenciais complexas.
+
+**Classes de Equivalência**
+
+| Condição de Entrada                | Classes Válidas                                              | Classes Inválidas                                                   | Classes Inválidas                                                    |
+| ---------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Suporte de Hardware do Dispositivo | Dispositivo possui leitor biométrico ativo e configurado (1) | Dispositivo não possui leitor ou ele está desativado no sistema (2) | Dispositivo tem o leitor, mas o usuário negou a permissão no app (3) |
+| Autenticação Biométrica            | Biometria reconhecida com sucesso (4)                        | Biometria não reconhecida (dedo incorreto/rosto não mapeado) (5)    | Usuário cancela a leitura no pop-up do sistema (6)                   |
+| Quantidade de Tentativas           | Até 3 falhas seguidas na leitura (7)                         | Mais de 3 falhas seguidas na leitura (8)                            |                                                                      |
+| Fluxo de Contingência              | Usuário clica para digitar a senha numérica após erro (9)    | Sistema trava ou não exibe alternativa de senha numérica (10)       |                                                                      |
+
+**Casos de Teste**
+
+| Casos de Teste | Classes de Equivalência | Entradas                                                                                                         | Resultado Esperado |
+| -------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------ |
+| Caso 1         | 1, 4, 7, 9              | Aparelho com leitor , biometria reconhecida, dentro do limite de tentativas  e fluxo de contingência operacional | Sucesso            |
+| Caso 2         | 2, 4, 7, 9              | Aparelho sem leitor biométrico                                                                                   | Falha              |
+| Caso 3         | 3, 4, 7, 9              | Aparelho tem leitor, mas usuário negou a permissão no app                                                        | Falha              |
+| Caso 4         | 1, 5, 7, 9              | Usuário insere o dedo errado                                                                                     | Falha              |
+| Caso 5         | 1, 6, 7, 9              | Usuário clica em "Cancelar" no pop-up nativo do sistema                                                          | Falha              |
+| Caso 6         | 1, 4, 8, 9              | Usuário atinge mais de 3 falhas seguidas na leitura                                                              | Falha              |
+| Caso 7         | 1, 4, 7, 10             | O sistema sofre um travamento interno na chamada da API de contingência                                          | Falha              |
+
+## Limite de Transferência Diária
+US3 - Enquanto usuário idoso, desejo estabelecer um limite diário transacional, a fim de mitigar riscos de fraudes financeiras e prevenir execução de operações com valores equivocados por erro operacional.
+
+**Classes de Equivalência**
+
+| Condição de Entrada               | Classes Válidas                                        | Classes Inválidas                                          | Classes Inválidas                                                                  |
+| --------------------------------- | ------------------------------------------------------ | ---------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Valor inserido para o novo limite | valor numérico maior que zero (1)                      | Valor igual a zero ou negativo (2)                         | Inserção de letras ou caracteres especiais (ex: 'abc' ou '@#$') (3)                |
+| Tipo de alteração solicitada      | Redução do limite atual ou aumento de limite atual (4) | Nenhuma alteração (valor igual ao atual) (5)               |                                                                                    |
+| Tempo de processamento (Aumento)  | Aguarda a janela de 24h a 48h (6)                      | Tentativa de usar o novo limite aumentado antes de 24h (7) | Sistema aprova o aumento antes de 24h (violando a regra de segurança do BACEN) (8) |
+| Tempo de processamento (Redução)  | Aplicação do novo limite de forma imediata (9)         | Atraso ou retenção na aplicação da redução (10)            |                                                                                    |
+
+**Casos de Teste**
+
+| Casos de Teste | Classes de Equivalência | Entradas                                                                                                                    | Resultado Esperado |
+| -------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| Caso 1         | 1, 4, 6, 9              | Tudo válido                                                                                                                 | Sucesso            |
+| Caso 2         | 2, 4, 6, 9              | No campo de ajuste, o usuário tenta digitar R$ 0,00 ou um valor negativo                                                    | Falha              |
+| Caso 3         | 3, 4, 6, 9              | O usuário tenta digitar letras ou caracteres especiais (ex: "abc" ou "@#$")                                                 | Falha              |
+| Caso 4         | 1, 5, 6, 9              | O limite atual do idoso é R$ 800 e ele digita exatamente R$ 800 no campo, tentando salvar nenhuma alteração                 | Falha              |
+| Caso 5         | 1, 4, 7, 9              | Usuário pede aumento válido e, apenas 2 horas depois (antes da janela de 24h) , tenta fazer um Pix usando esse novo limite. | Falha              |
+| Caso 6         | 1, 4, 8, 9              | Usuário solicita um aumento de limite válido e o sistema aprova e disponibiliza o valor imediatamente antes das 24h         | Falha              |
+| Caso 7         | 1, 4, 6, 10             | O usuário solicita uma redução de limite válida, mas o sistema sofre um atraso ou retenção interna no processamento.        | Falha              |
+
+## Utilização de Chaves PIX
+US4 - Enquanto usuário idoso, desejo inserir chaves PIX manualmente através de um campo de digitação direto,
+para realizar transferências a novos recebedores de forma independente, sem depender de contatos previamente salvos.
+
+**Classes de Equivalência**
+
+| Condição de Entrada        | Classes Válidas                                                | Classes Inválidas                                                                 | Classes Inválidas |
+| -------------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------- | ----------------- |
+| Abertura do Teclado        | Teclado abre exclusivamente numérico para CPF ou Telefone      | Teclado abre alfanumérico (com letras) para CPF ou Telefone                       |                   |
+| Formato de Chave: CPF      | CPF contendo exatamente 11 dígitos numéricos                   | CPF com menos de 11 dígitos, mais de 11 dígitos ou caracteres especiais inválidos |                   |
+| Formato de Chave: Telefone | Telefone contendo o prefixo internacional +55, DDD e 9 dígitos | Telefone sem o prefixo internacional (+55) ou com número incompleto               |                   |
+| Ação do Botão "Limpar"     | Clique limpa todo o campo e mantém o foco do teclado           | Clique falha em limpar, limpa parcialmente ou esconde o teclado                   |                   |
+
+**Casos de Teste**
+
+| Casos de Teste | Classes de Equivalência | Entradas                                                                                                                    | Resultado Esperado |
+| -------------- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| Caso 1         | 1, 4, 6, 9              | Tudo válido                                                                                                                 | Sucesso            |
+| Caso 2         | 2, 4, 6, 9              | No campo de ajuste, o usuário tenta digitar R$ 0,00 ou um valor negativo                                                    | Falha              |
+| Caso 3         | 3, 4, 6, 9              | O usuário tenta digitar letras ou caracteres especiais (ex: "abc" ou "@#$")                                                 | Falha              |
+| Caso 4         | 1, 5, 6, 9              | O limite atual do idoso é R$ 800 e ele digita exatamente R$ 800 no campo, tentando salvar nenhuma alteração                 | Falha              |
+| Caso 5         | 1, 4, 7, 9              | Usuário pede aumento válido e, apenas 2 horas depois (antes da janela de 24h) , tenta fazer um Pix usando esse novo limite. | Falha              |
+| Caso 6         | 1, 4, 8, 9              | Usuário solicita um aumento de limite válido e o sistema aprova e disponibiliza o valor imediatamente antes das 24h         | Falha              |
+| Caso 7         | 1, 4, 6, 10             | O usuário solicita uma redução de limite válida, mas o sistema sofre um atraso ou retenção interna no processamento.        | Falha              |
+
 ## Visualização de Comprovante Ampliada
 US13 - Enquanto usuário idoso, desejo visualizar o comprovante final com uma fonte ampliada e nítida, para conseguir conferir as informações da transferência sem forçar a vista.
 
