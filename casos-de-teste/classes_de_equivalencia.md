@@ -22,6 +22,8 @@ US1 - Enquanto usuário idoso, quero que o meu saldo apareça oculto por padrão
 | Caso 4         | 1, 3, 6, 7              | Revelar o saldo clicando no botão e, em seguida, tocar para ir à tela de Extrato.        | Falha                              |
 | Caso 5         | 1, 3, 5, 8              | Definir a preferência de ocultar saldo, fazer o logout e fechar o aplicativo totalmente. | Falha                              |
 
+---
+
 ## Acesso Biométrico
 US2 - Enquanto usuário idoso, desejo autenticar meu processo por meio de biometria (digital ou reconhecimento facial), a fim de simplificar o processo de login e eliminar a necessidade de memorização de credenciais complexas.
 
@@ -46,6 +48,8 @@ US2 - Enquanto usuário idoso, desejo autenticar meu processo por meio de biomet
 | Caso 6         | 1, 4, 8, 9              | Usuário atinge mais de 3 falhas seguidas na leitura                                                              | Falha              |
 | Caso 7         | 1, 4, 7, 10             | O sistema sofre um travamento interno na chamada da API de contingência                                          | Falha              |
 
+---
+
 ## Limite de Transferência Diária
 US3 - Enquanto usuário idoso, desejo estabelecer um limite diário transacional, a fim de mitigar riscos de fraudes financeiras e prevenir execução de operações com valores equivocados por erro operacional.
 
@@ -69,6 +73,8 @@ US3 - Enquanto usuário idoso, desejo estabelecer um limite diário transacional
 | Caso 5         | 1, 4, 7, 9              | Usuário pede aumento válido e, apenas 2 horas depois (antes da janela de 24h) , tenta fazer um Pix usando esse novo limite. | Falha              |
 | Caso 6         | 1, 4, 8, 9              | Usuário solicita um aumento de limite válido e o sistema aprova e disponibiliza o valor imediatamente antes das 24h         | Falha              |
 | Caso 7         | 1, 4, 6, 10             | O usuário solicita uma redução de limite válida, mas o sistema sofre um atraso ou retenção interna no processamento.        | Falha              |
+
+---
 
 ## Utilização de Chaves PIX
 US4 - Enquanto usuário idoso, desejo inserir chaves PIX manualmente através de um campo de digitação direto,
@@ -95,6 +101,8 @@ para realizar transferências a novos recebedores de forma independente, sem dep
 | Caso 6         | 1, 4, 8, 9              | Usuário solicita um aumento de limite válido e o sistema aprova e disponibiliza o valor imediatamente antes das 24h         | Falha              |
 | Caso 7         | 1, 4, 6, 10             | O usuário solicita uma redução de limite válida, mas o sistema sofre um atraso ou retenção interna no processamento.        | Falha              |
 
+---
+
 ## Visualização de Comprovante Ampliada
 US13 - Enquanto usuário idoso, desejo visualizar o comprovante final com uma fonte ampliada e nítida, para conseguir conferir as informações da transferência sem forçar a vista.
 
@@ -107,6 +115,8 @@ US13 - Enquanto usuário idoso, desejo visualizar o comprovante final com uma fo
 | Ação do botão "Salvar PDF"       | PDF gerado mantém a formatação e escala (5) | PDF gerado quebra a formatação ou escala (6) |                       |
 | Leitura da escala do dispositivo | Sistema identifica a escala ativa (7)       | Sistema ignora a escala do aparelho (8)      |                       |
 | Comportamento do Layout          | Elementos adaptam-se sem cortar texto (9)   | Layout quebra ou oculta informações (10)     |                       |
+
+---
 
 ## Exibição de Aviso de Risco de Fraude
 US14 - Enquanto usuário idoso, desejo visualizar um aviso de risco claro e em destaque antes de confirmar um Pix suspeito, para que eu possa interromper a operação a tempo e evitar cair em um golpe.
@@ -122,6 +132,8 @@ US14 - Enquanto usuário idoso, desejo visualizar um aviso de risco claro e em d
 | **Interação com "Continuar assim mesmo"** | Ativa cronômetro regressivo de 5 segundos (10)    | Libera o campo de senha imediatamente sem pausa (11)       |                                 |
 | **Tratamento de Risco Crítico**           | Bloqueio sumário e direcionamento ao suporte (12) | Permite que o usuário insira a senha e envie o Pix (13)    |                                 |
 
+---
+
 ## Compartilhar Comprovantes por Canais de Comunicação
 US15 - Enquanto usuário idoso, desejo compartilhar o comprovante de transferência através das opções do meu aparelho, para enviar o recibo pelo canal de comunicação que eu preferir.
 
@@ -136,6 +148,7 @@ US15 - Enquanto usuário idoso, desejo compartilhar o comprovante de transferên
 | **Leitura da Escala do Dispositivo** | Sistema identifica a escala ativa do aparelho (9)               | Sistema ignora a escala configurada no aparelho (10)           |                       |
 | **Comportamento do Layout**          | Elementos do comprovante adaptam-se sem cortar texto (11)       | Layout quebra, sobrepõe ou oculta dados do recibo (12)         |                       |
 
+---
 
 ## Extrato Simplificado
 US16 - Enquanto usuário idoso, desejo ver uma lista das minhas ultimas transações com nomes amigáveis (apelidos), para entender facilmente onde gastei meu dinheiro.
@@ -149,6 +162,8 @@ US16 - Enquanto usuário idoso, desejo ver uma lista das minhas ultimas transaç
 | **Visualização dos Detalhes** | Exibe todos os dados, incluindo a Razão Social original (5) | Oculta dados obrigatórios ou omite a Razão Social (6)   |                       |
 | **Cruzamento de Dados**       | Identifica o vínculo com o CPF/CNPJ salvo com sucesso (7)   | Falha ao consultar ou processar o vínculo dos dados (8) |                       |
 | **Prioridade de Exibição**    | Prioriza o Apelido sobre o Nome Fantasia/Razão Social (9)   | Exibe a Razão Social mesmo com Apelido cadastrado (10)  |                       |
+
+---
 
 ## Geração de QR Code
 US17 - Enquanto usuário idoso, desejo gerar um QR Code com o valor da venda ou cobrança, para que outra pessoa possa me pagar sem eu precisar falar minha chave.
@@ -164,6 +179,8 @@ US17 - Enquanto usuário idoso, desejo gerar um QR Code com o valor da venda ou 
 | **Ação de Copiar Código**    | Copia a string do Pix Copia e Cola para a área de transferência (9) | Botão não responde ou copia string corrompida (10)         |                       |
 | **Confirmação de Pagamento** | Exibe alerta visual e emite sinal sonoro ao receber (11)            | Atualiza o saldo sem emitir aviso visual ou sonoro (12)    |                       |
 
+---
+
 ## Botão de Ajuda por Voz/Vídeo
 US18 - Enquanto usuário idoso, desejo ter um botão de "Ajuda" fácil de encontrar, para falar com um atendente humano caso eu fique confuso.
 
@@ -178,6 +195,7 @@ US18 - Enquanto usuário idoso, desejo ter um botão de "Ajuda" fácil de encont
 | **Ação em Horário Ativo**   | Libera o direcionamento para o atendente humano (9)                   | Bloqueia a chamada ou falha ao iniciar a conexão (10)            |                       |
 | **Ação em Horário Inativo** | Bloqueia chamadas e exibe tela informativa de funcionamento (11)      | Permite tentar a chamada gerando erro de linha discada/muda (12) |                       |
 
+---
 
 ## Modo conta assistida
 US28 - Enquanto idoso, desejo ativar o modo de conta assistida para receber auxílio no gerenciamento da segurança e do controle financeiro da minha conta.
@@ -210,6 +228,8 @@ US28 - Enquanto idoso, desejo ativar o modo de conta assistida para receber aux�
 | 1,3,6,8,11,16,17            | Resposta da solicitação de consentimento | Compartilhamento é feito sem solicitação(Inválido)                                                  |
 | 1,3,6,8,11,16,18            | Responsavel vinculado                    | resposável consegue alterar titularidade(Inválido)                                                  |
 | 1,3,6,8,11,16,19            | Responsavel vinculado                    | responsável é vinculado como titular da conta(Inválido)                                             |
+
+---
 
 ## Vinculação de um Contato de Apoio
 US29 - Enquanto idoso, desejo adicionar um responsável à minha conta assistida para receber suporte no gerenciamento da segurança e das atividades financeiras da minha conta.
@@ -250,6 +270,8 @@ US29 - Enquanto idoso, desejo adicionar um responsável à minha conta assistida
 | 1,3,5,7,9,12,15,17,19,23,24  | Responsável vinculado             | Sistema permite adicionar um segundo responsável (Inválido)      |
 | 1,3,5,7,9,12,15,17,19,22,25  | Permissões do responsável         | Sistema concede permissões acima das mínimas iniciais (Inválido) |
 
+---
+
 ## Remoção de um Contato de Apoio
 US30 - Enquanto idoso, desejo remover um responsável vinculado à minha conta para manter controle sobre quem possui acesso assistido à minha conta.
 
@@ -280,6 +302,8 @@ US30 - Enquanto idoso, desejo remover um responsável vinculado à minha conta p
 | 1,3,6,8,13,14,16        | Biometria Facial        | Biometria facial não cadastrada ou câmera indisponível (Inválido)                      |
 | 1,3,6,8,11,15,16        | Revogação de permissões | Permissões do responsável permanecem ativas após remoção (Inválido)                    |
 | 1,3,6,8,11,14,17        | Auditoria               | Remoção não registrada nos logs de auditoria (Inválido)                                |
+
+---
 
 ## Níveis de Acesso
 US31 - Enquanto idoso, desejo configurar diferentes níveis de acesso para meu responsável através de modos pré-definidos ou personalizados para equilibrar minha privacidade, autonomia e segurança financeira.
@@ -332,6 +356,7 @@ US31 - Enquanto idoso, desejo configurar diferentes níveis de acesso para meu r
 | 1,3,5,7,10,12,15,18,20,22,24,27,29,31,35,36 | Permissões restritas   | Responsável recebe acesso às chaves PIX (Inválido)             |
 | 1,3,5,7,10,12,15,18,20,22,24,27,29,31,33,37 | Auditoria              | Alteração não registrada em log de auditoria (Inválido)        |
 
+---
 
 ## Cadastro do Usuário Idoso no SeuPix
 US32 - Enquanto idoso, desejo realizar meu cadastro no aplicativo SeuPix utilizando CPF, e-mail e número de telefone e definindo minha senha para criar minha conta bancária digital.
@@ -374,6 +399,8 @@ US32 - Enquanto idoso, desejo realizar meu cadastro no aplicativo SeuPix utiliza
 | 1,3,6,9,12,15,17,19,21,23,26,27,29  | Segurança da senha     | Senha armazenada em texto puro (Inválido)                    |
 | 1,3,6,9,12,15,17,19,21,23,25,28,29  | Segurança dos dados    | Dados armazenados sem proteção adequada (Inválido)           |
 | 1,3,6,9,12,15,17,19,21,23,25,27,30  | Acessibilidade         | Interface não atende requisitos de acessibilidade (Inválido) |
+
+---
 
 ## Login do Usuário Idoso no SeuPix
 US33 - Enquanto idoso, desejo realizar login no aplicativo SeuPix utilizando meu método de acesso preferido (CPF, e-mail ou número de telefone) e minha senha para acessar minha conta bancária.
