@@ -1,5 +1,89 @@
 # Classe de Equivalência
 
+## Visualização de Comprovante Ampliada
+US13 - Enquanto usuário idoso, desejo visualizar o comprovante final com uma fonte ampliada e nítida, para conseguir conferir as informações da transferência sem forçar a vista.
+
+**Classes de Equivalência**
+
+| **Condições de Entrada**         | **Classes Válidas**                         | **Classes Inválidas**                        | **Classes Inválidas** |
+| -------------------------------- | ------------------------------------------- | -------------------------------------------- | --------------------- |
+| Tamanho da fonte das informações | Tamanho $\ge$ 20px (1)                      | Tamanho $<$ 20px (2)                         |                       |
+| Contraste entre texto e fundo    | Atende aos padrões de acessibilidade (3)    | Abaixo do padrão (ilegível) (4)              |                       |
+| Ação do botão "Salvar PDF"       | PDF gerado mantém a formatação e escala (5) | PDF gerado quebra a formatação ou escala (6) |                       |
+| Leitura da escala do dispositivo | Sistema identifica a escala ativa (7)       | Sistema ignora a escala do aparelho (8)      |                       |
+| Comportamento do Layout          | Elementos adaptam-se sem cortar texto (9)   | Layout quebra ou oculta informações (10)     |                       |
+
+## Exibição de Aviso de Risco de Fraude
+US14 - Enquanto usuário idoso, desejo visualizar um aviso de risco claro e em destaque antes de confirmar um Pix suspeito, para que eu possa interromper a operação a tempo e evitar cair em um golpe.
+
+**Classes de Equivalência**
+
+| **Condições de Entrada**                  | **Classes Válidas**                               | **Classes Inválidas**                                      | **Classes Inválidas**           |
+| ----------------------------------------- | ------------------------------------------------- | ---------------------------------------------------------- | ------------------------------- |
+| **Nível de Risco da Chave de Destino**    | Risco Suspeito / Elevado (1)                      | Risco Normal / Seguro (2)                                  | Risco Crítico / Lista Preta (3) |
+| **Interface do Pop-up de Alerta**         | Tela cheia, fundo amarelo e fonte $\ge$ 20pt (4)  | Layout quebrado, sem fundo de alerta ou fonte $<$ 20pt (5) |                                 |
+| **Linguagem da Mensagem**                 | Linguagem humana e acolhedora (6)                 | Presença de termos técnicos ou códigos de erro (7)         |                                 |
+| **Interação com "Quero Cancelar"**        | Transação é interrompida com segurança (8)        | Sistema falha e prossegue com a transação (9)              |                                 |
+| **Interação com "Continuar assim mesmo"** | Ativa cronômetro regressivo de 5 segundos (10)    | Libera o campo de senha imediatamente sem pausa (11)       |                                 |
+| **Tratamento de Risco Crítico**           | Bloqueio sumário e direcionamento ao suporte (12) | Permite que o usuário insira a senha e envie o Pix (13)    |                                 |
+
+## Compartilhar Comprovantes por Canais de Comunicação
+US15 - Enquanto usuário idoso, desejo compartilhar o comprovante de transferência através das opções do meu aparelho, para enviar o recibo pelo canal de comunicação que eu preferir.
+
+**Classes de Equivalência**
+
+| **Condições de Entrada**             | **Classes Válidas**                                             | **Classes Inválidas**                                          | **Classes Inválidas** |
+| ------------------------------------ | --------------------------------------------------------------- | -------------------------------------------------------------- | --------------------- |
+| **Interface do Botão**               | Botão visível com ícone padrão e texto "Enviar Comprovante" (1) | Botão sem texto descritivo, ícone incorreto ou oculto (2)      |                       |
+| **Acionamento do Botão**             | Abre a gaveta nativa de compartilhamento do SO (3)              | Não executa ação ou gera erro de sistema (4)                   |                       |
+| **Formato e Resolução do Arquivo**   | Arquivo gerado em Imagem/PDF de alta resolução e legível (5)    | Arquivo corrompido, em baixa resolução ou formato ilegível (6) |                       |
+| **Destino do Compartilhamento**      | Integra com apps de mensagens/redes sociais instalados (7)      | Falha ao transferir o arquivo para o app selecionado (8)       |                       |
+| **Leitura da Escala do Dispositivo** | Sistema identifica a escala ativa do aparelho (9)               | Sistema ignora a escala configurada no aparelho (10)           |                       |
+| **Comportamento do Layout**          | Elementos do comprovante adaptam-se sem cortar texto (11)       | Layout quebra, sobrepõe ou oculta dados do recibo (12)         |                       |
+
+
+## Extrato Simplificado
+US16 - Enquanto usuário idoso, desejo ver uma lista das minhas ultimas transações com nomes amigáveis (apelidos), para entender facilmente onde gastei meu dinheiro.
+
+**Classes de Equivalência**
+
+| **Condições de Entrada**      | **Classes Válidas**                                         | **Classes Inválidas**                                   | **Classes Inválidas** |
+| ----------------------------- | ----------------------------------------------------------- | ------------------------------------------------------- | --------------------- |
+| **Exibição do Nome na Lista** | Exibe Apelido salvo ou Nome Fantasia em destaque (1)        | Exibe apenas a Razão Social complexa ou códigos (2)     |                       |
+| **Toque na Movimentação**     | Abre a tela secundária com os detalhes completos (3)        | Não responde ao toque ou quebra a navegação (4)         |                       |
+| **Visualização dos Detalhes** | Exibe todos os dados, incluindo a Razão Social original (5) | Oculta dados obrigatórios ou omite a Razão Social (6)   |                       |
+| **Cruzamento de Dados**       | Identifica o vínculo com o CPF/CNPJ salvo com sucesso (7)   | Falha ao consultar ou processar o vínculo dos dados (8) |                       |
+| **Prioridade de Exibição**    | Prioriza o Apelido sobre o Nome Fantasia/Razão Social (9)   | Exibe a Razão Social mesmo com Apelido cadastrado (10)  |                       |
+
+## Geração de QR Code
+US17 - Enquanto usuário idoso, desejo gerar um QR Code com o valor da venda ou cobrança, para que outra pessoa possa me pagar sem eu precisar falar minha chave.
+
+**Classes de Equivalência**
+
+| **Condições de Entrada**     | **Classes Válidas**                                                 | **Classes Inválidas**                                      | **Classes Inválidas** |
+| ---------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------- | --------------------- |
+| **Entrada do Valor**         | Campo com teclado numérico ativo e fonte grande (1)                 | Abre teclado alfabético ou fonte padrão pequena (2)        |                       |
+| **Tipo de QR Code Gerado**   | QR Code dinâmico com valor embutido no payload (3)                  | QR Code estático ou sem valor especificado (4)             |                       |
+| **Exibição do Código**       | Centralizado, ampliado e em alto contraste (5)                      | Código pequeno, descentralizado ou com baixo contraste (6) |                       |
+| **Vínculo da Chave Pix**     | Associa os dados da chave Pix principal corretamente (7)            | Gera o código sem chave ou com chave incorreta (8)         |                       |
+| **Ação de Copiar Código**    | Copia a string do Pix Copia e Cola para a área de transferência (9) | Botão não responde ou copia string corrompida (10)         |                       |
+| **Confirmação de Pagamento** | Exibe alerta visual e emite sinal sonoro ao receber (11)            | Atualiza o saldo sem emitir aviso visual ou sonoro (12)    |                       |
+
+## Botão de Ajuda por Voz/Vídeo
+US18 - Enquanto usuário idoso, desejo ter um botão de "Ajuda" fácil de encontrar, para falar com um atendente humano caso eu fique confuso.
+
+**Classes de Equivalência**
+
+| **Condições de Entrada**    | **Classes Válidas**                                                   | **Classes Inválidas**                                            | **Classes Inválidas** |
+| --------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------- |
+| **Interface do Botão**      | Botão visível, com ícone correto e texto "Falar com Atendente" (1)    | Botão oculto, sem texto descritivo ou ícone confuso (2)          |                       |
+| **Opções de Canais**        | Exibe claramente os botões "Chamada de Voz" e "Chat por Mensagem" (3) | Omite um dos canais ou exibe opções não suportadas (4)           |                       |
+| **Tempo de Espera**         | Exibe o tempo estimado de forma legível e atualizada (5)              | Tempo de espera oculto, estático ou com fontes ilegíveis (6)     |                       |
+| **Horário de Atendimento**  | Horário do dispositivo entre 7h00 e 22h00 (7)                         | Horário do dispositivo entre 22h01 e 6h59 (Opcional Noturno) (8) |                       |
+| **Ação em Horário Ativo**   | Libera o direcionamento para o atendente humano (9)                   | Bloqueia a chamada ou falha ao iniciar a conexão (10)            |                       |
+| **Ação em Horário Inativo** | Bloqueia chamadas e exibe tela informativa de funcionamento (11)      | Permite tentar a chamada gerando erro de linha discada/muda (12) |                       |
+
+
 ## Modo conta assistida
 US28 - Enquanto idoso, desejo ativar o modo de conta assistida para receber auxílio no gerenciamento da segurança e do controle financeiro da minha conta.
 
