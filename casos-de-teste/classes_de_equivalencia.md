@@ -103,6 +103,105 @@ para realizar transferências a novos recebedores de forma independente, sem dep
 
 ---
 
+## Confirmação de Dados do Recebedor
+US5 -  Enquanto usuário idoso, desejo conferir o nome completo e parte do CPF do destinatário com letras em destaque na tela de confirmação, para ter certeza de que o dinheiro está indo para a pessoa certa.
+
+**Classe Equivalência**
+
+| Condições de entrada                 | Classes válidas                                       | Classes inválidas                           | Classes inválidas                                                     |
+| ------------------------------------ | ----------------------------------------------------- | ------------------------------------------- | --------------------------------------------------------------------- |
+| Consulta ao DICT realizada           | Dados do recebedor retornados pelo DICT (1)           | DICT indisponível (2)                       | Chave Pix não encontrada no DICT (3)                                  |
+| Exibição dos dados do recebedor      | Nome completo e CPF parcial exibidos corretamente (4) | Nome não exibido (5)                        | CPF parcial não exibido ou exibido incorretamente (6)                 |
+| Confirmação da transferência         | Usuário seleciona "Sim, os dados estão corretos" (7)  | Usuário seleciona "Não, quero corrigir" (8) | Usuário não seleciona nenhuma opção (9)                               |
+| Apresentação da tela de confirmação  | Tela contém apenas informações da confirmação (10)    | Tela contém anúncios (11)                   | Tela contém elementos distrativos não relacionados à confirmação (12) |
+| Destaque visual do nome do recebedor | Nome exibido em negrito e fonte ≥ 20pt (13)           | Nome exibido sem negrito (14)               | Nome exibido com fonte < 20pt (15)                                    |
+
+**Casos de Teste**
+
+| Casos de Teste | Classes de Equivalência | Entradas                                      | Resultado Esperado                                                              |
+| -------------- | ----------------------- | --------------------------------------------- | ------------------------------------------------------------------------------- |
+| Caso 1         | 1, 4, 7, 10, 13         | Todas válidas                                 | Transferência confirmada (válido)                                               |
+| Caso 2         | 2, 4, 7, 10, 13         | DICT indisponível                             | Transferência não pode prosseguir; exibir mensagem de erro (inválido)           |
+| Caso 3         | 3, 4, 7, 10, 13         | Chave Pix não encontrada no DICT              | Transferência não pode prosseguir; exibir mensagem de chave inválida (inválido) |
+| Caso 4         | 1, 5, 7, 10, 13         | Nome do recebedor não exibido                 | Dados não podem ser confirmados; exibir erro (inválido)                         |
+| Caso 5         | 1, 6, 7, 10, 13         | CPF parcial ausente ou exibido incorretamente | Reprovação no critério de segurança (inválido)                                  |
+| Caso 6         | 1, 4, 8, 10, 13         | Usuário clica em "Não, quero corrigir".       | Retornar para a tela de edição/inserção da chave Pix (inválido)                 |
+| Caso 7         | 1, 4, 9, 10, 13         | Usuário abandona a tela/não seleciona nada.   | Permanecer na tela ou aplicar timeout por inatividade (inválido)                |
+| Caso 8         | 1, 4, 7, 11, 13         | Tela de confirmação contém anúncios           | Falha de conformidade de design (Não deve exibir anúncios) (inválido)           |
+| Caso 9         | 1, 4, 7, 12, 13         | Tela contém elementos distrativos             | Falha de conformidade de design (Não deve exibir distrações) (inválido)         |
+| Caso 10        | 1, 4, 7, 10, 14         | Nome do recebedor é exibido sem negrito.      | Falha de conformidade visual/diretriz de acessibilidade (inválido)              |
+| Caso 11        | 1, 4, 7, 10, 15         | Nome exibido com fonte menor que 20p          | Falha de conformidade visual/diretriz de acessibilidade (inválido)              |
+
+---
+
+## Leitura de QR Code
+US6 -  Enquanto usuário idoso, desejo escanear o QR Code usando a câmera dentro do aplicativo ou ter a opção de inserir o código manualmente, para realizar pagamentos de forma mais prática e ágil.
+
+**Classe Equivalência**
+
+| Condições de entrada         | Classes válidas                                            | Classes inválidas                         | Classes inválidas                                    |
+| ---------------------------- | ---------------------------------------------------------- | ----------------------------------------- | ---------------------------------------------------- |
+| Permissão de acesso à câmera | Usuário concede permissão para uso da câmera (1)           | Usuário nega a permissão da câmera (2)    | Permissão não definida ou revogada durante o uso (3) |
+| Disponibilidade da câmera    | Câmera disponível e inicializada corretamente (4)          | Câmera indisponível no dispositivo (5)    | Erro na inicialização da câmera (6)                  |
+| Leitura do QR Code           | QR Code lido com sucesso (7)                               | QR Code danificado ou ilegível (8)        | QR Code fora da área de captura (9)                  |
+| Iluminação do ambiente       | Ambiente claro ou flash ativado corretamente (10)          | Ambiente escuro e flash indisponível (11) | Falha ao ativar o flash em ambiente escuro (12)      |
+| Feedback após leitura        | Vibração e som de confirmação executados corretamente (13) | Vibração não executada (14)               | Som de confirmação não executado (15)                |
+| Entrada manual do código Pix | Código Pix digitado corretamente (16)                      | Código Pix vazio (17)                     | Código Pix em formato inválido (18)                  |
+
+**Casos de Teste**
+
+| Casos de Teste | Classes de Equivalência | Entrada                                    | Resultado Esperado                                                                                     |
+| -------------- | ----------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| Caso 1         | 1, 4, 7, 10, 13, 16     | Todas válidas                              | Fluxo executado com sucesso (Leitura concluída e confirmada) (válido)                                  |
+| Caso 2         | 2, 4, 7, 10, 13, 16     | Usuário nega a permissão da câmera         | Fluxo bloqueado (Exibir mensagem solicitando permissão ou direcionando para entrada manual) (inválido) |
+| Caso 3         | 3, 4, 7, 10, 13, 16     | Permissão revogada durante o uso           | Fluxo interrompido (Exibir alerta de perda de permissão) (inválido)                                    |
+| Caso 4         | 1, 5, 7, 10, 13, 16     | Câmera indisponível no dispositivo         | Exibir erro de hardware ou sugerir uso exclusivo da entrada manual (inválido)                          |
+| Caso 5         | 1, 6, 7, 10, 13, 16     | Erro na inicialização da câmera            | Exibir mensagem de erro de carregamento (inválido)                                                     |
+| Caso 6         | 1, 4, 8, 10, 13, 16     | QR Code danificado ou ilegível             | Exibir mensagem informando que o código não pôde ser lido (inválido)                                   |
+| Caso 7         | 1, 4, 9, 10, 13, 16     | QR Code fora da área de captura            | Manter a câmera ativa e instruir o usuário a centralizar o código (inválido)                           |
+| Caso 8         | 1, 4, 7, 11, 13, 16     | Ambiente escuro e flash indisponível       | Dificuldade de leitura (Alertar o usuário sobre a falta de luz ou sugerir digitação) (inválido)        |
+| Caso 9         | 1, 4, 7, 12, 13, 16     | Falha ao ativar o flash em ambiente escuro | Falha no acionamento do hardware (Exibir aviso ou prosseguir com leitura degradada) (inválido)         |
+| Caso 10        | 1, 4, 7, 10, 14, 16     | Vibração não executada após leitura        | Falha de conformidade de feedback acessível (O app lê, mas falha no feedback físico) (inválido)        |
+| Caso 11        | 1, 4, 7, 10, 15, 16     | Som de confirmação não executado           | Falha de conformidade de feedback sonoro (inválido)                                                    |
+| Caso 12        | 1, 4, 7, 10, 13, 17     | Código Pix vazio (na digitação manual)     | Exibir mensagem de erro: "O código Pix não pode estar vazio (inválido)                                 |
+| Caso 13        | 1, 4, 7, 10, 13, 18     | Código Pix em formato inválido             | Exibir mensagem de erro: "Formato de chave ou código Pix inválido" (inválido)                          |
+
+---
+
+## Inserção do valor com teclado adaptado
+US7 -  Enquanto usuário idoso, desejo preencher a quantia do Pix em um teclado com números grandes e espaçados, para ter mais facilidade e não cometer erros de digitação.
+
+**Classe Equivalência**
+
+| Condições de entrada                  | Classes válidas                                         | Classes inválidas                                 | Classes inválidas                               |
+| ------------------------------------- | ------------------------------------------------------- | ------------------------------------------------- | ----------------------------------------------- |
+| Tamanho do teclado numérico           | Teclado ocupa ≥ 40% da altura útil da tela (1)          | Teclado ocupa menos de 40% da altura útil (2)     | Teclado parcialmente oculto ou cortado (3)      |
+| Tipo de entrada permitida             | Apenas números podem ser inseridos (4)                  | Entrada de letras permitida (5)                   | Entrada de caracteres especiais permitida (6)   |
+| Exibição do valor digitado            | Valor exibido em destaque com auto-scaling adequado (7) | Valor não exibido em destaque (8)                 | Valor ultrapassa a tela sem ajuste de fonte (9) |
+| Aplicação da máscara monetária        | Máscara R$ aplicada corretamente em tempo real (10)     | Máscara não aplicada (11)                         | Máscara aplicada incorretamente (12)            |
+| Inserção automática de casas decimais | Valor formatado corretamente a partir do 3º dígito (13) | Casas decimais não inseridas automaticamente (14) | Formatação decimal incorreta (15)               |
+| Feedback ao pressionar tecla          | Alteração visual imediata ocorre ao toque (16)          | Nenhum feedback visual é apresentado (17)         | Feedback ocorre com atraso perceptível (18)     |
+
+**Casos de Teste**
+
+| Casos de Teste | Classes de Equivalência | Entrada                                                                                      | Resultado Esperado                                                                                        |
+| -------------- | ----------------------- | -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Caso 1         | 1, 4, 7, 10, 13, 16     | Todas válidas                                                                                | Entrada realizada com sucesso e exibição perfeitamente formatada conforme as diretrizes de UI/UX (válido) |
+| Caso 2         | 2, 4, 7, 10, 13, 16     | Teclado numérico ocupa menos de 40% da altura útil da tela                                   | Falha de conformidade de design (Teclado muito pequeno para digitação confortável) (inválido)             |
+| Caso 3         | 3, 4, 7, 10, 13, 16     | Teclado numérico aparece parcialmente oculto ou cortado na tela                              | Falha crítica de interface (Impede o uso completo do teclado pelo usuário) (inválido)                     |
+| Caso 4         | 1, 5, 7, 10, 13, 16     | Interface permite a entrada/digitação de letras                                              | Falha de validação de entrada (O campo deve bloquear caracteres alfabéticos) (inválido)                   |
+| Caso 5         | 1, 6, 7, 10, 13, 16     | Interface permite a entrada de caracteres especiais                                          | Falha de validação de entrada (O campo deve bloquear caracteres especiais) (inválido)                     |
+| Caso 6         | 1, 4, 8, 10, 13, 16     | O valor digitado não é exibido em destaque                                                   | Falha de usabilidade (O usuário perde a visibilidade do valor que está inserindo) (inválido)              |
+| Caso 7         | 1, 4, 9, 10, 13, 16     | Valor ultrapassa os limites da tela sem realizar o ajuste automático de fonte (auto-scaling) | Falha de layout/quebra de interface (Texto estoura o componente visual) (inválido)                        |
+| Caso 8         | 1, 4, 7, 11, 13, 16     | A máscara monetária "R$" não é aplicada ao valor digitado                                    | Falha de formatação de dados (O valor fica como número bruto, ex: 1000 em vez de R$ 10,00) (inválido)     |
+| Caso 9         | 1, 4, 7, 12, 13, 16     | A máscara monetária é aplicada de forma incorreta ou desconfigurada                          | Falha de formatação visual (Exibição incorreta do padrão de moeda) (inválido)                             |
+| Caso 10        | 1, 4, 7, 10, 14, 16     | As casas decimais não são inseridas automaticamente a partir do 3º dígito                    | Falha de regra de negócio/usabilidade (Exige que o usuário digite a vírgula manualmente) (inválido)       |
+| Caso 11        | 1, 4, 7, 10, 15, 16     | Formatação decimal incorreta ao processar os dígitos informados                              | Falha no cálculo/máscara de exibição de centavos (inválido)                                               |
+| Caso 12        | 1, 4, 7, 10, 13, 17     | Nenhum feedback visual é apresentado ao pressionar as teclas                                 | Falha de interação design (Teclas parecem "mortas", sem resposta ao toque) (inválido)                     |
+| Caso 13        | 1, 4, 7, 10, 13, 18     | O feedback visual na tecla ocorre com um atraso perceptível (lag)                            | Falha de performance de UI (Gera uma experiência de uso truncada) (inválido)                              |
+
+---
+
 ## Canais de Comunicação
 US8 - Enquanto especialista de suporte, desejo canais de comunicação estáveis e interfaces simplificadas para guiar usuários com necessidades de acessibilidade com clareza
 
@@ -399,6 +498,78 @@ US18 - Enquanto usuário idoso, desejo ter um botão de "Ajuda" fácil de encont
 | **Caso 5**         | 1, 3, 6, 7, 9               | O menu de suporte abre corretamente, mas o tempo de espera estimado está oculto, estático ou utilizando fontes ilegíveis para o idoso.                                                             | Falha                  |
 | **Caso 6**         | 1, 3, 5, 7, 10              | O usuário tenta iniciar um atendimento às 10h00 da manhã, mas o sistema falha ao iniciar a conexão ou bloqueia a chamada em horário ativo.                                                         | Falha                  |
 | **Caso 7**         | 1, 3, 5, 8, 12              | O usuário tenta acionar o suporte humano de madrugada (às 02h00), mas o sistema permite a tentativa de chamada, gerando erro de linha discada ou muda.                                             | Falha                  |
+---
+
+
+## Login tutor/Contato de apoio
+US19 - Enquanto tutor desejo realizar cadastro no seupix para logar em minha conta.
+
+**Classe Equivalência**
+
+| Condições de entrada                  | Classes válidas                                                             | Classes inválidas                          | Classes inválidas                                 |
+| ------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------ | ------------------------------------------------- |
+| Nome completo                         | Nome completo preenchido corretamente (1)                                   | Campo nome vazio (2)                       | Nome incompleto (apenas primeiro nome) (3)        |
+| CPF informado                         | CPF com 11 dígitos válidos (4)                                              | CPF com menos de 11 dígitos (5             | CPF em formato inválido ou inexistente (6)        |
+| DDD informado                         | DDD válido conforme padrão nacional (10)                                    | DDD inexistente (11)                       | Campo DDD vazio (12)                              |
+| Senha cadastrada                      | Senha com ≥ 8 caracteres, 1 maiúscula, 1 número e 1 caractere especial (13) | Senha com menos de 8 caracteres (14)       | Senha sem atender aos critérios de segurança (15) |
+| Preenchimento dos campos obrigatórios | Todos os campos obrigatórios preenchidos (16)                               | Um ou mais campos obrigatórios vazios (17) | Campos preenchidos com dados inválidos (18)       |
+| Confirmação visual dos campos         | Campo válido exibe indicador verde e ícone de confirmação (19)              | Campo válido sem confirmação visual (20)   | Campo inválido exibindo confirmação visual (21)   |
+| Tipo de conta selecionado             | Opção "Conta para tutores" selecionada (22)                                 | Outra opção de conta selecionada (23)      | Nenhuma opção selecionada (24)                    |
+
+**Casos de Teste**
+
+| Casos de Teste | Classes de Equivalência  | Entrada                                                                | Resultado Esperado                                                                             |
+| -------------- | ------------------------ | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Caso 1         | 1, 4, 10, 13, 16, 19, 22 | Todas válidas                                                          | Cadastro realizado com sucesso (válido)                                                        |
+| Caso 2         | 2, 4, 10, 13, 16, 19, 22 | Campo de nome completo vazio                                           | Bloquear envio e exibir mensagem: "O campo nome completo é obrigatório" (inválido)             |
+| Caso 3         | 3, 4, 10, 13, 16, 19, 22 | Nome incompleto (apenas o primeiro nome informado)                     | Bloquear envio e solicitar a inserção do sobrenome (inválido)                                  |
+| Caso 4         | 1, 5, 10, 13, 16, 19, 22 | CPF informado com menos de 11 dígitos                                  | Bloquear envio e exibir mensagem: "CPF deve conter 11 dígitos" (inválido)                      |
+| Caso 5         | 1, 6, 10, 13, 16, 19, 22 | CPF em formato inválido ou inexistente (falso)                         | Bloquear envio e exibir mensagem: "CPF inválido" (inválido)                                    |
+| Caso 6         | 1, 4, 11, 13, 16, 19, 22 | DDD informado não existe no padrão nacional                            | Bloquear envio e exibir mensagem: "DDD inexistente" (inválido)                                 |
+| Caso 7         | 1, 4, 12, 13, 16, 19, 22 | Campo de DDD deixado em branco                                         | Bloquear envio e exibir mensagem: "O campo DDD é obrigatório" (invalido)                       |
+| Caso 8         | 1, 4, 10, 14, 16, 19, 22 | Senha cadastrada com menos de 8 caracteres                             | Bloquear envio e alertar sobre o tamanho mínimo da senha (inválido)                            |
+| Caso 9         | 1, 4, 10, 15, 16, 19, 22 | Senha com 8+ caracteres, mas sem maiúscula, número ou especial         | Bloquear envio e alertar sobre os critérios de segurança ausentes (inválido)                   |
+| Caso 10        | 1, 4, 10, 13, 17, 19, 22 | Um ou mais campos obrigatórios deixados vazios                         | Impedir a submissão e destacar visualmente os campos vazios (inválido)                         |
+| Caso 11        | 1, 4, 10, 13, 18, 19, 22 | Campos obrigatórios preenchidos com dados inválidos                    | Impedir a submissão e destacar os erros de validação correspondentes (inválido)                |
+| Caso 12        | 1, 4, 10, 13, 16, 20, 22 | Campo preenchido com dado válido, mas sem o indicador verde/ícone      | Falha de conformidade de UI (O sistema aceita o dado, mas falha no feedback visual) (inválido) |
+| Caso 13        | 1, 4, 10, 13, 16, 21, 22 | Campo preenchido com dado inválido, mas exibindo indicador verde/ícone | Falha grave de UI/UX (Engana o usuário mostrando sucesso em um campo errôneo) (inválido)       |
+| Caso 14        | 1, 4, 10, 13, 16, 19, 23 | Outra opção de tipo de conta selecionada (que não seja Tutores)        | Seguir o fluxo específico para o outro tipo de conta selecionado (inválido)                    |
+| Caso 15        | 1, 4, 10, 13, 16, 19, 24 | Nenhuma opção de tipo de conta selecionada                             | Bloquear envio e exibir mensagem: "Selecione o tipo de conta" (inválido)                       |
+
+---
+
+
+## Configuração de Limite de Alerta contra Fraudes
+US20 - Enquanto tutor, desejo configurar um valor mínimo para recebimento de notificações de transações suspeitas no SeuPix, para controlar quando devo ser alertado sobre movimentações financeiras potencialmente suspeitas. 
+
+**Classe Equivalência**
+
+| Condições de entrada           | Classes válidas                                                     | Classes inválidas                                                    | Classes inválidas                                                   |
+| ------------------------------ | ------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Valor mínimo para notificação  | Valor entre R$ 0,00 e R$ 100.000,00 (1)                             | Valor menor que R$ 0,00 (2)                                          | Valor maior que R$ 100.000,00 (3)                                   |
+| Configuração de notificações   | Valor maior que R$ 0,00 configurado corretamente (4)                | Campo de valor vazio (5)                                             | Valor em formato inválido (6)                                       |
+| Configuração com valor R$ 0,00 | Tutor define R$ 0,00 e confirma estar ciente (7)                    | Tutor define R$ 0,00 e não confirma a ciência (8)                    | Sistema mantém notificações ativas após configuração de R$ 0,00 (9) |
+| Recebimento de notificação     | Transação com valor igual ou superior ao limite configurado (10)    | Transação abaixo do limite configurado gera notificação (11)         | Transação acima do limite não gera notificação (12)                 |
+| Envio de alerta ao idoso       | Tutor envia alerta para o idoso após notificação recebida (13)      | Tutor tenta enviar alerta sem ter recebido notificação elegível (14) | Falha no envio do alerta ao idoso (15)                              |
+| Confirmação da configuração    | Sistema exibe mensagem de confirmação após salvar configuração (19) | Nenhuma confirmação exibida (20)                                     | Confirmação exibida não condiz com a configuração realizada (21)    |
+
+**Casos de Teste**
+
+| Casos de Teste | Classes de Equivalência | Entrada                                                                                       | Resultado Esperado                                                                                             |
+| -------------- | ----------------------- | --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Caso 1         | 1, 4, 7, 10, 13, 19     | Todas válidas                                                                                 | Configuração salva com sucesso e fluxo de alerta operacionalizado corretamente (válido)                        |
+| Caso 2         | 2, 4, 7, 10, 13, 19     | Valor configurado menor que R$ 0,00 (valor negativo)                                          | Sistema bloqueia a gravação e exibe mensagem de erro de valor inválido (inválido)                              |
+| Caso 3         | 3, 4, 7, 10, 13, 19     | Valor configurado maior que R$ 100.000,00                                                     | Sistema bloqueia a gravação e informa que o valor ultrapassa o limite máximo permitido (inválido)              |
+| Caso 4         | 1, 5, 7, 10, 13, 19     | Campo de valor de notificação deixado vazio                                                   | Sistema impede o salvamento e exibe alerta de campo obrigatório (inválido)                                     |
+| Caso 5         | 1, 6, 7, 10, 13, 19     | Valor inserido em formato inválido (letras ou caracteres inválidos)                           | Sistema recusa a entrada e solicita formatação monetária correta (inválido)                                    |
+| Caso 6         | 1, 4, 8, 10, 13, 19     | Tutor define o valor como R$ 0,00, mas não confirma o termo de ciência                        | Sistema impede a conclusão da configuração até que a ciência seja marcada (inválido)                           |
+| Caso 7         | 1, 4, 9, 10, 13, 19     | Sistema mantém notificações ativas de forma errônea após a configuração de R$ 0,00            | Falha de regra de negócio/lógica do sistema (Notificações não deveriam disparar incorretamente) (inválido)     |
+| Caso 8         | 1, 4, 7, 11, 13, 19     | Uma transação abaixo do limite configurado gera uma notificação                               | Falha de regra de negócio (Inconsistência no filtro de gatilho do valor) (inválido)                            |
+| Caso 9         | 1, 4, 7, 12, 13, 19     | Uma transação acima do limite configurado não gera notificação                                | Falha crítica do sistema (Gatilho de notificação falhou em disparar) (inválido)                                |
+| Caso 10        | 1, 4, 7, 10, 14, 19     | Tutor tenta enviar um alerta ao idoso sem ter recebido uma notificação elegível antes         | Sistema bloqueia a ação (Ação de envio de alerta deve estar indisponível ou protegida) (inválido)              |
+| Caso 11        | 1, 4, 7, 10, 15, 19     | Ocorre uma falha técnica no envio do alerta ao idoso                                          | Sistema captura a falha de rede/serviço e exibe mensagem: "Falha ao enviar alerta. Tente novamente" (inválido) |
+| Caso 12        | 1, 4, 7, 10, 13, 20     | Nenhuma mensagem de confirmação é exibida após salvar a configuração                          | Falha de conformidade de UI/UX (O usuário fica sem feedback se a alteração persistiu) (inválido)               |
+| Caso 13        | 1, 4, 7, 10, 13, 21     | Confirmação exibida na tela não condiz com os valores ou configuração real feita pelo usuário | Falha de integridade/exibição de dados na interface (inválido)                                                 |
 
 ---
 
