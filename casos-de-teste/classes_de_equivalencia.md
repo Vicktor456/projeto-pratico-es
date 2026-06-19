@@ -249,6 +249,17 @@ US13 - Enquanto usuário idoso, desejo visualizar o comprovante final com uma fo
 | Leitura da escala do dispositivo | Sistema identifica a escala ativa (7)       | Sistema ignora a escala do aparelho (8)      |                       |
 | Comportamento do Layout          | Elementos adaptam-se sem cortar texto (9)   | Layout quebra ou oculta informações (10)     |                       |
 
+**Casos de Teste**
+
+| **Casos de Teste** | **Classes de Equivalência** | **Entradas**                                                                                                                                             | **Resultado Esperado** |
+| ------------------ | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| **Caso 1**         | 1, 3, 5, 7, 9               | Tudo válido                                                                                                                                              | Sucesso                |
+| **Caso 2**         | 2, 3, 5, 7, 9               | Na exibição do comprovante, o sistema renderiza as informações principais (Valor, Nome ou Data) com tamanho de fonte abaixo de 20px.                     | Falha                  |
+| **Caso 3**         | 1, 4, 5, 7, 9               | O sistema renderiza o texto do comprovante com cores que deixam o contraste abaixo dos padrões de acessibilidade (tornando a leitura nítida impossível). | Falha                  |
+| **Caso 4**         | 1, 3, 6, 7, 9               | O usuário aciona o botão "Salvar PDF", mas o arquivo de saída gerado quebra a formatação original ou ignora o tamanho da escala.                         | Falha                  |
+| **Caso 5**         | 1, 3, 5, 8, 9               | O sistema ignora completamente a configuração de escala de fonte que está ativa no sistema operacional do dispositivo do usuário.                        | Falha                  |
+| **Caso 6**         | 1, 3, 5, 7, 10              | O sistema tenta aplicar o redimensionamento proporcional, mas a disposição do layout quebra, sobrepõe linhas ou oculta partes dos textos do comprovante. | Falha                  |
+
 ---
 
 ## Exibição de Aviso de Risco de Fraude
@@ -264,6 +275,20 @@ US14 - Enquanto usuário idoso, desejo visualizar um aviso de risco claro e em d
 | **Interação com "Quero Cancelar"**        | Transação é interrompida com segurança (8)        | Sistema falha e prossegue com a transação (9)              |                                 |
 | **Interação com "Continuar assim mesmo"** | Ativa cronômetro regressivo de 5 segundos (10)    | Libera o campo de senha imediatamente sem pausa (11)       |                                 |
 | **Tratamento de Risco Crítico**           | Bloqueio sumário e direcionamento ao suporte (12) | Permite que o usuário insira a senha e envie o Pix (13)    |                                 |
+
+**Casos de Teste**
+
+| **Casos de Teste** | **Classes de Equivalência** | **Entradas**                                                                                                                                      | **Resultado Esperado** |
+| ------------------ | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| **Caso 1**         | 1, 4, 6, 10                 | Tudo válido                                                                                                                                       | Sucesso                |
+| **Caso 2**         | 1, 4, 6, 8                  | O usuário visualiza o alerta de conta suspeita dentro dos padrões visuais corretos e clica na ação recomendada de destaque "Quero Cancelar".      | Sucesso                |
+| **Caso 3**         | 3, 12                       | O usuário tenta realizar uma transferência Pix para uma conta cujo nível de risco é crítico (Presente na lista negra).                            | Sucesso                |
+| **Caso 4**         | 2, 4, 6, 10                 | O usuário envia um Pix para uma chave comum e segura (Risco Normal), mas o sistema aciona incorretamente a tela de interrupção de fraude.         | Falha                  |
+| **Caso 5**         | 1, 5, 6, 10                 | Ao identificar a chave suspeita, o pop-up de alerta é gerado com o layout quebrado, sem o fundo amarelo-alerta ou com fontes menores que 20pt.    | Falha                  |
+| **Caso 6**         | 1, 4, 7, 10                 | O pop-up é acionado para a chave suspeita, mas a mensagem falha no critério e exibe termos técnicos complexos como "Score de Risco de Transação". | Falha                  |
+| **Caso 7**         | 1, 4, 6, 9                  | O usuário clica no botão "Quero Cancelar", mas o aplicativo ignora a ação e prossegue normalmente com o fluxo da transação de risco.              | Falha                  |
+| **Caso 8**         | 1, 4, 6, 11                 | O usuário clica em "Continuar assim mesmo" e o sistema libera o campo de digitação de senha imediatamente, ignorando os 5 segundos de pausa.      | Falha                  |
+| **Caso 9**         | 3, 13                       | A chave de destino possui nível de risco crítico (lista preta), mas o sistema falha no bloqueio sumário e permite que o idoso digite a senha.     | Falha                  |
 
 ---
 
@@ -281,6 +306,18 @@ US15 - Enquanto usuário idoso, desejo compartilhar o comprovante de transferên
 | **Leitura da Escala do Dispositivo** | Sistema identifica a escala ativa do aparelho (9)               | Sistema ignora a escala configurada no aparelho (10)           |                       |
 | **Comportamento do Layout**          | Elementos do comprovante adaptam-se sem cortar texto (11)       | Layout quebra, sobrepõe ou oculta dados do recibo (12)         |                       |
 
+**Casos de Teste**
+
+| **Casos de Teste** | **Classes de Equivalência** | **Entradas**                                                                                                                                           | **Resultado Esperado** |
+| ------------------ | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
+| **Caso 1**         | 1, 3, 5, 7, 9, 11           | Tudo válido                                                                                                                                            | Sucesso                |
+| **Caso 2**         | 2, 3, 5, 7, 9, 11           | O sistema exibe o comprovante, mas o botão de compartilhar aparece oculto, sem o texto descritivo "Enviar Comprovante" ou com um ícone incorreto.      | Falha                  |
+| **Caso 3**         | 1, 4, 5, 7, 9, 11           | O usuário toca no botão de compartilhamento correto, mas o aplicativo não executa nenhuma ação ou gera um erro de sistema interno.                     | Falha                  |
+| **Caso 4**         | 1, 3, 6, 7, 9, 11           | O processo é iniciado, mas o arquivo gerado para o compartilhamento está corrompido, em baixa resolução ou em um formato totalmente ilegível.          | Falha                  |
+| **Caso 5**         | 1, 3, 5, 8, 9, 11           | O usuário seleciona o aplicativo desejado na gaveta nativa do SO, mas o sistema falha ao transferir o arquivo do recibo para esse aplicativo.          | Falha                  |
+| **Caso 6**         | 1, 3, 5, 7, 10, 11          | O sistema operacional está configurado com zoom de acessibilidade, mas o aplicativo simplesmente ignora a escala ativa no aparelho do idoso.           | Falha                  |
+| **Caso 7**         | 1, 3, 5, 7, 9, 12           | O sistema tenta realizar o compartilhamento com a escala de fonte ativa, mas o layout quebra, sobrepõe as linhas ou oculta dados essenciais do recibo. | Falha                  |
+
 ---
 
 ## Extrato Simplificado
@@ -295,6 +332,17 @@ US16 - Enquanto usuário idoso, desejo ver uma lista das minhas ultimas transaç
 | **Visualização dos Detalhes** | Exibe todos os dados, incluindo a Razão Social original (5) | Oculta dados obrigatórios ou omite a Razão Social (6)   |                       |
 | **Cruzamento de Dados**       | Identifica o vínculo com o CPF/CNPJ salvo com sucesso (7)   | Falha ao consultar ou processar o vínculo dos dados (8) |                       |
 | **Prioridade de Exibição**    | Prioriza o Apelido sobre o Nome Fantasia/Razão Social (9)   | Exibe a Razão Social mesmo com Apelido cadastrado (10)  |                       |
+
+**Casos de Teste**
+
+| **Casos de Teste** | **Classes de Equivalência** | **Entradas**                                                                                                                                                        | **Resultado Esperado** |
+| ------------------ | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| **Caso 1**         | 1, 3, 5, 7, 9               | Tudo válido (Contato Salvo)                                                                                                                                         | Sucesso                |
+| **Caso 2**         | 1, 3, 5, 8, 9               | Tudo válido (Nome Fantasia): transação para local sem contato salvo cruza dados e prioriza o Nome Fantasia em vez de termos jurídicos complexos na lista principal. | Sucesso                |
+| **Caso 3**         | 2, 3, 5, 7, 9               | A lista do extrato principal falha em aplicar a máscara amigável e exibe diretamente a Razão Social complexa ou códigos da empresa para o idoso.                    | Falha                  |
+| **Caso 4**         | 1, 4, 5, 7, 9               | O usuário tenta tocar sobre uma movimentação para entender o gasto, mas a interface não responde ou quebra completamente a navegação.                               | Falha                  |
+| **Caso 5**         | 1, 3, 6, 7, 9               | A tela secundária de detalhes da movimentação abre após o toque, mas oculta dados obrigatórios ou omite a Razão Social original da transação.                       | Falha                  |
+| **Caso 6**         | 1, 3, 5, 7, 10              | Existe um apelido registrado para o CPF/CNPJ de destino, mas o sistema ignora a regra de prioridade e exibe a Razão Social jurídica na lista do extrato.            | Falha                  |
 
 ---
 
@@ -312,6 +360,18 @@ US17 - Enquanto usuário idoso, desejo gerar um QR Code com o valor da venda ou 
 | **Ação de Copiar Código**    | Copia a string do Pix Copia e Cola para a área de transferência (9) | Botão não responde ou copia string corrompida (10)         |                       |
 | **Confirmação de Pagamento** | Exibe alerta visual e emite sinal sonoro ao receber (11)            | Atualiza o saldo sem emitir aviso visual ou sonoro (12)    |                       |
 
+**Casos de Teste**
+
+| **Casos de Teste** | **Classes de Equivalência** | **Entradas**                                                                                                                                             | **Resultado Esperado** |
+| ------------------ | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| **Caso 1**         | 1, 3, 5, 7, 9, 11           | Tudo válido                                                                                                                                              | Sucesso                |
+| **Caso 2**         | 2, 3, 5, 7, 9, 11           | O usuário toca no campo de inserção do valor, mas o aplicativo abre o teclado alfabético tradicional ou exibe uma fonte padrão pequena.                  | Falha                  |
+| **Caso 3**         | 1, 4, 5, 7, 9, 11           | O sistema processa a cobrança, mas gera um QR Code do tipo estático ou completamente sem o valor especificado embutido no payload.                       | Falha                  |
+| **Caso 4**         | 1, 3, 6, 7, 9, 11           | O código é gerado, mas aparece na tela em tamanho pequeno, descentralizado ou com cores de baixo contraste.                                              | Falha                  |
+| **Caso 5**         | 1, 3, 5, 8, 9, 11           | O aplicativo cria o QR Code, mas falha ao vincular os dados da chave Pix configurada como principal ou gera com uma chave incorreta.                     | Falha                  |
+| **Caso 6**         | 1, 3, 5, 7, 10, 11          | O usuário aciona a função de cópia, mas o botão não responde ou envia uma string do Pix Copia e Cola totalmente corrompida para a área de transferência. | Falha                  |
+| **Caso 7**         | 1, 3, 5, 7, 9, 12           | O pagamento vinculado ao QR Code é detectado e o saldo é atualizado, mas o sistema não emite nenhum aviso visual ou sinal sonoro de confirmação.         | Falha                  |
+
 ---
 
 ## Botão de Ajuda por Voz/Vídeo
@@ -327,6 +387,18 @@ US18 - Enquanto usuário idoso, desejo ter um botão de "Ajuda" fácil de encont
 | **Horário de Atendimento**  | Horário do dispositivo entre 7h00 e 22h00 (7)                         | Horário do dispositivo entre 22h01 e 6h59 (Opcional Noturno) (8) |                       |
 | **Ação em Horário Ativo**   | Libera o direcionamento para o atendente humano (9)                   | Bloqueia a chamada ou falha ao iniciar a conexão (10)            |                       |
 | **Ação em Horário Inativo** | Bloqueia chamadas e exibe tela informativa de funcionamento (11)      | Permite tentar a chamada gerando erro de linha discada/muda (12) |                       |
+
+**Casos de Teste**
+
+| **Casos de Teste** | **Classes de Equivalência** | **Entradas**                                                                                                                                                                                       | **Resultado Esperado** |
+| ------------------ | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| **Caso 1**         | 1, 3, 5, 7, 9               | Tudo válido (Atendimento Diurno)                                                                                                                                                                   | Sucesso                |
+| **Caso 2**         | 1, 3, 5, 8, 11              | Tudo válido (Atendimento Noturno): usuário acessa o suporte de madrugada (às 23h30), o sistema identifica o horário inativo, bloqueia a chamada ativa e exibe a tela informativa de funcionamento. | Sucesso                |
+| **Caso 3**         | 2, 3, 5, 7, 9               | O usuário precisa de ajuda, mas o botão de suporte aparece oculto nas telas principais, sem texto descritivo ou com um ícone confuso.                                                              | Falha                  |
+| **Caso 4**         | 1, 4, 5, 7, 9               | O usuário aciona o botão de ajuda no horário comercial, mas a interface omite um dos canais de atendimento ou exibe opções não suportadas.                                                         | Falha                  |
+| **Caso 5**         | 1, 3, 6, 7, 9               | O menu de suporte abre corretamente, mas o tempo de espera estimado está oculto, estático ou utilizando fontes ilegíveis para o idoso.                                                             | Falha                  |
+| **Caso 6**         | 1, 3, 5, 7, 10              | O usuário tenta iniciar um atendimento às 10h00 da manhã, mas o sistema falha ao iniciar a conexão ou bloqueia a chamada em horário ativo.                                                         | Falha                  |
+| **Caso 7**         | 1, 3, 5, 8, 12              | O usuário tenta acionar o suporte humano de madrugada (às 02h00), mas o sistema permite a tentativa de chamada, gerando erro de linha discada ou muda.                                             | Falha                  |
 
 ---
 
