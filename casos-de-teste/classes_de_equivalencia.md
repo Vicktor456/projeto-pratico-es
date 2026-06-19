@@ -178,12 +178,12 @@ US10 - Enquanto contato de apoio, desejo uma interface com fontes legíveis para
 
 | Classes de equivalência | Entradas                          | Resultado Esperado                                                                                             |
 | :---------------------- | :-------------------------------- | :------------------------------------------------------------------------------------------------------------- |
-| 1,3,5,7,9               | todas entradas válidas            | interface configurada corretamente com alta legibilidade e acessibilidade pro usuário(valido)                  |
-| 2,3,5,7,9               | espaçamento entre linhas          | interface com espaçamento inferior ao mínimo, leva a fadiga visual(inválido)                                   |
-| 1,4,5,7,9               | rastreamento da leitura acessível | interface com espaçamento inferior ao mínimo, não torna possível o rastreamento acessível da leitura(inválido) |
-| 1,3,6,7,9               | estilo da fonte                   | uso de estilos cursivos, muito finos ou fontes com serifa que dificultam a leitura(inválido)                   |
-| 1,3,5,8,9               | margem entre botões               | botões muito próximos, geram risco de o usuário clicar num item por engano(inválido)                           |
-| 1,3,5,7,10              | comprimento da linha              | linhas extensas contendo mais de 80 caracteres, prejudicam a legibilidade(inválido)                            |
+| 1,3,5,7,9               | Todas entradas válidas            | interface configurada corretamente com alta legibilidade e acessibilidade pro usuário(valido)                  |
+| 2,3,5,7,9               | Espaçamento entre linhas          | interface com espaçamento inferior ao mínimo, leva a fadiga visual(inválido)                                   |
+| 1,4,5,7,9               | Rastreamento da leitura acessível | interface com espaçamento inferior ao mínimo, não torna possível o rastreamento acessível da leitura(inválido) |
+| 1,3,6,7,9               | Estilo da fonte                   | uso de estilos cursivos, muito finos ou fontes com serifa que dificultam a leitura(inválido)                   |
+| 1,3,5,8,9               | Margem entre botões               | botões muito próximos, geram risco de o usuário clicar num item por engano(inválido)                           |
+| 1,3,5,7,10              | Comprimento da linha              | linhas extensas contendo mais de 80 caracteres, prejudicam a legibilidade(inválido)                            |
 
 ---
 
