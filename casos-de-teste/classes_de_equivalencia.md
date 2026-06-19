@@ -330,6 +330,222 @@ US18 - Enquanto usuário idoso, desejo ter um botão de "Ajuda" fácil de encont
 
 ---
 
+# Navegação Segura no Modo Conta Assistida
+US21 - Enquanto tutor desejo um modo de conta assistida para observar as principais movimentações bancárias do idoso.
+
+**Classes de Equivalência**
+
+| **Condição de Entrada**      | **Classes Válidas**                                              | **Classes Inválidas**                                                       | **Classes Inválidas**                                                |
+| ---------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| **Ações na conta do idoso**  | Enviar notificação de transação suspeita. (1)                    | Tentar alterar dados cadastrais ou realizar transações financeiras. (2)     | Tentar realizar exclusões ou ações administrativas complexas. (3)    |
+| **Tempo de navegação**       | Tempo de navegação menor ou igual a 15 minutos (Ex: 15 min). (4) | Tempo de navegação maior que 15 minutos (Ex: 16 min). (5)                   | Tempo nulo, vazio ou negativo de sessão (Ex: -1 min). (6)            |
+| **Confirmação do idoso**     | Confirmação realizada via Link, Código ou QR Code válido. (7)    | Ausência de resposta ou recusa do idoso (Timeout). (8)                      | Utilização de método de confirmação incorreto ou corrompido. (9)     |
+| **Exibição de Dados / LGPD** | Dados de movimentação visíveis e dados pessoais censurados. (10) | Dados pessoais totalmente expostos sem censura. (11)                        | Falha na carga de dados (Tela de movimentações vazia/quebrada). (12) |
+| **Status do Primeiro Login** | Modo assistido ativo automaticamente no primeiro login. (13)     | Modo assistido não ativa (Tutor ganha acesso total no primeiro login). (14) | Modo assistido perde o estado em logins subsequentes. (15)           |
+
+**Casos de Teste**
+
+| **CT**   | **Classes de Equivalência** | **Entradas**             | **Resultado Esperado**                                                                                                                                                  |
+| -------- | --------------------------- | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **CT01** | 1, 4, 7, 10, 13             | Todas entradas válidas   | Modo assistido é ativado com sucesso.                                                                                                                                   |
+| **CT02** | 2, 4, 7, 10, 13             | Ações na conta do idoso  | A operação financeira/cadastral é bloqueada. Exibição de mensagem de erro: _"Ação não permitida no modo de conta assistida"_.                                           |
+| **CT03** | 3, 4, 7, 10, 13             | Ações na conta do idoso  | Ação administrativa crítica é abortada imediatamente. Sistema mantém a integridade da conta e exibe alerta de violação de privilégios de acesso.                        |
+| **CT04** | 1, 5, 7, 10, 13             | Tempo de navegação       | Aos 15 minutos, a navegação do tutor é suspensa e a tela de bloqueio é exibida                                                                                          |
+| **CT05** | 1, 6, 7, 10, 13             | Tempo de navegação       | O sistema de segurança detecta a inconsistência crítica no contador de sessão. O token de acesso é invalidado e o tutor é deslogado por segurança.                      |
+| **CT06** | 1, 4, 8, 10, 13             | Confirmação do idoso     | É exibida mensagem informando que a sessão expirou por falta de confirmação do idoso.                                                                                   |
+| **CT07** | 1, 4, 9, 10, 13             | Confirmação do idoso     | O sistema rejeita a entrada inválida. Exibe mensagem de erro _"Confirmação inválida"_ e mantém a tela do tutor travada até que uma credencial correta seja fornecida.   |
+| **CT08** | 1, 4, 7, 11, 13             | Exibição de Dados / LGPD | O mecanismo de segurança intercepta a resposta e força a censura/máscara dos dados pessoais sensíveis na interface, em estrita conformidade com a LGPD.                 |
+| **CT09** | 1, 4, 7, 12, 13             | Exibição de Dados / LGPD | O sistema trata a exceção e exibe uma mensagem amigável: _"Não foi possível carregar as movimentações no momento"_, sem expor dados internos ou quebrar o app.          |
+| **CT10** | 1, 4, 7, 10, 14             | Status do Primeiro Login | As diretrizes corporativas de segurança no backend identificam o perfil "tutor" e injetam compulsoriamente as amarras do modo assistido, impedindo o acesso irrestrito. |
+| **CT11** | 1, 4, 7, 10, 15             | Status do Primeiro Login | O sistema valida o vínculo de tutoria de forma persistente.                                                                                                             |
+
+---
+
+# Autenticação Multifator para Acesso Assistido
+US22 - Enquanto tutor desejo receber uma validação através de link, código ou Qr Code para acessar o modo conta assistida. 
+
+**Classes de Equivalência**
+
+| **Condição de Entrada**               | **Classes Válidas**                                                            | **Classes Inválidas**                                                                  | **Classes Inválidas**                                                               |
+| ------------------------------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| **Tempo de recebimento da validação** | Recebimento do método em até 5 segundos. (1)                                   | Recebimento após 5 segundos (SLA estourado). (2)                                       | Validação não recebida / tempo de requisição esgotado. (3)                          |
+| **Método de validação e formato**     | Link estruturado correto, código numérico/alfanumérico ou QR Code íntegro. (4) | Código contendo caracteres inválidos ou formato incompatível. (5)                      | Código com tempo expirado ou QR Code corrompido/ilegível. (6)                       |
+| **Submissão da validação**            | Confirmação realizada com sucesso de um token/método ativo. (7)                | Envio do campo de validação totalmente vazio ou em branco. (8)                         | Tentativa de utilizar credencial gerada para outra conta (combinação inválida). (9) |
+| **Vínculo de perfil**                 | Tutor devidamente associado e vinculado ao perfil do idoso. (10)               | Tutor sem qualquer registro de vínculo com idoso no sistema. (11)                      | Tutor com vínculo anteriormente revogado, bloqueado ou inativo. (12)                |
+| **Redirecionamento e Permissões**     | Redirecionamento automático imediato com perfil assistido configurado. (13)    | Validação com sucesso, mas sistema falha e não redireciona (tutor preso na tela). (14) | Redirecionamento para rota inválida ou com permissões totais expostas. (15)         |
+
+**Casos de Teste**
+
+| **CT**   | **Classes de Equivalência** | **Entradas**                      | **Resultado Esperado**                                                                                                                               |
+| -------- | --------------------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **CT01** | 1, 4, 7, 10, 13             | Todas entradas válidas            | Validação concluída, modo assistido é ativado com sucesso.                                                                                           |
+| **CT02** | 2, 4, 7, 10, 13             | Tempo de recebimento da validação | O sistema rejeita a validação por estouro do tempo limite de entrega (SLA).                                                                          |
+| **CT03** | 3, 4, 7, 10, 13             | Tempo de recebimento da validação | A operação é cancelada por tempo de requisição esgotado. O sistema exibe mensagem de erro de comunicação e libera o botão para tentar um novo envio. |
+| **CT04** | 1, 5, 7, 10, 13             | Método de validação e formato     | O sistema identifica o formato incompatível antes do envio. Bloqueia a submissão e exibe o alerta: _"Formato de código inválido"_.                   |
+| **CT05** | 1, 6, 7, 10, 13             | Método de validação e formato     | O sistema recusa o token durante a validação.                                                                                                        |
+| **CT06** | 1, 4, 8, 10, 13             | Submissão da validação            | O sistema impede o envio do formulário.                                                                                                              |
+| **CT07** | 1, 4, 9, 10, 13             | Submissão da validação            | O sistema recusa o acesso por incompatibilidade de sessão de segurança. Exibe mensagem de erro de autenticação.                                      |
+| **CT08** | 1, 4, 7, 11, 13             | Vínculo de perfil                 | O sistema valida o token, mas bloqueia o acesso na sequência.                                                                                        |
+| **CT09** | 1, 4, 7, 12, 13             | Vínculo de perfil                 | O acesso ao modo assistido é negado                                                                                                                  |
+| **CT10** | 1, 4, 7, 10, 14             | Redirecionamento e Permissões     | O sistema mantém os dados protegidos de forma segura no backend (não renderiza a tela principal)                                                     |
+| **CT11** | 1, 4, 7, 10, 15             | Redirecionamento e Permissões     | O barramento de segurança do backend intercepta a falha de autorização da rota.                                                                      |
+
+---
+
+# Consulta Segura de Dados do Destinatário
+US23 - Enquanto tutor desejo visualizar dados da conta do destinatário que receberá o dinheiro, para checar a segurança da transação.
+
+**Classes de Equivalência**
+
+| **Condição de Entrada**                | **Classes Válidas**                                                                       | **Classes Inválidas**                                                                   | **Classes Inválidas**                                                                      |
+| -------------------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| Exibição dos dados obrigatórios        | Nome, Valor, Data e Hora exibidos de forma completa e íntegra. (1)                        | Um ou mais campos obrigatórios ausentes ou vazios em tela. (2)                          | Campos carregados com formato corrompido ou ilegível. (3)                                  |
+| Marcação de Prioridade                 | Transação de alto valor ou recorrente com marcação de prioridade visível. (4)             | Transação de alto valor ou recorrente sem a marcação visual devida. (5)                 | Transação comum/baixo valor exibindo marcação de prioridade indevida. (6)                  |
+| Mascaramento de Documentos             | Documento (CPF/RG) exibido com os caracteres intermediários ocultados por asteriscos. (7) | Documento exposto integralmente na interface sem nenhuma máscara de proteção. (8)       | Campo de documento com máscara totalmente desconfigurada, vazia ou quebrando o layout. (9) |
+| Permissões do Perfil - Somente Leitura | Interface sem elementos operacionais (edição/exclusão) ativos para o tutor. (10)          | Sistema processa e aceita comandos de modificação ou inserção enviados pelo tutor. (11) | Botões de modificação ou exclusão visíveis e clicáveis na tela do tutor. (12)              |
+
+**Casos de Teste**
+
+| **CT**   | **Classes de Equivalência** | **Entradas**                           | **Resultado Esperado**                                                                                                                                                             |
+| -------- | --------------------------- | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **CT01** | 1, 4, 7, 10                 | Todas entradas válidas                 | Visualização de dados do destinatário concluída.                                                                                                                                   |
+| **CT02** | 2, 4, 7, 10                 | Exibição dos dados obrigatórios        | O sistema intercepta o dado ausente e impede o carregamento da tela incompleta.                                                                                                    |
+| **CT03** | 3, 4, 7, 10                 | Exibição dos dados obrigatórios        | O front-end bloqueia a renderização dos dados corrompidos para preservar a integridade visual.                                                                                     |
+| **CT04** | 1, 5, 7, 10                 | Marcação de Prioridade                 | O sistema de auditoria de segurança identifica o erro de conformidade da regra de priorização. O teste falha ao apontar que uma transação de risco ficou sem o selo visual devido. |
+| **CT05** | 1, 6, 7, 10                 | Marcação de Prioridade                 | Ocorre um falso positivo na interface.                                                                                                                                             |
+| **CT06** | 1, 4, 8, 10                 | Mascaramento de Documentos             | Ocorre uma violação crítica de segurança (LGPD). O mecanismo de proteção secundário do front-end deve travar a tela ou o teste reportará a exposição indevida do dado bruto.       |
+| **CT07** | 1, 4, 9, 10                 | Mascaramento de Documentos             | A interface quebra ou oculta o bloco de identificação de forma anômala.                                                                                                            |
+| **CT08** | 1, 4, 7, 11                 | Permissões do Perfil - Somente Leitura | O backend barra a ação operando na regra de Somente Leitura. A requisição é rejeitada imediatamente com um erro HTTP 403 _(Forbidden / Acesso Negado)_.                            |
+| **CT09** | 1, 4, 7, 12                 | Permissões do Perfil - Somente Leitura | Falha de privilégio na camada visual da aplicação.                                                                                                                                 |
+
+---
+
+# Monitoramento de Histórico com Alerta Antifraude
+US24 - Enquanto tutor desejo navegar pela tela do idoso para verificar se há movimentações suspeitas no histórico.
+
+**Classes de Equivalência**
+
+| **Condição de Entrada** | **Classes Válidas**                                                             | **Classes Inválidas**                                                | **Classes Inválidas**                                                   |
+| ----------------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Vínculo Tutor e Idoso   | Vínculo formalizado e ativo no sistema. (1)                                     | Tutor tenta acessar idoso sem nenhum vínculo cadastrado. (2)         | Tutor tenta acessar idoso com vínculo inativo ou revogado. (3)          |
+| Filtros de busca        | Filtros preenchidos em formato correto e períodos existentes. (4)               | Filtro contendo caracteres inválidos ou formato incorreto. (5)       | Filtros totalmente vazios ou com intervalos inexistentes. (6)           |
+| Ordenação do histórico  | Histórico exibido completamente em estrita ordem cronológica. (7)               | Histórico exibido com quebra ou falha na ordenação cronológica. (8)  | Falha crítica no carregamento dos dados (histórico em branco). (9)      |
+| Alerta de atividade     | Destaque visual e badge "Atividade Suspeita" aplicados a acessos atípicos. (10) | Movimentação atípica sem exibição de destaque visual (omissão). (11) | Movimentação comum exibindo o alerta de suspeita (falso positivo). (12) |
+
+**Casos de Teste**
+
+| **CT**   | **Classes de Equivalência** | **Entradas**           | **Resultado Esperado**                                                                                                                                |
+| -------- | --------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **CT01** | 1, 4, 7, 10                 | Todas entradas válidas | Verificação de movimentações suspeitas por meio da navegação na tela do idoso concluida                                                               |
+| **CT02** | 2, 4, 7, 10                 | Vínculo Tutor e Idoso  | O sistema bloqueia a renderização da tela e impede a execução da consulta por quebra de segurança.                                                    |
+| **CT03** | 3, 4, 7, 10                 | Vínculo Tutor e Idoso  | O sistema recusa o acesso e barra a consulta aos logs.                                                                                                |
+| **CT04** | 1, 5, 7, 10                 | Filtros de busca       | O mecanismo de validação do front-end/API rejeita a busca antes de submeter ao banco de dados.                                                        |
+| **CT05** | 1, 6, 7, 10                 | Filtros de busca       | O sistema invalida o intervalo inconsistente e exibe uma mensagem informativa na listagem: _"Nenhum registro encontrado para o período selecionado"_. |
+| **CT06** | 1, 4, 8, 10                 | Ordenação do histórico | O caso de teste acusa uma falha de sistema, evidenciando que o requisito de ordenação estritamente cronológica foi violado.                           |
+| **CT07** | 1, 4, 9, 10                 | Ordenação do histórico | O sistema trata a falha de infraestrutura de forma segura.                                                                                            |
+| **CT08** | 1, 4, 7, 11                 | Alerta de atividade    | O caso de teste registra uma falha de omissão de negócio, apontando que o algoritmo de segurança falhou ao não destacar a atividade atípica.          |
+| **CT09** | 1, 4, 7, 12                 | Alerta de atividade    | Ocorre um falso positivo na interface.                                                                                                                |
+
+---
+
+# Análise Consolidada de Gastos via Dashboard
+US25 - Enquanto tutor desejo visualizar uma interface gráfica com dashboards para obter dados organizados que mostram o fluxo gastos determinados por periodos filtrados.
+
+**Classes de Equivalência**
+
+| **Condição de Entrada**           | **Classes Válidas**                                                      | **Classes Inválidas**                                                 | **Classes Inválidas**                                                    |
+| --------------------------------- | ------------------------------------------------------------------------ | --------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| Perfil do Usuário                 | Usuário autenticado com perfil de Tutor ativo. (1)                       | Usuário autenticado com perfil comum ou de idoso. (2)                 | Usuário não autenticado tentando acesso direto por rota. (3)             |
+| Filtro de Período Selecionado     | Seleção dos períodos previstos (diário, semanal, mensal ou anual). (4)   | Parâmetro de período enviado vazio ou nulo na requisição. (5)         | Parâmetro preenchido com formato incorreto ou valor inexistente. (6)     |
+| Escopo e Isolamento Financeiro    | Dados de gastos correspondentes apenas ao idoso vinculado ao tutor. (7)  | Injeção de ID para tentar visualizar dados de idoso de terceiros. (8) | Base de dados de transações indisponível, corrompida ou offline. (9)     |
+| Renderização e Atualização Visual | Componentes visuais renderizados e atualizados de forma automática. (10) | Falha estrutural ou erro de renderização visual dos gráficos. (11)    | Alteração de filtro que falha em disparar a atualização automática. (12) |
+
+**Casos de Teste**
+
+| **CT**   | **Classes de Equivalência** | **Entradas**                      | **Resultado Esperado**                                                                                                                                          |
+| -------- | --------------------------- | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **CT01** | 1, 4, 7, 10                 | Todas entradas válidas            | Visualização de interface com dashboards concluída                                                                                                              |
+| **CT02** | 2, 4, 7, 10                 | Perfil do Usuário                 | O sistema bloqueia o carregamento da tela e impede a renderização dos componentes gráficos.                                                                     |
+| **CT03** | 3, 4, 7, 10                 | Perfil do Usuário                 | A requisição é interceptada pelo middleware de autenticação.                                                                                                    |
+| **CT04** | 1, 5, 7, 10                 | Filtro de Período Selecionado     | O sistema adota uma configuração segura por padrão para evitar quebra de layout.                                                                                |
+| **CT05** | 1, 6, 7, 10                 | Filtro de Período Selecionado     | O sistema rejeita o processamento do parâmetro inválido.                                                                                                        |
+| **CT06** | 1, 4, 8, 10                 | Escopo e Isolamento Financeiro    | O back-end detecta a quebra de escopo/isolamento no barramento de segurança.                                                                                    |
+| **CT07** | 1, 4, 9, 10                 | Escopo e Isolamento Financeiro    | O front-end trata o erro de infraestrutura.                                                                                                                     |
+| **CT08** | 1, 4, 7, 11                 | Renderização e Atualização Visual | O sistema aciona um fallback de layout, sem travar a página.                                                                                                    |
+| **CT09** | 1, 4, 7, 12                 | Renderização e Atualização Visual | O caso de teste documenta e acusa uma falha lógica de sincronismo na interface, visto que o gráfico permaneceu estático e não refletiu a nova busca do usuário. |
+
+---
+
+# Envio de Alerta Preventivo ao Idoso
+US26 - Enquanto tutor desejo enviar aviso de transação suspeita para o idoso receber uma notificação.
+
+**Classes de Equivalência**
+
+| **Condição de Entrada**        | **Classes Válidas**                                                                 | **Classes Inválidas**                                                               | **Classes Inválidas**                                                                     |
+| ------------------------------ | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Vínculo Tutor e Idoso          | Vínculo devidamente formalizado e ativo no sistema. (1)                             | Tutor tenta enviar aviso para idoso sem nenhum vínculo cadastrado. (2)              | Tutor tenta enviar aviso para idoso com vínculo inativo ou revogado. (3)                  |
+| Dados da Transação e Descrição | Informações da movimentação válidas e descrição preenchida corretamente. (4)        | Dados da movimentação ou campo de descrição enviado totalmente vazio. (5)           | Descrição contendo caracteres inválidos ou tentativa de injeção de scripts. (6)           |
+| Controle de Duplicidade        | Envio único do aviso ou envio após o término do intervalo curto de segurança. (7)   | Envio duplicado para a mesma transação dentro do curto intervalo de tempo. (8)      | Múltiplos cliques rápidos/simultâneos no botão de envio (Tentativa de Flood). (9)         |
+| Confirmação e Mensageria       | Mensagem de sucesso correta exibida e notificação push entregue em tempo real. (10) | Alerta salvo com sucesso, mas o disparo automático em tempo real falha (Rede). (11) | Envio concluído, mas o sistema exibe texto incorreto ou falha de layout na mensagem. (12) |
+| Filtro de Histórico            | Idoso acessando e visualizando logs exclusivos de sua própria conta. (13)           | Idoso tenta alterar parâmetros de rota para ler o histórico de outros idosos. (14)  | Idoso impossibilitado de ler seu próprio log devido a uma falha de persistência. (15)     |
+
+**Casos de Teste**
+
+| **CT**   | **Classes de Equivalência** | **Entradas**                   | **Resultado Esperado**                                                                                                                                          |
+| -------- | --------------------------- | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **CT01** | 1, 4, 7, 10, 13             | Todas entradas válidas         | Aviso de transação suspeita enviado com sucesso                                                                                                                 |
+| **CT02** | 2, 4, 7, 10, 13             | Vínculo Tutor e Idoso          | O sistema rejeita o processamento na camada de negócios por quebra de segurança.                                                                                |
+| **CT03** | 3, 4, 7, 10, 13             | Vínculo Tutor e Idoso          | O sistema impede a submissão do alerta.                                                                                                                         |
+| **CT04** | 1, 5, 7, 10, 13             | Dados da Transação e Descrição | O front-end intercepta e bloqueia o envio do formulário.                                                                                                        |
+| **CT05** | 1, 6, 7, 10, 13             | Dados da Transação e Descrição | O sistema sanitiza a entrada ou barra o envio por motivos de segurança, exibindo alerta de formato inválido.                                                    |
+| **CT06** | 1, 4, 8, 10, 13             | Controle de Duplicidade        | O mecanismo antiduplicidade identifica o ID da transação repetida no log recente.                                                                               |
+| **CT07** | 1, 4, 9, 10, 13             | Controle de Duplicidade        | O componente de botão é desabilitado imediatamente após o primeiro clique.                                                                                      |
+| **CT08** | 1, 4, 7, 11, 13             | Confirmação e Mensageria       | O alerta é registrado e persistido com sucesso no histórico de auditoria.                                                                                       |
+| **CT09** | 1, 4, 7, 12, 13             | Confirmação e Mensageria       | O caso de teste documenta uma falha de layout e interface, visto que a mensagem não foi apresentada de maneira limpa ou textual conforme exigido pelo critério. |
+| **CT10** | 1, 4, 7, 10, 14             | Filtro de Histórico            | O back-end detecta a tentativa de violação de acesso horizontal.                                                                                                |
+| **CT11** | 1, 4, 7, 10, 15             | Filtro de Histórico            | O front-end trata a exceção e exibe uma mensagem: _"Não foi possível carregar seu histórico de notificações no momento"_, sem quebrar a tela.                   |
+
+---
+
+# Autenticação do Tutor com Bloqueio de Segurança
+US27 - Enquanto tutor, desejo realizar login e acessar o menu inicial, para acessar o sistema.
+
+**Classes de Equivalência**
+
+| **Condição de Entrada**         | **Classes Válidas**                                                       | **Classes Inválidas**                                                           | **Classes Inválidas**                                                                           |
+| ------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Identificação do Usuário        | E-mail/usuário cadastrado e em formato correto. (1)                       | E-mail/usuário não cadastrado na base de dados. (2)                             | Campo de e-mail/usuário vazio ou com formato inválido. (3)                                      |
+| Validação da Senha              | Senha correta correspondente ao usuário digitado. (4)                     | Senha incorreta/divergente da cadastrada. (5)                                   | Campo de senha enviado totalmente em branco/vazio. (6)                                          |
+| Contador de Falhas Consecutivas | Número de tentativas incorretas menor ou igual a 4. (7)                   | Número de tentativas incorretas atinge exatamente o limite de 5 falhas. (8)     | Tentativa de submissão com a conta já suspensa (dentro dos 15 minutos). (9)                     |
+| Destino do Redirecionamento     | Redirecionamento bem-sucedido para o menu inicial adaptado de tutor. (10) | Redirecionamento para tela inválida, genérica ou com privilégios expostos. (11) | Autenticação aprovada no backend, mas front-end falha e prende o usuário na tela de login. (12) |
+
+**Casos de Teste**
+
+| **CT**   | **Classes de Equivalência** | **Entradas**                    | **Resultado Esperado**                                                                                                                       |
+| -------- | --------------------------- | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| **CT01** | 1, 4, 7, 10                 | Todas entradas válidas          | Login feito com sucesso                                                                                                                      |
+| **CT02** | 2, 4, 7, 10                 | Identificação do Usuário        | Login rejeitado                                                                                                                              |
+| **CT03** | 3, 4, 7, 10                 | Identificação do Usuário        | O sistema impede a submissão ou bloqueia a requisição.                                                                                       |
+| **CT04** | 1, 5, 7, 10                 | Validação da Senha              | Login rejeitado                                                                                                                              |
+| **CT05** | 1, 6, 7, 10                 | Validação da Senha              | A validação de campo obrigatório da interface é acionada.                                                                                    |
+| **CT06** | 1, 4, 8, 10                 | Contador de Falhas Consecutivas | O login é recusado e o sistema ativa o bloqueio temporário da conta por 15 minutos ou dispara obrigatoriamente o desafio CAPTCHA.            |
+| **CT07** | 1, 4, 9, 10                 | Contador de Falhas Consecutivas | O sistema recusa o processamento da autenticação e exibe o alerta informando que a conta está temporariamente suspensa por segurança.        |
+| **CT08** | 1, 4, 7, 11                 | Destino do Redirecionamento     | O barramento de segurança da aplicação intercepta a quebra de privilégio, bloqueia a renderização da rota inválida e protege as informações. |
+| **CT09** | 1, 4, 7, 12                 | Destino do Redirecionamento     | O sistema impede a criação de uma sessão ativa "fantasma" sem resposta visual, tratando a falha e exigindo a reinicialização segura do app.  |
+
+---
+
+# Molde
+US - Descriçãp
+
+**Classes de Equivalência**
+
+
+**Casos de Teste**
+
+---
+
+
 ## Modo conta assistida
 US28 - Enquanto idoso, desejo ativar o modo de conta assistida para receber auxílio no gerenciamento da segurança e do controle financeiro da minha conta.
 
@@ -577,3 +793,33 @@ US33 - Enquanto idoso, desejo realizar login no aplicativo SeuPix utilizando meu
 | 1,3,6,8,10,12,14,16,18,20,22,25,26,28 | Auditoria              | Login/logout não registrado em auditoria (Inválido)                        |
 | 1,3,6,8,10,12,14,16,18,20,22,24,27,28 | Armazenamento de senha | Senha armazenada em texto puro (Inválido)                                  |
 | 1,3,6,8,10,12,14,16,18,20,22,24,26,29 | Proteção da sessão     | Sessão vulnerável a acesso não autorizado (Inválido)                       |
+
+---
+
+# Exportação Massiva de Extratos para Auditoria
+US - Enquanto especialista de suporte com privilégios administrativos, desejo exportar extratos financeiros de usuários em lote aplicando filtros dinâmicos, para analisar comportamentos sistêmicos falhos ou atender a demandas de auditoria em massa.
+
+**Classes de Equivalência**
+
+| **Condição de Entrada**      | **Classes Válidas**                                                                       | **Classes Inválidas**                                                                     | **Classes Inválidas**                                                              |
+| ---------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Autorização do Especialista  | PerfilAdmin autenticado e com a flag de exportação massiva ativa. (1)                     | PerfilAdmin autenticado, mas sem a flag de autorização ativada. (2)                       | Especialista com sessão expirada, token inválido ou não autenticado. (3)           |
+| Filtro de Período            | Intervalo de datas preenchido corretamente no formato aceito (Ex: DD/MM/AAAA). (4)        | Intervalo de período invertido (Data início maior que data fim) ou inválido. (5)          | Parâmetro de período enviado totalmente vazio ou nulo na requisição. (6)           |
+| Tipo de Transação e Status   | Parâmetros compatíveis com os enums mapeados no sistema. (7)                              | Valores externos aos enums cadastrados ou caracteres inválidos (Ex: SQL Injection). (8)   | Combinação inválida de parâmetros que corrompe a estrutura de filtros. (9)         |
+| Processamento e Mascaramento | Documento local gerado com sucesso aplicando as máscaras de dados sensíveis da US08. (10) | Documento gerado com falha de conformidade (expondo dados sensíveis em texto claro). (11) | Falha de timeout no processamento em lote devido a volume excessivo de dados. (12) |
+
+**Casos de Teste**
+
+| **CT**   | **Classes de Equivalência** | **Entradas**                 | **Resultado Esperado**                                                                          |
+| -------- | --------------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------- |
+| **CT01** | 1, 4, 7, 10                 | Todas entradas válidas       | Exportação de extratos financeiros em lote realizado com sucesso                                |
+| **CT02** | 2, 4, 7, 10                 | Autorização do Especialista  | O sistema bloqueia a execução do método exportarExtratoLote                                     |
+| **CT03** | 3, 4, 7, 10                 | Autorização do Especialista  | O backend rejeita a requisição imediatamente de forma preventiva.                               |
+| **CT04** | 1, 5, 7, 10                 | Filtro de Período            | O front-end/API rejeita a busca antes de iniciar o processamento em lote.                       |
+| **CT05** | 1, 6, 7, 10                 | Filtro de Período            | O sistema impede a exportação massiva sem delimitador temporal.                                 |
+| **CT06** | 1, 4, 8, 10                 | Tipo de Transação e Status   | O sistema intercepta e sanitiza a entrada de dados.                                             |
+| **CT07** | 1, 4, 9, 10                 | Tipo de Transação e Status   | O back-end recusa a estrutura do objeto recebido.                                               |
+| **CT08** | 1, 4, 7, 11                 | Processamento e Mascaramento | O caso de teste aponta e documenta uma falha crítica de segurança e desconformidade regulatória |
+| **CT09** | 1, 4, 7, 12                 | Processamento e Mascaramento | O back-end interrompe a conexão de forma segura devido ao estouro de tempo.                     |
+
+---
