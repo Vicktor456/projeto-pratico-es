@@ -103,6 +103,139 @@ para realizar transferências a novos recebedores de forma independente, sem dep
 
 ---
 
+## Canais de Comunicação
+US8 - Enquanto especialista de suporte, desejo canais de comunicação estáveis e interfaces simplificadas para guiar usuários com necessidades de acessibilidade com clareza
+
+**Classes de Equivalência**
+
+| Condições de Entrada         | classes válidas                                                                          | classes inválidas                                                                                                                      | classes inválidas |
+| ---------------------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| canal de comunicação estável | especialista visualiza a tela do usuário(1)                                              | não há tela disponível para o especialista em suporte visualizar(2)                                                                    |                   |
+| permissão do usuário         | usuário faz a validação da permissão para acesso do especialista(3)                      | especialista em suporte não tem acesso concedido por parte do usuário (4)                                                              |                   |
+| função de ajuda              | a interface contém o "botão de ajuda" para inicio de chamada ou chat (5)                 | o botão de ajuda não está disponível para ajudar o usuário, seja por bug ou outro motivo, portanto o chat/chamada não é iniciado(6)    |                   |
+| feedback                     | o suporte acessa o painel de controle visualizando a ultima ação com falha do usuário(7) | não foi possível identificar por que  a ultima ação do usuário falhou, por bug, atraso na transmissão ou outros problemas técnicos.(8) |                   |
+| censura de dados sensíveis   | campos com dados sensíveis são mascarados automaticamente para o suporte(9)              | não há censura de informações sensíveis na tela compartilhada para o suporte(10)                                                       |                   |
+
+**Casos de Teste**
+
+| Classes de Equivalência | Entradas                     | Resultado Esperado                                                                        |
+| :---------------------- | :--------------------------- | :---------------------------------------------------------------------------------------- |
+| 1,3,5,7,9               | todas entradas válidas       | suporte assistido inicia com sucesso, exibe as falhas e oculta os dados sensíveis(válido) |
+| 2,3,5,7,9               | canal de comunicação estável | não há tela disponível para o especialista em suporte visualizar(inválido)                |
+| 1,4,5,7,9               | permissão do usuário         | especialista em suporte não tem acesso concedido por parte do usuário(inválido)           |
+| 1,3,6,7,9               | função de ajuda              | obotão de ajuda não está disponível e o chat/chamada não é iniciado(inválido)             |
+| 1,3,5,8,9               | feedback                     | não é possível identificar por que a última ação do usuário falhou(inválido)              |
+| 1,3,5,7,10              | censura de dados sensíveis   | não  há censura de informações sensíveis na tela compartilhada(inválido)                  |
+
+---
+
+## Controle de Funções Essenciais
+US9 - Enquanto suporte, desejo um sistema com menus enxutos e funções essenciais para realização de ações fundamentais como geração de extratos.
+
+**Classes de Equivalência**
+
+| Condições de Entrada             | Classes válidas                                                                                                      | Classes inválidas                                                                            | Classes Inválidas |
+| :------------------------------- | :------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------- | ----------------- |
+| período do extrato               | seleção de filtros rápidos de 7, 15 ou 30 dias(1)                                                                    | período customizado inválido ou fora dos filtros rápidos(2)                                  |                   |
+| formato de download              | exportação em formato PDF estruturado para leitores de tela ou CSV com UTF-8(3)                                      | exportação em formatos não confirmados (ex: XLS, TXT)(4)                                     |                   |
+| busca de registros               | uso do campo de busca no topo para localização direta(5)                                                             | navegação profunda através de submenus sem uso da busca(6)                                   |                   |
+| segurança na exportação          | usuário realiza a reautenticação via MFA com sucesso(7)                                                              | usuário falha ou cancela a reautenticação via MFA(8)                                         |                   |
+| volume de registros (síncrono)   | solicitação de exportação com até 10.000 registros(9)                                                                | solicitação de exportação síncrona acima de 10.000 registros(10)                             |                   |
+| volume de registros (assíncrono) | processamento em segundo plano entre 10.001 e 50.000 registros com envio de link por e-mail e notificação in-app(11) | tentativa de processamento assíncrono acima de 50.000 registros sem aprovação(12)            |                   |
+| aprovação de grande volume       | exportação acima de 50.000 registros aprovada por um segundo suporte(13)                                             | exportação acima de 50.000 registros bloqueada por falta de aprovação do segundo suporte(14) |                   |
+| limite diário de grandes volumes | suporte realiza até 5 exportações de grandes volumes no dia(15)                                                      | suporte tenta realizar a 6ª exportação de grande volume no mesmo dia(16)                     |                   |
+
+**Casos de Teste**
+
+| Classes de equivalência | Entradas                         | Resultado Esperado                                                                                |
+| :---------------------- | :------------------------------- | :------------------------------------------------------------------------------------------------ |
+| 1,3,5,7,9,11,13,15      | todas entradas válidas           | geração e exportação do extrato realizado com sucesso (válido)                                    |
+| 2,3,5,7,9,11,13,15      | período do extrato               | período customizado inválido ou fora dos filtros rápidos(inválido)                                |
+| 1,4,5,7,9,11,13,15      | formato do download              | exportação em formatos não confirmados (ex: XLS, TXT)(inválido)                                   |
+| 1,3,6,7,9,11,13,15      | busca de registros               | navegação profunda através de submenus sem uso da busca(inválido)                                 |
+| 1,3,5,8,9,11,13,15      | segurança na exportação          | usuário falha ou cancela a reautenticação via MFA(Inválido)                                       |
+| 1,3,5,7,10,11,13,15     | volume de registros (síncrono)   | solicitação de exportação síncrona acima de 10.000 registros(Inválido)                            |
+| 1,3,5,7,9,12,13,15      | volume de registros (assíncrono) | tentativa de processamento assíncrono acima de 50.000 registros sem aprovação(Inválido)           |
+| 1,3,5,7,9,11,14,15      | aprovação de grande volume       | exportação acima de 50.000 registros bloqueada por falta de aprovação do segundo suporte(invlido) |
+| 1,3,5,7,9,11,13,16      | limite diário de grandes volumes | suporte tenta realizar a 6ª exportação de grande volume no mesmo dia(inválido)                    |
+
+---
+
+## Acessibilidade Visual na Interface
+US10 - Enquanto contato de apoio, desejo uma interface com fontes legíveis para garantir a acessibilidade de usuários com baixa visão.
+
+**Classes de Equivalência**
+
+| Condições de Entrada              | classes válidas                                                                          | classes inválidas                                                                                        | classes inválidas |
+| :-------------------------------- | :--------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------- | ----------------- |
+| espaçamento entre linhas          | interface configurada com o espaçamento mínimo exigido para evitar fadiga visual(1)      | interface com espaçamento inferior ao mínimo, leva a fadiga vidual (2)                                   |                   |
+| rastreamento da leitura acessível | espaçamento mínimo entre linhas facilita o rastreamento da leitura pelo idoso(3)         | interface com espaçamento inferior ao mínimo, não torna possível o rastreamento acessível da leitura (4) |                   |
+| estilo da fonte                   | uso de fontes sem serifa como Arial, Open Sans ou Roboto para garantir a legibilidade(5) | uso de estilos cursivos, muito finos ou fontes com serifa que dificultam a leitura(6)                    |                   |
+| margem entre botões               | botões dispostos com espaçamento visual suficiente para impedir cliques por engano(7)    | botões excessivamente próximos, geram risco de o usuário clicar num item por engano(8)                   |                   |
+| comprimento da linha              | textos estruturados respeitando o limite máximo de até 80 caracteres por linha(9)        | linhas extensas contendo mais de 80 caracteres, prejudicando a legibilidade(10)                          |                   |
+
+**Casos de Teste**
+
+| Classes de equivalência | Entradas                          | Resultado Esperado                                                                                             |
+| :---------------------- | :-------------------------------- | :------------------------------------------------------------------------------------------------------------- |
+| 1,3,5,7,9               | todas entradas válidas            | interface configurada corretamente com alta legibilidade e acessibilidade pro usuário(valido)                  |
+| 2,3,5,7,9               | espaçamento entre linhas          | interface com espaçamento inferior ao mínimo, leva a fadiga visual(inválido)                                   |
+| 1,4,5,7,9               | rastreamento da leitura acessível | interface com espaçamento inferior ao mínimo, não torna possível o rastreamento acessível da leitura(inválido) |
+| 1,3,6,7,9               | estilo da fonte                   | uso de estilos cursivos, muito finos ou fontes com serifa que dificultam a leitura(inválido)                   |
+| 1,3,5,8,9               | margem entre botões               | botões muito próximos, geram risco de o usuário clicar num item por engano(inválido)                           |
+| 1,3,5,7,10              | comprimento da linha              | linhas extensas contendo mais de 80 caracteres, prejudicam a legibilidade(inválido)                            |
+
+---
+
+## Memorização de Contato para Futuras Transações
+US11 - Enquanto usuário idoso, desejo gravar o contato da pessoa que acabou de receber meu dinheiro, para ter um atalho rápido nas minhas próximas operações.
+
+**Classes de Equivalência**
+
+| Condições de Entrada        | classes válidas                                                                                     | classes inválidas                                                                   | classes inválidas |
+| :-------------------------- | :-------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- | ----------------- |
+| exibição da opção de salvar | chave pix ou dados bancários não existem na lista e o app exibe a opção de "Salvar este contato"(1) | chave pix ou dados bancários já existem na lista e o app omite a opção de salvar(2) |                   |
+| identificação do contato    | usuário atribui um nome ou apelido simples para o contato(3)                                        | usuário tenta salvar sem preencher o nome ou apelido(4)                             |                   |
+| visualização de atalhos     | contatos salvos aparecem corretamente na seção de "favoritos" ou "recentes" na tela inicial(5)      | novos contatos cadastrados não são renderizados nos atalhos da tela inicial(6)      |                   |
+
+**Casos de Teste**
+
+| Classes de Equivalência | Entradas                    | Resultado Esperado                                                                                |
+| :---------------------- | :-------------------------- | :------------------------------------------------------------------------------------------------ |
+| 1,3,5                   | todas entradas válidas      | opção de salvar é exibida, o nome é atribuído com sucesso e o contato aparece nos atalhos(válido) |
+| 2,3,5                   | exibição da opção de salvar | chave pix ou os dados bancários já existem na lista e o app não exibe a opção de salvar(inválido) |
+| 1,4,5                   | identificação do contato    | usuário tenta salvar sem preencher o nome ou apelido(inválido)                                    |
+| 1,3,6                   | visualização de atalhos     | novos contatos cadastrados não são renderizados nos atalhos da tela inicial(inválido)             |
+
+---
+
+## Pesquisa de Recebedor por Barra de Pesquisa
+US12 - Enquanto usuário idoso, desejo pesquisar um recebedor na minha lista usando apenas o nome, para localizar o contato rapidamente na hora da transferência.
+
+**Classes de Equivalência**
+
+| Condições de Entrada          | classes válidas                                                                                               | classes inválidas                                                                        | classes invalidas                                         |
+| :---------------------------- | :------------------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| campo de busca                | barra de pesquisa fixa presente no topo da lista com o placeholder "buscar por nome"(1)                       | barra de pesquisa ausente, oculta ou com placeholder incorreto(2)                        |                                                           |
+| filtro de contatos            | digitação de letras filtra automaticamente a lista de contatos correspondentes(3)                             | sistema ou não atualiza a lista em tempo real(4)                                         | sistema exige clique em botão para buscar atualizações(5) |
+| tratamento de acentos e caixa | busca ignora diferenças entre maiúsculas/minúsculas e acentos (como "Jose" localiza "José")(6)                | busca restrita que exige digitação exata com acentuação e caixa correta(7)               |                                                           |
+| ordenação do resultado        | contatos localizados são exibidos priorizando a ordem alfabética(8)                                           | lista retorma de forma desordenada ou aleatória(9)                                       |                                                           |
+| correspondência ausente       | nenhum contato corresponde ao termo digitado e exibe a mensagem: nenhum contato encontrado com este nome"(10) | nenhum contato localizado e a tela fica em branco sem feedback ou algum visual claro(11) |                                                           |
+
+**Casos de Teste**
+
+| classes de equivalência | Entradas                      | Resultado Esperado                                                                                    |
+| :---------------------- | :---------------------------- | :---------------------------------------------------------------------------------------------------- |
+| 1,3,6,8,10              | todas entradas válidas        | busca realizada com sucesso, lista filtrada em ordem alfabética desconsiderando acentos/caixa(válido) |
+| 2,3,6,8,10              | campo de busca                | barra de pesquisa ausente, oculta ou com placeholder incorreto(inválido)                              |
+| 1,4,6,8,10              | filtro de contatos            | sistema não atualiza a lista em tempo real ao digitar(Inválido)                                       |
+| 1,5,6,8,10              | filtro de contatos            | ssitema exige clique em botão para buscar atualizações(Inválido)                                      |
+| 1,3,7,8,10              | tratamento de acentos e caixa | busca restrita que exige digitação exata com acentuação e caixa correta(Inválido)                     |
+| 1,3,6,9,10              | ordenação do resultado        | lista retorna de forma desordenada ou aleatória(Inválido)                                             |
+| 1,3,6,8,11              | correspondência ausente       | nenhum contato localizado e a tela fica em branco sem feedback ou algum visual claro(Inválido)        |
+
+---
+
 ## Visualização de Comprovante Ampliada
 US13 - Enquanto usuário idoso, desejo visualizar o comprovante final com uma fonte ampliada e nítida, para conseguir conferir as informações da transferência sem forçar a vista.
 
