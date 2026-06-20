@@ -52,6 +52,9 @@ Andrey Antonio de Oliveira Rodrigues
 ## Projeto e Arquitetura
 [Projeto e Arquitetura](https://github.com/Vicktor456/projeto-pratico-es/tree/main/projeto-e-arquitetura)
 
+## Casos de Teste
+[Casos de Teste](https://github.com/Vicktor456/projeto-pratico-es/tree/main/casos-de-teste)
+
 #
 
 Declaramos a utilização de IA para estruturação e refinamento do projeto.
