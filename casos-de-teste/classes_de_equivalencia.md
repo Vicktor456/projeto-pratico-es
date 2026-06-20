@@ -1,26 +1,27 @@
 # Classe de Equivalência
 
-## Privacidade de Saldo
-US1 - Enquanto usuário idoso, quero que o meu saldo apareça oculto por padrão, para que eu possa abrir o aplicativo em locais públicos com privacidade
+# Privacidade de Saldo
+
+ US1 - Enquanto usuário idoso, quero que o meu saldo apareça oculto por padrão, para que eu possa abrir o aplicativo em locais públicos com privacidade.
 
 **Classes de Equivalência**
 
-| Condições de Entrada              | Classes Válidas                           | Classes Inválidas                            | Classes Inválidas |
-| --------------------------------- | ----------------------------------------- | -------------------------------------------- | ----------------- |
-| Estado inicial ao abrir o app     | Saldo inicia oculto (1)                   | Saldo inicia visível (2)                     |                   |
-| Interação com o botão "Ver Saldo" | Clique exibe o saldo textual (3)          | Clique mantém oculto ou quebra layout (4)    |                   |
-| Ação de trocar de tela            | Saldo volta a ocultar automaticamente (5) | Saldo permanece exposto na nova tela (6)     |                   |
-| Preferência no Perfil             | Estado é salvo nas configurações (7)      | Preferência é perdida ao deslogar/fechar (8) |                   |
+| Condições de Entrada              | Classes Válidas                                                      | Classes Inválidas                                                      | Classes Inválidas |
+| --------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------- | ----------------- |
+| Estado inicial ao abrir o app     | Saldo inicia oculto por padrão (1)                                   | Saldo inicia visível por padrão (2)                                    |                   |
+| Interação com o botão "Ver Saldo" | Clique exibe o saldo corretamente (3)                                | Clique não exibe o saldo ou provoca erro visual/layout (4)             |                   |
+| Ação de trocar de tela            | Saldo volta a ocultar automaticamente ao navegar para outra tela (5) | Saldo permanece visível após navegação para outra tela (6)             |                   |
+| Preferência no Perfil             | Preferência de ocultação é salva corretamente nas configurações (7)  | Preferência é perdida após logout ou reinicialização do aplicativo (8) |                   |
 
 **Casos de Teste**
 
-| Casos de Teste | Classes de Equivalência | Entradas                                                                                 | Resultado Esperado                 |
-| -------------- | ----------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------- |
-| Caso 1         | 1, 3, 5, 7              | Abrir o app, clicar em "Ver saldo", alternar outra tela e verificar o perfil.            | Sucesso ( Saldo inicia oculto ***) |
-| Caso 2         | 1, 3, 5, 7              | Inicializar o aplicativo pela primeira vez na tela principal.                            | Falha                              |
-| Caso 3         | 1, 4, 5, 7              | Tocar no botão grande com a etiqueta "Ver Saldo".                                        | Falha                              |
-| Caso 4         | 1, 3, 6, 7              | Revelar o saldo clicando no botão e, em seguida, tocar para ir à tela de Extrato.        | Falha                              |
-| Caso 5         | 1, 3, 5, 8              | Definir a preferência de ocultar saldo, fazer o logout e fechar o aplicativo totalmente. | Falha                              |
+| Casos de Teste | Classes de Equivalência | Entradas                                                                                                                             | Resultado Esperado                                                                                                 |
+| -------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| Caso 1         | 1, 3, 5, 7              | Abrir o aplicativo, visualizar a tela inicial, clicar em "Ver Saldo", navegar para outra tela e verificar as configurações do perfil | Sucesso – saldo inicia oculto, pode ser exibido, volta a ocultar ao trocar de tela e a preferência permanece salva |
+| Caso 2         | 2                       | Inicializar o aplicativo pela primeira vez e verificar o estado do saldo na tela principal                                           | Falha – saldo é exibido sem solicitação do usuário                                                                 |
+| Caso 3         | 1, 4, 5, 7              | Tocar no botão "Ver Saldo"                                                                                                           | Falha – saldo não é exibido corretamente ou ocorre erro de interface                                               |
+| Caso 4         | 1, 3, 6, 7              | Exibir o saldo e navegar para a tela de Extrato                                                                                      | Falha – saldo continua visível após mudança de tela                                                                |
+| Caso 5         | 1, 3, 5, 8              | Configurar ocultação do saldo, realizar logout e encerrar o aplicativo                                                               | Falha – preferência não é persistida após novo acesso                                                              |
 
 ---
 
