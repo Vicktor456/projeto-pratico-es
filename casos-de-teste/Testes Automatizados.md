@@ -13,7 +13,14 @@ Cada método de teste possui rastreabilidade com os Casos de Teste definidos na 
 
 # Testes Automatizados
 ## US1 - Privacidade de Saldo
+**Arquivos Relacionados**
+
+Arquivo Source - [PrivacidadedeSaldoService.java](https://github.com/Vicktor456/projeto-pratico-es/blob/main/casos-de-teste/src/PrivacidadeSaldoService.java)
+
+Teste - [PrivacidadedeSaldoTest.java](https://github.com/Vicktor456/projeto-pratico-es/blob/main/casos-de-teste/tests/PrivacidadeSaldoServiceTest.java)
+
 **Descrição**
+
 Os testes automatizados desta funcionalidade validam se o saldo do usuário permanece oculto por padrão, se pode ser exibido mediante ação do usuário, se volta a ser ocultado ao navegar entre telas e se a preferência é corretamente persistida.
 
 **Rastreabilidade**
