@@ -32,3 +32,55 @@ Os testes automatizados desta funcionalidade validam se o saldo do usuário perm
 | US1        | Caso 3        | CT_US1_03_FalhaAoExibirSaldo                |
 | US1        | Caso 4        | CT_US1_04_SaldoPermaneceExpostoAoTrocarTela |
 | US1        | Caso 5        | CT_US1_05_PreferenciaNaoPersistida          |
+
+---
+
+## US14 - Exibição de Aviso de Risco de Fraude
+**Arquivos Relacionados**
+
+Arquivo Source - [AlertaFraudeService.java](https://github.com/Vicktor456/projeto-pratico-es/blob/main/casos-de-teste/src/AlertaFraudeService.java)
+
+Teste - [AlertaFraudeTest.java](https://github.com/Vicktor456/projeto-pratico-es/blob/main/casos-de-teste/tests/AlertaFraudeTest.java)
+
+**Descrição**
+
+Os testes automatizados desta funcionalidade verificam a exibição de alertas de fraude para transações suspeitas ou críticas, validando aspectos visuais, clareza da mensagem, interrupção da operação, temporização de segurança e bloqueio de operações consideradas perigosas.
+
+**Rastreabilidade**
+
+| User Story | Caso de Teste | Método JUnit                            |
+| ---------- | ------------- | --------------------------------------- |
+| US14       | Caso 1        | CT_US14_01_ContinuarComCronometro       |
+| US14       | Caso 2        | CT_US14_02_CancelamentoSeguro           |
+| US14       | Caso 3        | CT_US14_03_BloqueioDeRiscoCritico       |
+| US14       | Caso 4        | CT_US14_04_AlertaExibidoParaChaveSegura |
+| US14       | Caso 5        | CT_US14_05_FalhaDeLayout                |
+| US14       | Caso 6        | CT_US14_06_LinguagemInadequada          |
+| US14       | Caso 7        | CT_US14_07_CancelamentoIgnorado         |
+| US14       | Caso 8        | CT_US14_08_CronometroNaoExecutado       |
+| US14       | Caso 9        | CT_US14_09_FalhaBloqueioCritico         |
+
+---
+
+## US17 - Geração de QR Code
+**Arquivos Relacionados**
+
+Arquivo Source - [GeracaoQRCodeService.java](https://github.com/Vicktor456/projeto-pratico-es/blob/main/casos-de-teste/src/GeracaoQRCodeService.java)
+
+Teste - [GeracaoQRCodeTest.java](https://github.com/Vicktor456/projeto-pratico-es/blob/main/casos-de-teste/tests/GeracaoQRCodeServiceTest.java)
+
+**Descrição**
+
+Os testes automatizados desta funcionalidade validam a geração de QR Codes para cobrança, verificando a entrada do valor, o tipo de QR gerado, a exibição visual, o vínculo com a chave Pix correta, a funcionalidade Pix Copia e Cola e as notificações de recebimento.
+
+**Rastreabilidade**
+
+| User Story | Caso de Teste | Método JUnit                       |
+| ---------- | ------------- | ---------------------------------- |
+| US17       | Caso 1        | CT_US17_01_GeracaoQRCodeComSucesso |
+| US17       | Caso 2        | CT_US17_02_TecladoIncorreto        |
+| US17       | Caso 3        | CT_US17_03_QRCodeInvalido          |
+| US17       | Caso 4        | CT_US17_04_ExibicaoIncorreta       |
+| US17       | Caso 5        | CT_US17_05_ChavePixIncorreta       |
+| US17       | Caso 6        | CT_US17_06_FalhaNoPixCopiaECola    |
+| US17       | Caso 7        | CT_US17_07_NotificacaoAusente      |
