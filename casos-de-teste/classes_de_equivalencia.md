@@ -362,33 +362,34 @@ US13 - Enquanto usuário idoso, desejo visualizar o comprovante final com uma fo
 
 ---
 
-## Exibição de Aviso de Risco de Fraude
+# Exibição de Aviso de Risco de Fraude
+
 US14 - Enquanto usuário idoso, desejo visualizar um aviso de risco claro e em destaque antes de confirmar um Pix suspeito, para que eu possa interromper a operação a tempo e evitar cair em um golpe.
 
 **Classes de Equivalência**
 
-| **Condições de Entrada**                  | **Classes Válidas**                               | **Classes Inválidas**                                      | **Classes Inválidas**           |
-| ----------------------------------------- | ------------------------------------------------- | ---------------------------------------------------------- | ------------------------------- |
-| **Nível de Risco da Chave de Destino**    | Risco Suspeito / Elevado (1)                      | Risco Normal / Seguro (2)                                  | Risco Crítico / Lista Preta (3) |
-| **Interface do Pop-up de Alerta**         | Tela cheia, fundo amarelo e fonte $\ge$ 20pt (4)  | Layout quebrado, sem fundo de alerta ou fonte $<$ 20pt (5) |                                 |
-| **Linguagem da Mensagem**                 | Linguagem humana e acolhedora (6)                 | Presença de termos técnicos ou códigos de erro (7)         |                                 |
-| **Interação com "Quero Cancelar"**        | Transação é interrompida com segurança (8)        | Sistema falha e prossegue com a transação (9)              |                                 |
-| **Interação com "Continuar assim mesmo"** | Ativa cronômetro regressivo de 5 segundos (10)    | Libera o campo de senha imediatamente sem pausa (11)       |                                 |
-| **Tratamento de Risco Crítico**           | Bloqueio sumário e direcionamento ao suporte (12) | Permite que o usuário insira a senha e envie o Pix (13)    |                                 |
+| Condições de Entrada                  | Classes Válidas                                                                 | Classes Inválidas                                                        | Classes Inválidas                            |
+| ------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | -------------------------------------------- |
+| Nível de Risco da Chave de Destino    | Risco Suspeito ou Elevado (1)                                                   | Risco Normal ou Seguro com acionamento indevido do alerta (2)            | Risco Crítico ou presente em Lista Preta (3) |
+| Interface do Pop-up de Alerta         | Tela cheia, fundo amarelo de destaque e fonte ≥ 20pt (4)                        | Layout quebrado, ausência de destaque visual ou fonte < 20pt (5)         |                                              |
+| Linguagem da Mensagem                 | Linguagem simples, humana e acolhedora (6)                                      | Utilização de termos técnicos, códigos de erro ou linguagem complexa (7) |                                              |
+| Interação com "Quero Cancelar"        | Transação é interrompida com segurança (8)                                      | Sistema ignora o cancelamento e continua a transação (9)                 |                                              |
+| Interação com "Continuar assim mesmo" | Sistema ativa cronômetro regressivo de 5 segundos antes de liberar a senha (10) | Sistema libera imediatamente a digitação da senha (11)                   |                                              |
+| Tratamento de Risco Crítico           | Sistema bloqueia a operação e direciona o usuário ao suporte (12)               | Sistema permite prosseguir com a transação mesmo em risco crítico (13)   |                                              |
 
 **Casos de Teste**
 
-| **Casos de Teste** | **Classes de Equivalência** | **Entradas**                                                                                                                                      | **Resultado Esperado** |
-| ------------------ | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| **Caso 1**         | 1, 4, 6, 10                 | Tudo válido                                                                                                                                       | Sucesso                |
-| **Caso 2**         | 1, 4, 6, 8                  | O usuário visualiza o alerta de conta suspeita dentro dos padrões visuais corretos e clica na ação recomendada de destaque "Quero Cancelar".      | Sucesso                |
-| **Caso 3**         | 3, 12                       | O usuário tenta realizar uma transferência Pix para uma conta cujo nível de risco é crítico (Presente na lista negra).                            | Sucesso                |
-| **Caso 4**         | 2, 4, 6, 10                 | O usuário envia um Pix para uma chave comum e segura (Risco Normal), mas o sistema aciona incorretamente a tela de interrupção de fraude.         | Falha                  |
-| **Caso 5**         | 1, 5, 6, 10                 | Ao identificar a chave suspeita, o pop-up de alerta é gerado com o layout quebrado, sem o fundo amarelo-alerta ou com fontes menores que 20pt.    | Falha                  |
-| **Caso 6**         | 1, 4, 7, 10                 | O pop-up é acionado para a chave suspeita, mas a mensagem falha no critério e exibe termos técnicos complexos como "Score de Risco de Transação". | Falha                  |
-| **Caso 7**         | 1, 4, 6, 9                  | O usuário clica no botão "Quero Cancelar", mas o aplicativo ignora a ação e prossegue normalmente com o fluxo da transação de risco.              | Falha                  |
-| **Caso 8**         | 1, 4, 6, 11                 | O usuário clica em "Continuar assim mesmo" e o sistema libera o campo de digitação de senha imediatamente, ignorando os 5 segundos de pausa.      | Falha                  |
-| **Caso 9**         | 3, 13                       | A chave de destino possui nível de risco crítico (lista preta), mas o sistema falha no bloqueio sumário e permite que o idoso digite a senha.     | Falha                  |
+| Casos de Teste | Classes de Equivalência | Entradas                                                                                                                       | Resultado Esperado                                                                   |
+| -------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| Caso 1         | 1, 4, 6, 10             | Chave Pix classificada como suspeita, alerta exibido corretamente, mensagem amigável e usuário escolhe "Continuar assim mesmo" | Sucesso – cronômetro regressivo de 5 segundos é iniciado antes da liberação da senha |
+| Caso 2         | 1, 4, 6, 8              | Chave Pix classificada como suspeita, alerta exibido corretamente e usuário seleciona "Quero Cancelar"                         | Sucesso – transação é interrompida com segurança                                     |
+| Caso 3         | 3, 12                   | Chave Pix presente em lista preta ou classificada como risco crítico                                                           | Sucesso – operação bloqueada e usuário direcionado ao suporte                        |
+| Caso 4         | 2, 4, 6, 10             | Chave Pix segura, porém o sistema exibe indevidamente o alerta de fraude                                                       | Falha – alerta não deveria ser exibido                                               |
+| Caso 5         | 1, 5, 6, 10             | Chave suspeita com alerta exibido em layout incorreto ou sem destaque visual adequado                                          | Falha – requisitos de acessibilidade e destaque visual não atendidos                 |
+| Caso 6         | 1, 4, 7, 10             | Chave suspeita com mensagem contendo termos técnicos ou difíceis de compreender                                                | Falha – linguagem inadequada para o público-alvo                                     |
+| Caso 7         | 1, 4, 6, 9              | Usuário seleciona "Quero Cancelar", porém o sistema prossegue com a transação                                                  | Falha – cancelamento ignorado                                                        |
+| Caso 8         | 1, 4, 6, 11             | Usuário seleciona "Continuar assim mesmo" e o sistema libera imediatamente o campo de senha                                    | Falha – cronômetro de segurança não executado                                        |
+| Caso 9         | 3, 13                   | Chave Pix classificada como risco crítico, porém o sistema permite prosseguir para a etapa de senha                            | Falha – bloqueio obrigatório não realizado                                           |
 
 ---
 
