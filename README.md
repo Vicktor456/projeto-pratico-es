@@ -1,5 +1,16 @@
-# SeuPix
+<div align="center">
+
+# 💲SeuPix
 **Trabalho Prático** da Disciplina de **Engenharia de Software I**
+
+![SeuPix](https://img.shields.io/badge/Seu-Pix-00695C?style=flat&labelColor=7ED957)
+![Version](https://img.shields.io/badge/version-3.0-2EA44F?style=flat)
+![Static Badge](https://img.shields.io/badge/license-MIT-black?style=flat&color=blue)
+
+
+
+</div>
+
 ## Proposta do Projeto:
 O SeuPix é uma ideia de app criada para resolver a problematica da evasão dos idosos de sistemas bancarios, o SeuPix é uma alternativa acessivel para que idosos utilizem e ingressem no sistema bancario virtual
 
