@@ -362,7 +362,7 @@ US13 - Enquanto usuário idoso, desejo visualizar o comprovante final com uma fo
 
 ---
 
-# Exibição de Aviso de Risco de Fraude
+## Exibição de Aviso de Risco de Fraude
 
 US14 - Enquanto usuário idoso, desejo visualizar um aviso de risco claro e em destaque antes de confirmar um Pix suspeito, para que eu possa interromper a operação a tempo e evitar cair em um golpe.
 
@@ -448,30 +448,32 @@ US16 - Enquanto usuário idoso, desejo ver uma lista das minhas ultimas transaç
 ---
 
 ## Geração de QR Code
-US17 - Enquanto usuário idoso, desejo gerar um QR Code com o valor da venda ou cobrança, para que outra pessoa possa me pagar sem eu precisar falar minha chave.
+
+US17 - Enquanto usuário idoso, desejo gerar um QR Code com o valor da venda ou cobrança, para que outra pessoa possa me pagar sem eu precisar informar minha chave Pix.
 
 **Classes de Equivalência**
 
-| **Condições de Entrada**     | **Classes Válidas**                                                 | **Classes Inválidas**                                      | **Classes Inválidas** |
-| ---------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------------- | --------------------- |
-| **Entrada do Valor**         | Campo com teclado numérico ativo e fonte grande (1)                 | Abre teclado alfabético ou fonte padrão pequena (2)        |                       |
-| **Tipo de QR Code Gerado**   | QR Code dinâmico com valor embutido no payload (3)                  | QR Code estático ou sem valor especificado (4)             |                       |
-| **Exibição do Código**       | Centralizado, ampliado e em alto contraste (5)                      | Código pequeno, descentralizado ou com baixo contraste (6) |                       |
-| **Vínculo da Chave Pix**     | Associa os dados da chave Pix principal corretamente (7)            | Gera o código sem chave ou com chave incorreta (8)         |                       |
-| **Ação de Copiar Código**    | Copia a string do Pix Copia e Cola para a área de transferência (9) | Botão não responde ou copia string corrompida (10)         |                       |
-| **Confirmação de Pagamento** | Exibe alerta visual e emite sinal sonoro ao receber (11)            | Atualiza o saldo sem emitir aviso visual ou sonoro (12)    |                       |
+| Condições de Entrada     | Classes Válidas                                                                 | Classes Inválidas                                                   | Classes Inválidas |
+| ------------------------ | ------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ----------------- |
+| Entrada do Valor         | Campo utiliza teclado numérico e fonte ampliada para facilitar a digitação (1)  | Campo abre teclado alfabético ou utiliza fonte pequena (2)          |                   |
+| Tipo de QR Code Gerado   | QR Code dinâmico contendo o valor da cobrança embutido no payload (3)           | QR Code estático ou sem valor definido no payload (4)               |                   |
+| Exibição do Código       | QR Code exibido centralizado, ampliado e com alto contraste (5)                 | QR Code exibido pequeno, descentralizado ou com baixo contraste (6) |                   |
+| Vínculo da Chave Pix     | QR Code vinculado corretamente à chave Pix principal do usuário (7)             | QR Code gerado sem chave Pix ou com chave incorreta (8)             |                   |
+| Ação de Copiar Código    | String Pix Copia e Cola copiada corretamente para a área de transferência (9)   | Botão não responde ou copia conteúdo corrompido (10)                |                   |
+| Confirmação de Pagamento | Sistema exibe alerta visual e sinal sonoro após o recebimento do pagamento (11) | Sistema atualiza o saldo sem emitir aviso visual ou sonoro (12)     |                   |
 
 **Casos de Teste**
 
-| **Casos de Teste** | **Classes de Equivalência** | **Entradas**                                                                                                                                             | **Resultado Esperado** |
-| ------------------ | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
-| **Caso 1**         | 1, 3, 5, 7, 9, 11           | Tudo válido                                                                                                                                              | Sucesso                |
-| **Caso 2**         | 2, 3, 5, 7, 9, 11           | O usuário toca no campo de inserção do valor, mas o aplicativo abre o teclado alfabético tradicional ou exibe uma fonte padrão pequena.                  | Falha                  |
-| **Caso 3**         | 1, 4, 5, 7, 9, 11           | O sistema processa a cobrança, mas gera um QR Code do tipo estático ou completamente sem o valor especificado embutido no payload.                       | Falha                  |
-| **Caso 4**         | 1, 3, 6, 7, 9, 11           | O código é gerado, mas aparece na tela em tamanho pequeno, descentralizado ou com cores de baixo contraste.                                              | Falha                  |
-| **Caso 5**         | 1, 3, 5, 8, 9, 11           | O aplicativo cria o QR Code, mas falha ao vincular os dados da chave Pix configurada como principal ou gera com uma chave incorreta.                     | Falha                  |
-| **Caso 6**         | 1, 3, 5, 7, 10, 11          | O usuário aciona a função de cópia, mas o botão não responde ou envia uma string do Pix Copia e Cola totalmente corrompida para a área de transferência. | Falha                  |
-| **Caso 7**         | 1, 3, 5, 7, 9, 12           | O pagamento vinculado ao QR Code é detectado e o saldo é atualizado, mas o sistema não emite nenhum aviso visual ou sinal sonoro de confirmação.         | Falha                  |
+| Casos de Teste | Classes de Equivalência | Entradas                                                                                                                   | Resultado Esperado                                                                                           |
+| -------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Caso 1         | 1, 3, 5, 7, 9, 11       | Usuário informa um valor utilizando teclado numérico, gera o QR Code dinâmico, compartilha a cobrança e recebe o pagamento | Sucesso – QR Code é gerado corretamente, o Pix Copia e Cola funciona e o recebimento é sinalizado ao usuário |
+| Caso 2         | 2, 3, 5, 7, 9, 11       | Usuário acessa o campo de valor e o sistema exibe teclado inadequado ou fonte pequena                                      | Falha – requisitos de acessibilidade não atendidos                                                           |
+| Caso 3         | 1, 4, 5, 7, 9, 11       | Sistema gera QR Code sem valor embutido ou gera QR Code estático                                                           | Falha – QR Code incorreto para cobrança                                                                      |
+| Caso 4         | 1, 3, 6, 7, 9, 11       | QR Code é gerado, porém exibido com tamanho inadequado ou baixo contraste                                                  | Falha – QR Code não atende aos requisitos de visualização                                                    |
+| Caso 5         | 1, 3, 5, 8, 9, 11       | QR Code é gerado com chave Pix incorreta ou sem chave associada                                                            | Falha – cobrança vinculada incorretamente                                                                    |
+| Caso 6         | 1, 3, 5, 7, 10, 11      | Usuário utiliza a função Pix Copia e Cola e o conteúdo copiado está incorreto ou inexistente                               | Falha – função de cópia não executada corretamente                                                           |
+| Caso 7         | 1, 3, 5, 7, 9, 12       | Pagamento é recebido, porém o sistema não emite qualquer notificação visual ou sonora                                      | Falha – confirmação de recebimento não realizada corretamente                                                |
+
 
 ---
 
