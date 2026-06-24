@@ -58,4 +58,4 @@ Andrey Antonio de Oliveira Rodrigues
 #
 
 Declaramos a utilização de IA para estruturação e refinamento do projeto.
-IAs utilizadas - Gemini e ChatGPT
+IAs utilizadas - Gemini, ChatGPT e FigmaMake
