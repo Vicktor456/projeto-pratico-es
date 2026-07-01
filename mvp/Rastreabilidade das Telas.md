@@ -7,7 +7,8 @@ loren inpsum
 
 ---
 
-IMAGEM
+<img width="253" height="552" alt="image" src="https://github.com/user-attachments/assets/91132e8c-6227-401d-b7e4-86870c0181ed" />
+
 
 ---
 
@@ -21,7 +22,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="240" height="495" alt="image" src="https://github.com/user-attachments/assets/0d197c79-c930-4a57-b8bc-a7c90ce78764" />
+
 
 ---
 
@@ -35,7 +37,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="251" height="506" alt="image" src="https://github.com/user-attachments/assets/0c89cec8-8b0a-490c-aed5-69ca2b0a5ca7" />
+
 
 ---
 
@@ -48,8 +51,7 @@ IMAGEM
 **Descrição:** Enquanto usuário idoso, desejo inserir chaves PIX manualmente através de um campo de digitação direto, para realizar transferências a novos recebedores de forma independente, sem depender de contatos previamente salvos.
 
 ---
-
-IMAGEM
+<img width="296" height="161" alt="image" src="https://github.com/user-attachments/assets/938e0444-42ce-45ce-992b-4884ef28f9d9" />
 
 ---
 
@@ -63,7 +65,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="218" height="494" alt="image" src="https://github.com/user-attachments/assets/d2c38e31-eaba-4fef-8b77-55654d949cdc" />
+
 
 ---
 
@@ -77,7 +80,9 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="255" height="244" alt="image" src="https://github.com/user-attachments/assets/1dbda3cf-ecc8-4bff-b2cd-53e50d2381ab" />
+
+<img width="251" height="406" alt="image" src="https://github.com/user-attachments/assets/70f5ef74-1180-4a20-881e-876c3b7604ea" />
 
 ---
 
@@ -91,7 +96,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="248" height="511" alt="image" src="https://github.com/user-attachments/assets/0f407883-fb78-40a6-9510-850a8183b16d" />
+
 
 ---
 
@@ -104,7 +110,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="246" height="490" alt="image" src="https://github.com/user-attachments/assets/f7862546-6825-434f-8392-294037c3be4b" />
+
 
 ---
 
@@ -122,7 +129,9 @@ IMAGEM
 
 ---
 
-IMAGEM IMAGEM
+<img width="240" height="502" alt="image" src="https://github.com/user-attachments/assets/44adbc73-6641-4623-9f85-e46be2ee666e" />
+<img width="220" height="240" alt="image" src="https://github.com/user-attachments/assets/e264d86d-2072-47f5-ad22-6b79a9233acf" />
+
 
 ---
 
@@ -136,7 +145,8 @@ IMAGEM IMAGEM
 
 ---
 
-IMAGEM
+<img width="270" height="528" alt="image" src="https://github.com/user-attachments/assets/bb15345e-f259-48a1-84e2-90cc38d0e4c5" />
+
 
 ---
 
@@ -145,16 +155,9 @@ IMAGEM
 ---
 
 ## US11 - Memorização de Contrato Para Futuras Transações
+Enquanto usuário idoso, desejo gravar o contato da pessoa que acabou de receber meu dinheiro, para ter um atalho rápido nas minhas próximas operações.
 
-**Descrição:** Enquanto usuário idoso, desejo gravar o contato da pessoa que acabou de receber meu dinheiro, para ter um atalho rápido nas minhas próximas operações.
-
----
-
-IMAGEM
-
----
-
-**Implementação no MVP:** !!!so vou adicionar a descrição dps que consertar, não sei onde vai ficar essa opção de salvar contato
+**Implementação no MVP:** Não foi gerada nenhuma tela para implementação dessa User Story, portanto, esta ficou fora do escopo do MVP
 
 ---
 
@@ -164,7 +167,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="266" height="283" alt="image" src="https://github.com/user-attachments/assets/4c2aa0b2-ce5c-408c-9ba2-027c37e8064a" />
+
 
 ---
 
@@ -178,7 +182,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="277" height="558" alt="image" src="https://github.com/user-attachments/assets/1e728ead-4219-4831-aef1-05e47ebf6e78" />
+
 
 ---
 
@@ -192,7 +197,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="270" height="544" alt="image" src="https://github.com/user-attachments/assets/6b680be1-1be3-4353-b3ae-b2c67843e684" />
+
 
 ---
 
@@ -206,7 +212,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="255" height="200" alt="image" src="https://github.com/user-attachments/assets/e13328c9-ff90-4842-9f4c-c6f7b2def02b" />
+
 
 ---
 
@@ -220,7 +227,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="270" height="535" alt="image" src="https://github.com/user-attachments/assets/aa020708-62d2-4974-81ed-957d6f185afa" />
+
 
 ---
 
@@ -234,7 +242,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="246" height="453" alt="image" src="https://github.com/user-attachments/assets/03f0f842-dfff-4e47-8cad-5e11db10d5f8" />
+
 
 ---
 
@@ -248,7 +257,9 @@ IMAGEM
 
 ---
 
-IMAGEM IMAGEM
+<img width="265" height="335" alt="image" src="https://github.com/user-attachments/assets/567d92e8-93be-48dc-b101-3eb041279877" />
+<img width="271" height="531" alt="image" src="https://github.com/user-attachments/assets/2d56952b-0377-47e5-b4ba-ff632e85ad00" />
+
 
 ---
 
@@ -262,7 +273,8 @@ IMAGEM IMAGEM
 
 ---
 
-IMAGEM
+<img width="259" height="535" alt="image" src="https://github.com/user-attachments/assets/12b626d5-419c-4bae-be13-1b41deb141f0" />
+
 
 ---
 
@@ -276,7 +288,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="258" height="469" alt="image" src="https://github.com/user-attachments/assets/8e721671-78e4-49b9-8592-fcb3d8518714" />
+
 
 ---
 
@@ -290,7 +303,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="221" height="489" alt="image" src="https://github.com/user-attachments/assets/e55b6320-f7c5-489d-8dd5-c02486cf5bcd" />
+
 
 ---
 
@@ -304,7 +318,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="221" height="489" alt="image" src="https://github.com/user-attachments/assets/9affc7e1-ea95-4d77-afd5-852678136555" />
+
 
 ---
 
@@ -318,7 +333,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="266" height="534" alt="image" src="https://github.com/user-attachments/assets/98a09b5f-7aa4-442c-a7bd-03387dd7d0aa" />
+
 
 ---
 
@@ -332,7 +348,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="275" height="564" alt="image" src="https://github.com/user-attachments/assets/f8313fbe-7691-4556-aaec-81075782b878" />
+
 
 ---
 
@@ -346,7 +363,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="259" height="556" alt="image" src="https://github.com/user-attachments/assets/94f08566-b92d-45f7-8552-bc8f0415379f" />
+
 
 ---
 
@@ -360,7 +378,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="211" height="480" alt="image" src="https://github.com/user-attachments/assets/5055fadb-39fe-4547-b02e-04aabe1a0874" />
+
 
 ---
 
@@ -374,7 +393,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="237" height="489" alt="image" src="https://github.com/user-attachments/assets/6ede034b-8462-4c51-8d48-d1108828abd6" />
+
 
 ---
 
@@ -388,7 +408,9 @@ IMAGEM
 
 ---
 
-IMAGEM IMAGEM
+<img width="233" height="497" alt="image" src="https://github.com/user-attachments/assets/afbf8f38-4f81-4a95-a184-93a18d5d9640" />
+ <img width="220" height="482" alt="image" src="https://github.com/user-attachments/assets/303089f8-fda5-42aa-8d6d-f112faacfb04" />
+
 
 ---
 
@@ -402,7 +424,8 @@ IMAGEM IMAGEM
 
 ---
 
-IMAGEM
+<img width="222" height="196" alt="image" src="https://github.com/user-attachments/assets/1326e3be-96b7-4e51-9aba-bd0873e3cc53" />
+
 
 ---
 
@@ -411,16 +434,8 @@ IMAGEM
 ---
 
 ## US31 - Gestão de Níveis de Permissão e Privacidade
-
-**Descrição:** Enquanto idoso, desejo configurar diferentes níveis de acesso para meu responsável através de modos pré-definidos ou personalizados para equilibrar minha privacidade, autonomia e segurança financeira.
-
----
-
-IMAGEM
-
----
-
-**Implementação no MVP:** (não implementado na simulação)
+Enquanto idoso, desejo configurar diferentes níveis de acesso para meu responsável através de modos pré-definidos ou personalizados para equilibrar minha privacidade, autonomia e segurança financeira.
+**Implementação do MVP:** Não foi gerada nenhuma tela para implementação dessa User Story, portanto, esta ficou fora do escopo do MVP.
 
 ---
 
@@ -430,7 +445,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="250" height="504" alt="image" src="https://github.com/user-attachments/assets/2dfa0214-db54-4ef8-915b-b2685e69b04b" />
+
 
 ---
 
@@ -444,7 +460,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="247" height="364" alt="image" src="https://github.com/user-attachments/assets/b2317bf1-48eb-47c0-8c26-15e46078c819" />
+
 
 ---
 
@@ -458,7 +475,8 @@ IMAGEM
 
 ---
 
-IMAGEM
+<img width="213" height="303" alt="image" src="https://github.com/user-attachments/assets/cfae78cf-f384-4015-9bb2-b59c64c5cf46" />
+
 
 ---
 
