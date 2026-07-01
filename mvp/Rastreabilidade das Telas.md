@@ -109,3 +109,355 @@ IMAGEM
 ---
 
 **Implementação no MVP:** A funcionalidade foi implementada através de uma interface de tela inicial simplificada que organiza os canais de suporte e navegação em um layout de grade com blocos amplos e de fácil identificação, visando guiar usuários com necessidades de acessibilidade com clareza. Sob o título delimitador "O que você quer fazer?", foram disponibilizados botões com ícones minimalistas e rótulos explícitos de texto em alta visibilidade. Entre as ações de suporte, destacam-se os botões dedicados de "Ajuda" (com ícone de interrogação) e "Assistida" (com ícone de usuário e engrenagem), que servem como canais diretos e estáveis para acionar o suporte especializado e facilitar a orientação remota, reduzindo a complexidade cognitiva do fluxo para o usuário.
+
+---
+
+## US09 - Controle de Operações Essenciais
+
+**Descrição:** Enquanto suporte, desejo um sistema com menus enxutos e funções essenciais para realização de ações fundamentais como geração de extratos.
+
+---
+
+IMAGEM IMAGEM
+
+---
+
+**Implementação no MVP** - A funcionalidade foi implementada através de um fluxo simples que contém menus e funções essenciais na tela inicial, onde o botão dedicado "Extrato" integra uma grade de ações rápidas e de fácil identificação visual. Ao acessar essa função, o usuário é direcionado para uma tela de extrato limpa e organizada, que exibe de forma direta os cards que mostram o fluxo de movimentações bancárias ("ENTRADAS" e "SAÍDAS"), além de botões de filtro rápido ("Todos", "Enviados", "Recebidos") localizados no topo. Todas as implementações seguem a ordem cronológica das transações, para manter a organização e facilitar a usabilidade do usuário.
+
+---
+
+## US10 - Acessibilidade Visual na Interface
+
+**Descrição:** Enquanto contato de apoio, desejo uma interface com fontes legíveis para garantir a acessibilidade de usuários com baixa visão.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - A funcionalidade foi implementada por meio da tela inicial do aplicativo, utilizando fonte sans-serif moderna, com hierarquia visual clara e tamanhos entre 32px e 36px para destaque de informações principais.
+
+---
+
+## US11 - Memorização de Contato Para Futuras Transações
+
+**Descrição:** Enquanto usuário idoso, desejo gravar o contato da pessoa que acabou de receber meu dinheiro, para ter um atalho rápido nas próximas operações.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - (não implementado na simulação)
+
+---
+
+## US12 - Pesquisa de Recebedor por Barra de Pesquisa
+
+**Descrição:** Enquanto usuário idoso, desejo pesquisar um recebedor na minha lista usando o nome.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - A funcionalidade foi implementada através da barra de pesquisa na área Pix, permitindo localizar contatos salvos e acessar rapidamente a tela de transferência.
+
+---
+
+## US13 - Visualização de Comprovante Ampliado
+
+**Descrição:** Enquanto usuário idoso, desejo visualizar comprovante com fonte ampliada e nítida.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - A tela de comprovante foi estruturada com foco em acessibilidade, exibindo valores e dados da transação em fonte ampliada, negrito e alto contraste.
+
+---
+
+## US14 - Exibição de Aviso de Risco de Fraude
+
+**Descrição:** Enquanto usuário idoso, desejo ver aviso de risco antes de confirmar Pix suspeito.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - O sistema exibe alertas de risco com cores de alto contraste (laranja e vermelho) antes da confirmação da transação.
+
+---
+
+## US15 - Compartilhar Comprovantes
+
+**Descrição:** Enquanto usuário idoso, desejo compartilhar comprovantes por canais do aparelho.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Botão de compartilhamento permite envio via WhatsApp, SMS, Bluetooth e outros canais do dispositivo.
+
+---
+
+## US16 - Extrato Simplificado
+
+**Descrição:** Enquanto usuário idoso, desejo ver transações com nomes amigáveis.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Lista de transações em ordem cronológica com descrições simplificadas como “Farmácia” e “Supermercado”.
+
+---
+
+## US17 - Geração de QR Code
+
+**Descrição:** Enquanto usuário idoso, desejo gerar QR Code para recebimento.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Tela de “Receber Pix” com QR Code centralizado, campo de valor e chave Pix mascarada com opção de cópia.
+
+---
+
+## US18 - Botão de Ajuda por Voz/Vídeo
+
+**Descrição:** Enquanto usuário idoso, desejo botão de ajuda acessível.
+
+---
+
+IMAGEM IMAGEM
+
+---
+
+**Implementação no MVP** - Botão de ajuda disponível na tela inicial e configurações, com suporte por voz e vídeo.
+
+---
+
+## US19 - Login Tutor
+
+**Descrição:** Enquanto tutor, desejo acessar o sistema para acompanhar o usuário.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Tela de login com CPF e senha e mensagem informativa de acompanhamento familiar.
+
+---
+
+## US20 - Limite de Alerta contra Fraudes
+
+**Descrição:** Enquanto tutor, desejo configurar limite de alertas.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Slider para ajuste de limite e botão de salvar configuração.
+
+---
+
+## US21 - Conta Assistida
+
+**Descrição:** Enquanto tutor desejo monitorar movimentações do idoso.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Tela com cards de alertas, proteção e controle de permissões.
+
+---
+
+## US22 - Autenticação Multifator
+
+**Descrição:** Enquanto tutor desejo autenticação via link, QR ou código.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Não implementado na simulação.
+
+---
+
+## US23 - Consulta de Destinatário
+
+**Descrição:** Enquanto tutor desejo verificar dados do destinatário.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Tela de confirmação exibe dados não sensíveis antes da transação.
+
+---
+
+## US24 - Monitoramento com Alerta
+
+**Descrição:** Enquanto tutor desejo identificar movimentações suspeitas.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Alertas automáticos para transações incomuns.
+
+---
+
+## US25 - Dashboard de Análise
+
+**Descrição:** Enquanto tutor desejo visualizar dados financeiros em gráficos.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Dashboard com gráficos de categorias e evolução mensal.
+
+---
+
+## US27 - Login Tutor Seguro
+
+**Descrição:** Enquanto tutor desejo login seguro no sistema.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Tela de autenticação com CPF e senha.
+
+---
+
+## US28 - Modo Assistido
+
+**Descrição:** Enquanto idoso desejo ativar conta assistida.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Tela informativa com opções de proteção e controle compartilhado.
+
+---
+
+## US29 - Vinculação de Tutor
+
+**Descrição:** Enquanto idoso desejo adicionar responsável à conta.
+
+---
+
+IMAGEM IMAGEM
+
+---
+
+**Implementação no MVP** - Fluxo com QR Code, link e código manual com consentimento do usuário.
+
+---
+
+## US30 - Revogação de Acesso
+
+**Descrição:** Enquanto idoso desejo remover tutor.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Botão de remoção com confirmação.
+
+---
+
+## US31 - Níveis de Permissão
+
+**Descrição:** Enquanto idoso desejo configurar níveis de acesso.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Não implementado na simulação.
+
+---
+
+## US32 - Cadastro de Conta
+
+**Descrição:** Enquanto idoso desejo criar conta digital.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Cadastro com nome, e-mail, telefone e senha.
+
+---
+
+## US33 - Login do Usuário
+
+**Descrição:** Enquanto idoso desejo escolher método de login.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Login via CPF com menção a alternativas.
+
+---
+
+## US34 - Exportação de Extratos
+
+**Descrição:** Enquanto suporte administrativo desejo exportar dados em massa.
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP** - Painel com logs e opção de exportação filtrada.
+
+---
