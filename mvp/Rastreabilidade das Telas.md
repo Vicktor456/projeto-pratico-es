@@ -95,4 +95,17 @@ IMAGEM
 
 ---
 
-**Implementação no MVP:**  A funcionalidade foi implementada através de uma interface de pagamento mobile com um teclado numérico de tamanho ampliado e um amplo espaçamento entre as teclas para facilitar o toque e evitar erros de digitação. O campo de inserção do valor exibe a quantia em uma fonte de tamanho grande e negrito para máxima visibilidade, posicionado centralmente acima do teclado. 
+**Implementação no MVP:**  A funcionalidade foi implementada através de uma interface de pagamento mobile com um teclado numérico de tamanho ampliado e um amplo espaçamento entre as teclas para facilitar o toque e evitar erros de digitação. O campo de inserção do valor exibe a quantia em uma fonte de tamanho grande e negrito para máxima visibilidade, posicionado centralmente acima do teclado.
+
+---
+
+## US08 - Canais de Comunicação Claros
+**Descrição:** Enquanto especialista de suporte, desejo canais de comunicação estáveis e interfaces simplificadas para guiar usuários com necessidades de acessibilidade com clareza
+
+---
+
+IMAGEM
+
+---
+
+**Implementação no MVP:** A funcionalidade foi implementada através de uma interface de tela inicial simplificada que organiza os canais de suporte e navegação em um layout de grade com blocos amplos e de fácil identificação, visando guiar usuários com necessidades de acessibilidade com clareza. Sob o título delimitador "O que você quer fazer?", foram disponibilizados botões com ícones minimalistas e rótulos explícitos de texto em alta visibilidade. Entre as ações de suporte, destacam-se os botões dedicados de "Ajuda" (com ícone de interrogação) e "Assistida" (com ícone de usuário e engrenagem), que servem como canais diretos e estáveis para acionar o suporte especializado e facilitar a orientação remota, reduzindo a complexidade cognitiva do fluxo para o usuário.
